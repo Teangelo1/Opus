@@ -1,22 +1,26 @@
+'use strict';
+const {
+  Model
+} = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    const Book = sequelize.define('book', {
-        title: Sequelize.STRING,
-        author: Sequelize.STRING,
-        genre: Sequelize.STRING,
-        pages: Sequelize.INTEGER,
-        shelf: Sequelize.STRING
-        // rating: Sequelize.INTEGER
-      });
-      
-  
-    // Book.associate = (models) => {
-    //   // Associating Author with Posts
-    //   // When an Author is deleted, also delete any associated Posts
-    //   Book.hasMany(models.Post, {
-    //     onDelete: 'cascade',
-    //   });
-    // };
-  
-    return Book;
+  class Book extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      // define association here
+    }
   };
-  
+  Book.init({
+    title: DataTypes.STRING,
+    author: DataTypes.STRING,
+    genre: DataTypes.STRING,
+    pages: DataTypes.INTEGER
+  }, {
+    sequelize,
+    modelName: 'Book',
+  });
+  return Book;
+};
