@@ -4,7 +4,7 @@ function Search({handleInputChange}) {
   return (
     <form>
       <div className="form-group">
-        <label htmlFor="search">Search</label>
+      
         <input
           onChange={ e => handleInputChange(e)}
           name="Books"
@@ -13,6 +13,7 @@ function Search({handleInputChange}) {
           placeholder="Find the Book for you"
           id="search"
         />
+         <label htmlFor="search">Search</label>
         <br />
       </div>
     </form>
