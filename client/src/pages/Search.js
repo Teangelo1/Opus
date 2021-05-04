@@ -13,7 +13,7 @@ function Search({handleInputChange}) {
           placeholder="Find the Book for you"
           id="search"
         />
-         <label htmlFor="search">Search</label>
+         <button>Search</button>
         <br />
       </div>
     </form>
