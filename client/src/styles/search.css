@@ -1,0 +1,24 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+h1 {
+    text-align: center;
+}
+
+.button-center {
+    margin: 0;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.search-content {
+    margin-top: 4cm;
+
+}

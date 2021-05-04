@@ -1,22 +1,38 @@
 import React from "react";
-function Search({handleInputChange}) {
-  
+import '../styles/search.css';
+import '../utils/API';
+
+
+function Search() {
+
   return (
-    <form>
-      <div className="form-group">
-      
-        <input
-          onChange={ e => handleInputChange(e)}
-          name="Books"
-          type="text"
-          className="form-control"
-          placeholder="Find the Book for you"
-          id="search"
-        />
-         <button>Search</button>
-        <br />
+    <div>
+      <div className="container search-content">
+        <div className="row">
+          <div className="col-12">
+            <div>
+              <h1><strong>Opus</strong></h1>
+            </div>
+            <div className="card-body">
+              <input type="text" id="book-search" className="form-control"
+                placeholder='“A room without books is like a body without a soul.”' />
+              <br />
+              <div className="button-center">
+                <button
+                  type="submit"
+                  className="btn btn-dark btn-md"
+                  id="search-btn">
+                  <span className=""></span> Find the Book for you
+              </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </form>
+    </div>
+
+
+
   );
 }
 export default Search;

@@ -9,3 +9,5 @@ function App() {
 }
 
 export default App;
+// add trending section
+// wrap all this content inside a container make navbar in the center
