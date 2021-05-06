@@ -8,8 +8,14 @@ let API = {
     return axios.get(BASEURL + query);
   },
   
+
   trendingBooks: function() {
     return axios.get(`${newYorkTimes}${apiKey}`);
+
+ // for testing only
+  testRoute: function(){
+    return axios.get(BASEURL + "The Last Time I Lied")
+
   }
 };
 
