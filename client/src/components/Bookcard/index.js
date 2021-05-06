@@ -25,7 +25,8 @@ function BookCard(props) {
           <Row>
           <Col size="4">
           <img id="bookImg" src={props.image} className="img-fluid" alt="bookimg" />
-          <p>{props.rating}</p>
+          <p>Average Rating: {props.rating} /5</p>
+          <p>{props.pages} pages</p>
           </Col>
           </Row>
           <Row>
