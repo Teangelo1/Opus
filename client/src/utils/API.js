@@ -4,6 +4,11 @@ let API = {
 
   searchBooks: function(query) {
     return axios.get(BASEURL + query);
+  },
+  
+ // for testing only
+  testRoute: function(){
+    return axios.get(BASEURL + "The Last Time I Lied")
   }
 };
 

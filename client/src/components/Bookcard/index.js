@@ -1,6 +1,5 @@
 import React from "react";
-import { Row, Col } from "../Grid";
-import "./style.css";
+import { Row, Col } from "react-bootstrap";
 
 function BookCard(props) {
   return (
@@ -14,11 +13,11 @@ function BookCard(props) {
             </Col>
             <Col size="3">
               <div>
-                <a href={props.link} type="button" className="btn" id="bookBtnView">
-                  View
-                </a>
+                <button type="button" className="btn" id="bookBtnView">
+                  Read
+                </button>
                 <button type="button" className="btn" onClick={props.onClick} id="bookBtnAction">
-                  {props.action}
+                  Want To Read
                 </button>
               </div>
             </Col>
@@ -26,7 +25,10 @@ function BookCard(props) {
           <Row>
           <Col size="4">
           <img id="bookImg" src={props.image} className="img-fluid" alt="bookimg" />
+          <p>{props.rating}</p>
           </Col>
+          </Row>
+          <Row>
             <Col size="8">
             <p>{props.description}</p>
             </Col>
