@@ -14,7 +14,10 @@ export default class Bookshelf extends React.Component {
     </Row>  
 
     <Row>
-    <div className="col-12 aboutme">Book, Name current page here</div>
+    <div className="col-4"></div>
+    <div className="col-2 favbook">Book Here</div>
+    <div className="col-2 aboutme">Name current page here</div>
+    <div className="col-4"></div>
     </Row> 
 
 

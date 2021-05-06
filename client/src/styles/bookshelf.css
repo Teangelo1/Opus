@@ -3,3 +3,22 @@ font-size: 24pt;
 font-weight: bold;
 text-align: center;
 }
+
+.subtitle {
+font-size: 20pt;
+font-weight: bold;
+text-align: center;
+}
+
+.aboutme {
+text-align: center;
+}
+
+.favbook {
+text-align: center;
+}
+
+.book {
+text-align: center;
+
+}
