@@ -1,33 +1,55 @@
-import React, {Component} from "react";
+import React, { useState, useEffect } from "react";
 import '../styles/search.css';
-import API from  '../utils/API';
+import API from '../utils/API';
 
-class Search extends Component{
-  state ={
-    books: [{}],
-    filteredBooks: [{}]
-  }
 
-  componentDidMount() {
-    API.searchBooks().then(data => {console.log(data); return data}).then(res => this.setState({
+function Search() {
+  const [books, setBooks] = useState([])
+  const [nyBooks, setNyBooks] = useState([])
+
+  useEffect(() => {
+    trendingBooks()
+  }, [])
+
+  function searchBooks() {
+    API.searchBooks().then(data => { console.log(data); return data }).then(res => setBooks({
       books: res.data.results,
-      filteredBooks: res.data.results
+      setBooks: res.data.results
     })).catch(err => console.log(err))
   }
 
-  handleInputChange = event => {
-    const value = event.target.value;
-    const filtered = this.state.books.filter(book=> book.name.first.toLowerCase().startsWith(value.toLowerCase())) // logging data differently after each filter.
-    this.setState({
-     filteredBooks: filtered
-    });
-    console.log(this.state)
-  };
+  function trendingBooks() {
+    API.trendingBooks().then(data => { console.log(data); return data }).then(res => setNyBooks({
+      nyBooks: res.data.results,
+      setNyBooks: res.data.results
+    })).catch(err => console.log(err))
+  } // .map lines 23/24
 
   
- render() {
+
   
+
+  // componentDidMount() {
+  //   nyAPI.trendingBooks().then(data => { console.log(data); return data }).then(res => this.setState({
+  //     nyBooks: res.data.results,
+  //     filteredBooks: res.data.results
+  //   })).catch(err => console.log(err))
+  // }
+
+  // handleInputChange = event => {
+  //   const value = event.target.value;
+  //   const filtered = this.state.books.filter(book => book.name.first.toLowerCase().startsWith(value.toLowerCase())) // logging data differently after each filter.
+  //   this.setState({
+  //     filteredBooks: filtered
+  //   });
+  //   console.log(this.state)
+  // };
+
+
+  
+
     return (
+
       <div>
         <div className="container search-content">
           <div className="row">
@@ -51,12 +73,23 @@ class Search extends Component{
             </div>
           </div>
         </div>
-      </div>
-  
-  
-  
+
+        <div class="container">
+          <div class="jumbotron">
+            <h1>Trending Books</h1>
+            <h3 id="trendingQoute">“Today a reader, tomorrow a leader.”</h3>
+            <hr />
+          </div>
+
+
+
+        </div>
+</div>
+
+
+
     );
-  }
+  
 }
 
 
