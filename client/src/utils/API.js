@@ -1,5 +1,7 @@
 import axios from 'axios';
-const BASEURL = "https://www.googleapis.com/books/v1/volumes?q="
+const BASEURL = "https://www.googleapis.com/books/v1/volumes?q=";
+const ISBNURL = "https://www.googleapis.com/books/v1/volumes?q=isbn:";
+
 let API = {
 
   searchBooks: function(query) {
@@ -8,7 +10,7 @@ let API = {
   
  // for testing only
   testRoute: function(){
-    return axios.get(BASEURL + "The Last Time I Lied")
+    return axios.get(ISBNURL + "1101985364")
   }
 };
 
