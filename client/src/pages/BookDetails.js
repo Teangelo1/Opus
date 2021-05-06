@@ -34,9 +34,11 @@ function BookDetails() {
                   authors={book.volumeInfo.authors}
                   description={book.volumeInfo.description}
                   image={book.volumeInfo.imageLinks.thumbnail}
-                  id={book.id}
-                  key={book.id}
+                  id={book.volumeInfo.industryIdentifiers[0].identifier}
+                  key={book.volumeInfo.industryIdentifiers[0].identifier}
                   rating={book.volumeInfo.averageRating}
+                  pages={book.volumeInfo.pageCount}
+                  genre={book.volumeInfo.categories} // may be problematic, doesnt go deeper than fiction non fiction
                 />
               ))}
             </div>
