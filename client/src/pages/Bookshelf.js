@@ -1,5 +1,6 @@
 import React from 'react'
 import {Row} from "react-bootstrap"
+import {NavLink} from "react-router-dom";
 import "../styles/bookshelf.css"
 
 export default class Bookshelf extends React.Component {
@@ -66,7 +67,12 @@ export default class Bookshelf extends React.Component {
 
 {/* search for more Section */}
 <Row>
-{/* search for more goes here */}
+<NavLink 
+className="nav-link"
+activeClassName="active"
+isActive={()=>window.location.pathname==="/search"}
+to = "/search" 
+>Search</NavLink>
     </Row>  
 
 
