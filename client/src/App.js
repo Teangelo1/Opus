@@ -12,6 +12,7 @@ function App() {
 {/* Paths for pages */}
 <Route exact path = "/bookshelf" component = {Bookshelf} />
 <Route exact path ="/search" component = {Search} />
+<Route component={Search} />
 </Switch>
 
 </Router>
