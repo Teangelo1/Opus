@@ -11,9 +11,15 @@ function App() {
 {/* <Header/> */}
 <Switch>
 {/* Paths for pages */}
+
+<Route exact path = "/bookshelf" component = {Bookshelf} />
+<Route exact path ="/search" component = {Search} />
+<Route component={Search} />
+
 <Route exact path = "/bookshelf" component={Bookshelf} />
 <Route exact path ="/search" component={Search} />
 <Route exact path ="/details" component={BookDetails} />
+
 </Switch>
 
 </Router>
