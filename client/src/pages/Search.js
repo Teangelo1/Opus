@@ -2,13 +2,12 @@ import React, { useState, useEffect } from "react";
 import BookDetail from "../components/BookDisplay";
 import '../styles/search.css';
 import API from '../utils/API';
-
+import Input from "../components/Input";
 
 function Search() {
   // const [books, setBooks] = useState([])
   const [nyBooks, setNyBooks] = useState([])
-  const [title, setTitle] = useState("")
-  const [book_image, setBook_Image] = useState("")
+  const [bookSearch, setBookSearch] = useState("")
 
   useEffect(() => {
     trendingBooks()
@@ -29,6 +28,17 @@ function Search() {
   } // .map lines 23/24
 
 
+  function handleInputChange(event) {
+    const { value } = event.target;
+    setBookSearch(value);
+  };
+
+  function handleFormSubmit(event) {
+    event.preventDefault();
+      API.searchBooks(bookSearch)
+        .then(res => setBooks(res.data.items))
+        .catch(err => console.log(err));
+ };
 
 
   // componentDidMount() {
@@ -60,14 +70,24 @@ function Search() {
               <h1><strong>Opus</strong></h1>
             </div>
             <div className="card-body">
+
               <input type="text" id="book-search" className="form-control"
                 placeholder='“A room without books is like a body without a soul.”' />
+
+              <Input
+                name="bookSearch"
+                value={bookSearch}
+                onChange={handleInputChange}
+                placeholder='“A room without books is like a body without a soul.”'
+              />
+
               <br />
               <div className="button-center">
                 <button
                   type="submit"
                   className="btn btn-dark btn-md"
-                  id="search-btn">
+                  id="search-btn"
+                  onClick={handleFormSubmit}>
                   <span className=""></span> Find the Book for you
                 </button>
               </div>
