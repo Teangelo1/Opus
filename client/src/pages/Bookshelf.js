@@ -1,7 +1,8 @@
-import React from 'react'
-import {Row} from "react-bootstrap"
+import React from 'react';
+import {Row} from "react-bootstrap";
 import {NavLink} from "react-router-dom";
-import "../styles/bookshelf.css"
+import "../styles/bookshelf.css";
+import Footer from "../components/footer";
 
 export default class Bookshelf extends React.Component {
     render(){
@@ -99,7 +100,7 @@ to = "/search"
 
 
 
-
+<Footer/>
 
 
         </div>

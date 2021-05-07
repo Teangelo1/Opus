@@ -17,19 +17,26 @@ export default class Footer extends React.Component{
       <Row>
 
 
-      <div className="card-body">
+     <div className="col-3"></div>
+
+     <div className="col-3">
                 <input type="text" id="book-search" className="form-control"
                   placeholder='“A room without books is like a body without a soul.”' />
                 <br />
-                <div className="button-center">
+                </div>
+
+
+                <div className="button-center col-3">
                   <button
                     type="submit"
-                    className="btn btn-dark btn-md"
+                    className="btn btn-dark"
                     id="search-btn">
                     <span className=""></span> Find the Book for you
                 </button>
                 </div>
-              </div>
+
+                <div className="col-3"></div>
+           
 
 
               </Row>
