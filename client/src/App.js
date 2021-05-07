@@ -4,6 +4,8 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Search from "./pages/Search"; 
 import BookDetails from "./pages/BookDetails";
 
+
+
 function App() {
   return (
 <div>
@@ -23,6 +25,7 @@ function App() {
 </Switch>
 
 </Router>
+
 
 </div>
 

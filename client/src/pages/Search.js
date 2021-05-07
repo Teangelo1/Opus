@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import BookDetail from "../components/BookDisplay";
 import '../styles/search.css';
 import API from '../utils/API';
 import Input from "../components/Input";
@@ -20,10 +21,9 @@ function Search() {
   // }
 
   function trendingBooks() {
-    API.trendingBooks().then(data => { console.log(data); return data }).then(res => setNyBooks({
-      nyBooks: res.data.results,
-      setNyBooks: res.data.results
-    })).catch(err => console.log(err))
+    API.trendingBooks().then(data => { console.log(data); return data }).then(res => setNyBooks(
+     res.data.results.books
+    )).catch(err => console.log(err))
   } // .map lines 23/24
 
 
@@ -43,7 +43,7 @@ function Search() {
   // componentDidMount() {
   //   nyAPI.trendingBooks().then(data => { console.log(data); return data }).then(res => this.setState({
   //     nyBooks: res.data.results,
-  //     filteredBooks: res.data.results
+  //
   //   })).catch(err => console.log(err))
   // }
 
@@ -69,19 +69,22 @@ function Search() {
               <h1><strong>Opus</strong></h1>
             </div>
             <div className="card-body">
+
               <Input
                 name="bookSearch"
                 value={bookSearch}
                 onChange={handleInputChange}
                 placeholder='“A room without books is like a body without a soul.”'
               />
+
               <br />
               <div className="button-center">
                 <button
                   type="submit"
                   className="btn btn-dark btn-md"
                   id="search-btn"
-                  onClick={handleFormSubmit}>
+                  onClick={handleFormSubmit}
+                 >
                   <span className=""></span> Find the Book for you
                 </button>
               </div>
@@ -90,11 +93,28 @@ function Search() {
         </div>
       </div>
 
-      <div class="container">
-        <div class="jumbotron">
+      <div className="container">
+        <div className="jumbotron">
           <h1>Trending Books</h1>
           <h3 id="trendingQoute">“Today a reader, tomorrow a leader.”</h3>
           <hr />
+          <div>We want to display data here</div>
+          {!nyBooks.length ? (
+            <h2>No Trending Books available at this moment </h2>
+          ) :
+            <div>
+              {nyBooks.map((book) => (
+                <BookDetail
+                  title={book.title}
+                  image={book.book_image}
+                  key={book.id}
+
+                />
+              ))}
+
+            </div>
+          }
+
         </div>
 
 
