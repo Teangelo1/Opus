@@ -67,7 +67,7 @@ export default class Bookshelf extends React.Component {
 
 {/* search for more Section */}
 
-<div class="input-group">
+{/* <div class="input-group">
   <div class="form-outline">
     <input type="search" id="form1" class="form-control" />
     <label class="form-label" for="form1">Search</label>
@@ -75,19 +75,19 @@ export default class Bookshelf extends React.Component {
   <button  type="button" class="btn btn-primary">
     <i class="fas fa-search"></i>
   </button>
-</div>
+</div> */}
 
 
 
 
-{/* <Row>
+<Row>
 <NavLink 
 className="nav-link search"
 activeClassName="active"
 isActive={()=>window.location.pathname==="/search"}
 to = "/search" 
 >Search</NavLink>
-    </Row>   */}
+    </Row>  
 
 
 
