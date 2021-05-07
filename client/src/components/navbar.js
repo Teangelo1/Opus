@@ -12,11 +12,39 @@ export default class Footer extends React.Component{
     
 <header>
 
-<div className="col-2"></div>
+<div className="col-2"><NavLink 
+className="nav-link search"
+activeClassName="active"
+isActive={()=>window.location.pathname==="/search"}
+to = "/search" 
+>Search</NavLink></div>
+
+
 <div className="col-4"></div>
-<div className="col-2"></div>
-<div className="col-2"></div>
-<div className="col-2"></div>
+
+
+<div className="col-2"><NavLink 
+className="nav-link search"
+activeClassName="active"
+isActive={()=>window.location.pathname==="/search"}
+to = "/search" 
+>Search</NavLink></div>
+
+
+<div className="col-2"><NavLink 
+className="nav-link search"
+activeClassName="active"
+isActive={()=>window.location.pathname==="/search"}
+to = "/search" 
+>Search</NavLink></div>
+
+
+<div className="col-2"><NavLink 
+className="nav-link search"
+activeClassName="active"
+isActive={()=>window.location.pathname==="/search"}
+to = "/search" 
+>Search</NavLink></div>
 
 
 
