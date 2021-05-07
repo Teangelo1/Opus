@@ -80,14 +80,14 @@ export default class Bookshelf extends React.Component {
 
 
 
-<Row>
+{/* <Row>
 <NavLink 
 className="nav-link search"
 activeClassName="active"
 isActive={()=>window.location.pathname==="/search"}
 to = "/search" 
 >Search</NavLink>
-    </Row>  
+    </Row>   */}
 
 
 
