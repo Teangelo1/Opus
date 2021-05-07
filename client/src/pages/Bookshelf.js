@@ -1,13 +1,17 @@
-import React from 'react'
-import {Row} from "react-bootstrap"
+import React from 'react';
+import {Row} from "react-bootstrap";
 import {NavLink} from "react-router-dom";
-import "../styles/bookshelf.css"
+import "../styles/bookshelf.css";
+import Footer from "../components/footer";
+import Header from "../components/navbar";
 
 export default class Bookshelf extends React.Component {
     render(){
     return (
         <div>
 
+
+<Header></Header>
 
 {/* Currently Reading Section */}
     <Row>
@@ -80,14 +84,14 @@ export default class Bookshelf extends React.Component {
 
 
 
-<Row>
+{/* <Row>
 <NavLink 
 className="nav-link search"
 activeClassName="active"
 isActive={()=>window.location.pathname==="/search"}
 to = "/search" 
 >Search</NavLink>
-    </Row>  
+    </Row>   */}
 
 
 
@@ -99,7 +103,7 @@ to = "/search"
 
 
 
-
+<Footer/>
 
 
         </div>
