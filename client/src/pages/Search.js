@@ -5,7 +5,7 @@ import API from '../utils/API';
 import Input from "../components/Input";
 
 function Search() {
-  // const [books, setBooks] = useState([])
+  const [books, setBooks] = useState([])
   const [nyBooks, setNyBooks] = useState([])
   const [bookSearch, setBookSearch] = useState("")
 
@@ -21,10 +21,9 @@ function Search() {
   // }
 
   function trendingBooks() {
-    API.trendingBooks().then(data => { console.log(data); return data }).then(res => setNyBooks({
-      nyBooks: res.data.results
-      // setBook_Image(nyBooks)
-    })).catch(err => console.log(err))
+    API.trendingBooks().then(data => { console.log(data); return data }).then(res => setNyBooks(
+     res.data.results.books
+    )).catch(err => console.log(err))
   } // .map lines 23/24
 
 
@@ -71,9 +70,6 @@ function Search() {
             </div>
             <div className="card-body">
 
-              <input type="text" id="book-search" className="form-control"
-                placeholder='“A room without books is like a body without a soul.”' />
-
               <Input
                 name="bookSearch"
                 value={bookSearch}
@@ -87,7 +83,8 @@ function Search() {
                   type="submit"
                   className="btn btn-dark btn-md"
                   id="search-btn"
-                  onClick={handleFormSubmit}>
+                  onClick={handleFormSubmit}
+                 >
                   <span className=""></span> Find the Book for you
                 </button>
               </div>
@@ -106,7 +103,7 @@ function Search() {
             <h2>No Trending Books available at this moment </h2>
           ) :
             <div>
-              {nyBooks.books.map((book) => (
+              {nyBooks.map((book) => (
                 <BookDetail
                   title={book.title}
                   image={book.book_image}
