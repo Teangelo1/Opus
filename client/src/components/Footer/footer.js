@@ -1,11 +1,11 @@
 
 import {Row} from "react-bootstrap";
-import "../styles/footer.css"
+
 import React, { useState, useEffect } from "react";
-import BookDetail from "../components/BookDisplay";
-import '../styles/search.css';
-import API from '../utils/API';
-import Input from "../components/Input";
+import BookDetail from "../BookDisplay";
+import './footer.css';
+import API from '../../utils/API';
+import Input from "../Input";
 
 
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import {Row} from "react-bootstrap";
 import "../styles/bookshelf.css";
-import Footer from "../components/footer";
-import Header from "../components/navbar";
+import Footer from "../components/Footer/footer";
+import Header from "../components/Navbar/navbar";
 
 export default class Bookshelf extends React.Component {
     render(){
