@@ -13,19 +13,11 @@ function Search() {
     trendingBooks()
   }, [])
 
-  // function searchBooks() {
-  //   API.searchBooks().then(data => { console.log(data); return data }).then(res => setBooks({
-  //     books: res.data.results,
-  //     setBooks: res.data.results
-  //   })).catch(err => console.log(err))
-  // }
-
   function trendingBooks() {
     API.trendingBooks().then(data => { console.log(data); return data }).then(res => setNyBooks(
      res.data.results.books
     )).catch(err => console.log(err))
-  } // .map lines 23/24
-
+  } 
 
   function handleInputChange(event) {
     const { value } = event.target;
@@ -38,26 +30,6 @@ function Search() {
         .then(res => setBooks(res.data.items))
         .catch(err => console.log(err));
  };
-
-
-  // componentDidMount() {
-  //   nyAPI.trendingBooks().then(data => { console.log(data); return data }).then(res => this.setState({
-  //     nyBooks: res.data.results,
-  //
-  //   })).catch(err => console.log(err))
-  // }
-
-  // handleInputChange = event => {
-  //   const value = event.target.value;
-  //   const filtered = this.state.books.filter(book => book.name.first.toLowerCase().startsWith(value.toLowerCase())) // logging data differently after each filter.
-  //   this.setState({
-  //     filteredBooks: filtered
-  //   });
-  //   console.log(this.state)
-  // };
-
-
-
 
   return (
 
@@ -89,6 +61,18 @@ function Search() {
                 </button>
               </div>
             </div>
+
+          {!books.length ? (<p>""</p>) : <div>
+          {books.map((book, index) =>(
+            <BookDetail
+            title={book.volumeInfo.title}
+            image={book.volumeInfo.imageLinks.smallThumbnail}
+            key={book.id}
+            id={index}
+            />
+          ))}
+          </div>
+          }
           </div>
         </div>
       </div>
