@@ -18,17 +18,20 @@ function BookDetails() {
       .catch(err => console.log(err));
   };
 
-//   function deleteBook(id) {
-//     API.getBooks(id)
-//       .then(res => loadBooks())
-//       .catch(err => console.log(err));
-//   }
+  function addBook(index) {
+    API.saveBooks({
+      title: books[index].volumeInfo.title,
+      author: books[index].volumeInfo.author,
+      genre: books[index].volumeInfo.genre,
+      pages: books[index].volumeInfo.pageCount,
+    })
+  }
  
   return (
     <Container>
     {books.length ? (
             <div>
-              {books.map(book => (
+              {books.map((book, index) => (
                 <BookCard
                   title={book.volumeInfo.title}
                   authors={book.volumeInfo.authors}
@@ -38,7 +41,8 @@ function BookDetails() {
                   key={book.volumeInfo.industryIdentifiers[0].identifier}
                   rating={book.volumeInfo.averageRating}
                   pages={book.volumeInfo.pageCount}
-                  genre={book.volumeInfo.categories} // may be problematic, doesnt go deeper than fiction non fiction
+                  genre={book.volumeInfo.categories}
+                  onClick={() => addBook(index)}
                 />
               ))}
             </div>

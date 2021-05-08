@@ -16,9 +16,14 @@ let API = {
     return axios.get(`${newYorkTimes}${apiKey}`);
   },
 
+  // db connect 
+  saveBooks: function(bookData){
+    return axios.post("/api/books", bookData);
+  },
+
  // for testing only
   testRoute: function(){
-    return axios.get(ISBNURL + "1101985364")
+    return axios.get(ISBNURL + "1101985364");
   }
 };
 
