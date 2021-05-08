@@ -22,8 +22,8 @@ let API = {
   },
 
  // for testing only
-  testRoute: function(){
-    return axios.get(ISBNURL + "1101985364");
+  testRoute: function(id){
+    return axios.get(ISBNURL + id); 
   }
 };
 
