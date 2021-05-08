@@ -18,8 +18,8 @@ export default class Header extends React.Component{
 <div className="col-2"><NavLink 
 className="nav-link search"
 activeClassName="active"
-isActive={()=>window.location.pathname==="/"}
-to = "/" 
+isActive={()=>window.location.pathname==="/search"}
+to = "/search" 
 >Home</NavLink></div>
 
 

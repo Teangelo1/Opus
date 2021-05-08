@@ -1,13 +1,43 @@
-import React from "react";
-import {Col, Row} from "react-bootstrap";
-import {NavLink} from "react-router-dom";
+
+import {Row} from "react-bootstrap";
 import "../styles/footer.css"
+import React, { useState, useEffect } from "react";
+import BookDetail from "../components/BookDisplay";
+import '../styles/search.css';
+import API from '../utils/API';
+import Input from "../components/Input";
 
 
-export default class Footer extends React.Component{
 
+function Footer() {
 
-    render(){
+ const [books, setBooks] = useState([])
+  const [nyBooks, setNyBooks] = useState([])
+  const [bookSearch, setBookSearch] = useState("")
+
+  useEffect(() => {
+    trendingBooks()
+  }, [])
+
+  function trendingBooks() {
+    API.trendingBooks().then(data => { console.log(data); return data }).then(res => setNyBooks(
+     res.data.results.books
+    )).catch(err => console.log(err))
+  } 
+
+  function handleInputChange(event) {
+    const { value } = event.target;
+    setBookSearch(value);
+  };
+
+  function handleFormSubmit(event) {
+    event.preventDefault();
+      API.searchBooks(bookSearch)
+        .then(res => setBooks(res.data.items))
+        .catch(err => console.log(err));
+ };
+
+      
         return(
     
       <footer  style={{
@@ -16,29 +46,42 @@ export default class Footer extends React.Component{
         width: "100%"}} >
       <Row>
 
+<div className="col-3"></div>
 
-     <div className="col-3"></div>
-
-     <div className="col-4">
-                <input type="text" id="book-search" className="form-control"
-                  placeholder='“A room without books is like a body without a soul.”' />
-               
-                </div>
-
-
-                <div className="col-2">
-                  <button
-                    type="submit"
-                    className="btn btn-dark"
-                    id="search-btn">
-                    <span className=""></span> Find the Book for you
+<div className="col-3">
+                <Input
+                name="bookSearch"
+                value={bookSearch}
+                onChange={handleInputChange}
+                placeholder='“A room without books is like a body without a soul.”'
+              />
+              </div>
+              
+              <div className="col-3">
+                <button
+                  type="submit"
+                  className="btn btn-dark btn-md"
+                  id="search-btn"
+                  onClick={event =>  window.location.href='/search'}
+                 >
+                  <span className=""></span> Find the Book for you
                 </button>
-                </div>
-
-                <div className="col-2"></div>
+              </div>
            
 
+              {!books.length ? (<p>""</p>) : <div>
+          {books.map((book, index) =>(
+            <BookDetail
+            title={book.volumeInfo.title}
+            image={book.volumeInfo.imageLinks.smallThumbnail}
+            key={book.id}
+            id={index}
+            />
+          ))}
+          </div>
+          }
 
+              <div className="col-3"></div>
               </Row>
       </footer> 
     
@@ -46,4 +89,7 @@ export default class Footer extends React.Component{
     
     
     
-    )}}
+    )}
+
+    
+      export default Footer

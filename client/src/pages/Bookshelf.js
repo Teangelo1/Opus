@@ -1,6 +1,5 @@
 import React from 'react';
 import {Row} from "react-bootstrap";
-import {NavLink} from "react-router-dom";
 import "../styles/bookshelf.css";
 import Footer from "../components/footer";
 import Header from "../components/navbar";
