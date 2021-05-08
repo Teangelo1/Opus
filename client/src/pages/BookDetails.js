@@ -2,19 +2,20 @@ import React, { useState, useEffect } from "react";
 import BookCard from "../components/Bookcard";
 import API from "../utils/API";
 import { Container } from "react-bootstrap";
+import { useParams } from "react-router-dom";
 
 function BookDetails() {
  const [books, setBooks] = useState([])
-  
+ let {id} = useParams(); // useParams will always reference the id in our url
   useEffect(() => {
-    loadBooks()
+    loadBooks(id)
   }, [])
 
-  function loadBooks() {
-    API.testRoute()
-      .then(res =>
+  function loadBooks(id) {
+    API.testRoute(id)
+      .then(res => {console.log(id)
         setBooks(res.data.items)
-      )
+  })
       .catch(err => console.log(err));
   };
 

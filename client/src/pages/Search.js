@@ -27,8 +27,10 @@ function Search() {
   function handleFormSubmit(event) {
     event.preventDefault();
       API.searchBooks(bookSearch)
-        .then(res => setBooks(res.data.items))
+        .then(res => { let filtered = res.data.items.filter(book => book.volumeInfo.industryIdentifiers != undefined) // filtering out books for now that does not have a isbn number
+          setBooks(filtered)})
         .catch(err => console.log(err));
+      
  };
 
   return (
@@ -64,11 +66,13 @@ function Search() {
 
           {!books.length ? (<p>""</p>) : <div>
           {books.map((book, index) =>(
+            // console.log(book.volumeInfo.industryIdentifiers)
             <BookDetail
             title={book.volumeInfo.title}
             image={book.volumeInfo.imageLinks.smallThumbnail}
             key={book.id}
             id={index}
+            gID={book.volumeInfo.industryIdentifiers[0].identifier}
             />
           ))}
           </div>
