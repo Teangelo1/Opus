@@ -5,7 +5,7 @@ const passport = require("./config/passport");
 const routes = require("./routes");
 
 // Establishing Connections and Requring Models 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 const db = require("./models");
 
 // Express App
@@ -25,6 +25,6 @@ app.use(routes);
 // Syncing our database
 db.sequelize.sync().then(() => {
     app.listen(PORT, () => {
-      console.log( "Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
+      console.log( "Listening on port %s.", PORT);
     });
   });

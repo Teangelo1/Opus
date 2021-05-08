@@ -1,5 +1,4 @@
 'use strict';
-
 module.exports = {
   up: async (queryInterface, Sequelize) => {
       return queryInterface.bulkInsert('Users', [{
@@ -18,9 +17,7 @@ module.exports = {
         updatedAt: new Date()
       }]);
   },
-
   // to add more, have to put additional users into array 
-
   down: async (queryInterface, Sequelize) => {
     return queryInterface.bulkDelete('Users', null, {})
     /**

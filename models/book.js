@@ -17,7 +17,9 @@ module.exports = (sequelize, DataTypes) => {
     title: DataTypes.STRING,
     author: DataTypes.STRING,
     genre: DataTypes.STRING,
-    pages: DataTypes.INTEGER
+    pages: DataTypes.INTEGER,
+    isbn: DataTypes.STRING,
+    // img: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Book',
