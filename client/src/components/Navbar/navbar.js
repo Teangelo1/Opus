@@ -1,7 +1,7 @@
 import React from "react";
 import {Col, Row} from "react-bootstrap";
 import {NavLink} from "react-router-dom";
-import "../styles/navbar.css"
+import "./navbar.css"
 
 
 export default class Header extends React.Component{
@@ -18,8 +18,8 @@ export default class Header extends React.Component{
 <div className="col-2"><NavLink 
 className="nav-link search"
 activeClassName="active"
-isActive={()=>window.location.pathname==="/"}
-to = "/" 
+isActive={()=>window.location.pathname==="/search"}
+to = "/search" 
 >Home</NavLink></div>
 
 
