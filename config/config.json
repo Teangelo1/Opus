@@ -1,14 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": "Th1s#sux",
+    "password": "",
     "database": "opus_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "Th1s#sux",
+    "password": "",
     "database": "opus_db",
     "host": "127.0.0.1",
     "dialect": "mysql"

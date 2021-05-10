@@ -1,5 +1,4 @@
 // Requiring our models and passport as we've configured it
-const db = require("../../models");
 const passport = require("../../config/passport");
 const router = require("express").Router();
 const opusController = require("../../controllers/opusControllers");
@@ -14,11 +13,13 @@ const opusController = require("../../controllers/opusControllers");
   router.route("/signup")
   .post(opusController.newUser);
   
+  router.route("/existing")
+ .get(opusController.allUsers)
   // app.post("/api/signup", function(req, res) {
   //   db.User.create({
   //     email: req.body.email,
   //     password: req.body.password
-  //   })
+  //   })c
   //     .then(function() {
   //       res.redirect(307, "/api/login"); // redirect to member prefrences page? 
   //     })
@@ -47,3 +48,5 @@ const opusController = require("../../controllers/opusControllers");
 //     }
 //   });
 // };
+
+module.exports = router;
