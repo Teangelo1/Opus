@@ -1,19 +1,9 @@
 import React from "react";
 
-function Login(props) {
+function Signup() {
     return (
         <div>
             <form>
-            
-                <div className="form-group">
-                    <label for="name">First Name</label>
-                    <input type="text" className="form-control" id="firstName" />
-                </div>
-
-                <div className="form-group">
-                    <label for="name">Last Name</label>
-                    <input type="text" className="form-control" id="LastName" />
-                </div>
 
                 <div className="form-group">
                     <label for="exampleInputEmail1">Email address</label>
@@ -26,10 +16,10 @@ function Login(props) {
                     <input type="password" className="form-control" id="exampleInputPassword1" />
                 </div>
 
-                <button type="submit" className="btn btn-primary">Login</button>
+                <button type="submit" className="btn btn-primary">Sign Up</button>
             </form>
         </div>
     );
 }
 
-export default Login;
+export default Signup;
