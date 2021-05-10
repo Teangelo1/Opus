@@ -22,7 +22,7 @@ function BookDetails() {
   function addBook(index) {
     API.saveBooks({
       title: books[index].volumeInfo.title,
-      author: books[index].volumeInfo.author,
+      author: books[index].volumeInfo.authors,
       genre: books[index].volumeInfo.genre,
       pages: books[index].volumeInfo.pageCount,
     }).then(alert("added " + books[index].volumeInfo.title))

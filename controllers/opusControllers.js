@@ -41,6 +41,12 @@ newUser: function(req, res) {
   .create(req.body)
   .then(dbUser => res.json(dbUser))
   .catch(err => res.status(422).json(err)); 
-}
+},
+allUsers: function(req, res) {
+  db.User
+  .findAll(req.query)
+  .then(dbModel => res.json(dbModel))
+  .catch(err => res.status(422).json(err));
 
+}
 };
