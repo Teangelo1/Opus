@@ -93,7 +93,6 @@ function Search() {
             <div>
               {nyBooks.map((book) => (
                 <BookDetail
-                  title={book.title}
                   image={book.book_image}
                   key={book.id}
 
