@@ -25,7 +25,7 @@ function BookDetails() {
       author: books[index].volumeInfo.author,
       genre: books[index].volumeInfo.genre,
       pages: books[index].volumeInfo.pageCount,
-    })
+    }).then(alert("added " + books[index].volumeInfo.title))
   }
  
   return (
@@ -33,6 +33,7 @@ function BookDetails() {
     {books.length ? (
             <div>
               {books.map((book, index) => (
+
                 <BookCard
                   title={book.volumeInfo.title}
                   authors={book.volumeInfo.authors}
