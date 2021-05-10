@@ -24,6 +24,11 @@ let API = {
  // for testing only
   testRoute: function(id){
     return axios.get(ISBNURL + id); 
+  },
+
+  // new user login route
+  newUser:  function(){
+    return axios.get("/api/signup");
   }
 };
 
