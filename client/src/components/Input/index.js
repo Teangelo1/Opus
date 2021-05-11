@@ -2,8 +2,9 @@ import React from "react";
 
 function Input(props) {
   return (
-    <div className="input-group input-group-lg">
-      <input className="form-control" type="text" {...props} />
+    <div className="form-group input-group-lg">
+      <label for={props.id}>{props.label}</label>
+      <input className="form-control" type="text" id={props.id} onChange={props.onChange} name={props.name} placeholder={props.placeholder}/>
     </div>
   );
 }
