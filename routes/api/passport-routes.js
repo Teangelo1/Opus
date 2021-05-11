@@ -4,18 +4,18 @@ const router = require("express").Router();
 const db = require("../../models/")
 // const opusController = require("../../controllers/opusControllers");
   
-    // log in 
-  // app.post("/api/login", passport.authenticate("local"), function(req, res) {
-  //   res.json(req.user);
-  //   // redirect function to bookshelf page?
-  // });
+//  // log in 
+ router.post("/api/login", passport.authenticate("local"), function(req, res) {
+  db.User.findOne({
+    where: {
+      email: req.body.email
+    }
+  })
+});
 
   // signup 
   router.post("/signup", (req, res) => {
-    db.User.create({
-      email: req.body.email,
-      password: req.body.password
-    })
+    db.User.create({ })
       .then(() => {
         res.redirect(307, "/api/login");
       })
