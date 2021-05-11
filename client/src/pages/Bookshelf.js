@@ -32,7 +32,7 @@ export default class Bookshelf extends React.Component {
     </Row>  
     <Row>
     <div className="col-1"></div>
-    <div className="col-2 book">Book Here</div>
+    <div className="col-2 book"></div>
     <div className="col-2 book">Book Here</div>
     <div className="col-2 book">Book Here</div>
     <div className="col-2 book">Book Here</div>

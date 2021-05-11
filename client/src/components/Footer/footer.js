@@ -1,6 +1,5 @@
 
 import {Row} from "react-bootstrap";
-
 import React, { useState, useEffect } from "react";
 import BookDetail from "../BookDisplay";
 import './footer.css';
