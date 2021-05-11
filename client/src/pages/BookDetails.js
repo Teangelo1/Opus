@@ -20,7 +20,7 @@ function BookDetails() {
       .catch(err => console.log(err));
   };
 
-  function addBook(index) {
+  function addBookRead(index) {
     API.saveBooks({
       title: books[index].volumeInfo.title,
       author: books[index].volumeInfo.authors[0],
@@ -28,10 +28,32 @@ function BookDetails() {
       pages: books[index].volumeInfo.pageCount, 
       isbn: books[index].volumeInfo.industryIdentifiers[0].identifier,
       img: books[index].volumeInfo.imageLinks.thumbnail,
-      shelf: "want to read"
-    })
-    // }).then(alert("added " + books[index].volumeInfo.title))
-    .then(console.log(books[index]))
+      shelf: "Read"
+    }).then(alert("You added " + books[index].volumeInfo.title + " to your Read Shelf"))
+  }
+
+  function addBookWant(index) {
+    API.saveBooks({
+      title: books[index].volumeInfo.title,
+      author: books[index].volumeInfo.authors[0],
+      genre: books[index].volumeInfo.genre,
+      pages: books[index].volumeInfo.pageCount, 
+      isbn: books[index].volumeInfo.industryIdentifiers[0].identifier,
+      img: books[index].volumeInfo.imageLinks.thumbnail,
+      shelf: "Want to Read"
+    }).then(alert("You added " + books[index].volumeInfo.title + " to your Want to Read Shelf"))
+  }
+
+  function addBookCurrent(index) {
+    API.saveBooks({
+      title: books[index].volumeInfo.title,
+      author: books[index].volumeInfo.authors[0],
+      genre: books[index].volumeInfo.genre,
+      pages: books[index].volumeInfo.pageCount, 
+      isbn: books[index].volumeInfo.industryIdentifiers[0].identifier,
+      img: books[index].volumeInfo.imageLinks.thumbnail,
+      shelf: "Currently Reading"
+    }).then(alert("You added " + books[index].volumeInfo.title + " to your Currently Reading Shelf"))
   }
  
   return (
@@ -50,13 +72,15 @@ function BookDetails() {
                   rating={book.volumeInfo.averageRating}
                   pages={book.volumeInfo.pageCount}
                   genre={book.volumeInfo.categories}
-                  onClick={() => addBook(index)}
+                  read={() => addBookRead(index)}
+                  want={() => addBookWant(index)}
+                  current={() => addBookCurrent(index)}
                 />
               ))}
             </div>
           ) : (
             <h2 id="noBook">
-            📚 You have no shelved books 📚
+            📚 Search a book from our Search Page 📚
             </h2>)}
     </Container>
   );
