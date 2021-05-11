@@ -13,25 +13,33 @@ function BookCard(props) {
             </Col>
             <Col size="3">
               <div>
-                <button type="button" className="btn" id="bookBtnView">
-                  Read
-                </button>
-                <button type="button" className="btn" onClick={props.onClick} id="bookBtnAction">
-                  Want To Read
-                </button>
+                <div className="dropdown">
+                  <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                    Add to your shelf! 
+                  </button>
+                  <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <li><button className="dropdown-item" type="button" value="read" onClick={props.read}>Read</button></li>
+                    <li><button className="dropdown-item" type="button" value="want to read" onClick={props.want}>Want to Read</button></li>
+                    <li><button className="dropdown-item" type="button" value="currently reading" onClick={props.current}>Currently Reading</button></li>
+                  </div>
+                </div>
+
+                <button type="button" className="btn btn-info" value="read" onClick={props.read}>Read</button>
+                <button type="button" className="btn btn-info" value="want to read" onClick={props.want}>Want to read</button>
+                <button type="button" className="btn btn-info" value="currently reading" onClick={props.current}>Currently Reading</button>
               </div>
             </Col>
           </Row>
           <Row>
-          <Col size="4">
-          <img id="bookImg" src={props.image} className="img-fluid" alt="bookimg" />
-          <p>Average Rating: {props.rating} /5</p>
-          <p>{props.pages} pages</p>
-          </Col>
+            <Col size="4">
+              <img id="bookImg" src={props.image} className="img-fluid" alt="bookimg" />
+              <p>Average Rating: {props.rating} /5</p>
+              <p>{props.pages} pages</p>
+            </Col>
           </Row>
           <Row>
             <Col size="8">
-            <p>{props.description}</p>
+              <p>{props.description}</p>
             </Col>
           </Row>
         </div>

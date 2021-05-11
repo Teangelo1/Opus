@@ -16,10 +16,11 @@ module.exports = (sequelize, DataTypes) => {
   Book.init({
     title: DataTypes.STRING,
     author: DataTypes.STRING,
-    genre: DataTypes.STRING,
+    genre: DataTypes.STRING, //may need to drop
     pages: DataTypes.INTEGER,
     isbn: DataTypes.STRING,
-    // img: DataTypes.STRING
+    img: DataTypes.STRING,
+    shelf: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Book',
