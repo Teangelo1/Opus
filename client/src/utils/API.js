@@ -27,8 +27,8 @@ let API = {
   },
 
   // new user login route
-  newUser:  function(){
-    return axios.post("/api/user/signup");
+  newUser:  function(userData){
+    return axios.post("/api/user/signup", userData);
   }
 };
 

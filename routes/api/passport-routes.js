@@ -15,7 +15,13 @@ const db = require("../../models/")
 
   // signup 
   router.post("/signup", (req, res) => {
-    db.User.create({ })
+    console.log(req.body)
+    db.User.create({
+      first_name: req.body.first_name, 
+      last_name: req.body.last_name,
+      email: req.body.email,
+      password: req.body.password
+    })
       .then(() => {
         res.redirect(307, "/api/login");
       })
