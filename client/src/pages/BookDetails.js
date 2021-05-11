@@ -7,7 +7,8 @@ import { useParams } from "react-router-dom";
 function BookDetails() {
  const [books, setBooks] = useState([])
  let {id} = useParams(); // useParams will always reference the id in our url
-  useEffect(() => {
+ 
+ useEffect(() => {
     loadBooks(id)
   }, [])
 
@@ -24,7 +25,11 @@ function BookDetails() {
       title: books[index].volumeInfo.title,
       author: books[index].volumeInfo.authors[0],
       genre: books[index].volumeInfo.genre,
-      pages: books[index].volumeInfo.pageCount })
+      pages: books[index].volumeInfo.pageCount, 
+      isbn: books[index].volumeInfo.industryIdentifiers[0].identifier,
+      img: books[index].volumeInfo.imageLinks.thumbnail,
+      shelf: "want to read"
+    })
     // }).then(alert("added " + books[index].volumeInfo.title))
     .then(console.log(books[index]))
   }

@@ -13,19 +13,20 @@ function BookCard(props) {
             </Col>
             <Col size="3">
               <div>
-                {props.onClick}
-
                 <div className="dropdown">
                   <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
                     Add to your shelf! 
                   </button>
                   <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <li><button className="dropdown-item" type="button">Read</button></li>
-                    <li><button className="dropdown-item" type="button">Want to Read</button></li>
-                    <li><button className="dropdown-item" type="button">Currently Reading</button></li>
+                    <li><button className="dropdown-item" type="button" value="read" onClick={props.onClick}>Read</button></li>
+                    <li><button className="dropdown-item" type="button" value="want to read" onClick={props.onChange}>Want to Read</button></li>
+                    <li><button className="dropdown-item" type="button" value="currently reading" onClick={props.onChange}>Currently Reading</button></li>
                   </div>
                 </div>
 
+                <button type="button" className="btn btn-info" value="read" onClick={props.onClick}>Read</button>
+                <button type="button" className="btn btn-info" value="want to read" onClick={props.onClick}>Want to read</button>
+                <button type="button" className="btn btn-info" value="currently reading" onClick={props.onClick}>Currently Reading</button>
               </div>
             </Col>
           </Row>
