@@ -64,7 +64,7 @@ function Search() {
               </div>
             </div>
 
-          {!books.length ? (<p>""</p>) : <div>
+          {!books.length ? (<p></p>) : <div>
           {books.map((book, index) =>(
             // console.log(book.volumeInfo.industryIdentifiers)
             <BookDetail
@@ -86,7 +86,6 @@ function Search() {
           <h1>Trending Books</h1>
           <h3 id="trendingQoute">“Today a reader, tomorrow a leader.”</h3>
           <hr />
-          <div>We want to display data here</div>
           {!nyBooks.length ? (
             <h2>No Trending Books available at this moment </h2>
           ) :

@@ -1,10 +1,7 @@
-.flexbox-container{
+.flex-container{
     width: 150px;
     display: flex;
-    flex-direction: column;
-    
-    
-
+ 
 }
 
 .book-item {
