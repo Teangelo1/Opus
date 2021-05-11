@@ -25,46 +25,66 @@ function UserLogin() {
                 email: "",
                 password: ""
             }))
+        }
+        
+        function handleLogin(event) {
+            event.preventDefault();
+            API.login({
+                email: user.email
+            })
+                .then(console.log(user))
+        }
 
-    }
+   
 
     return (
         <div>
-        <form>
-            <Input
-                onChange={handleInputChange}
-                name="first_name"
-                placeholder="First Name"
-                defaultvalue={user.first_name}
-            />
-            <Input
-                onChange={handleInputChange}
-                name="last_name"
-                placeholder="Last Name"
-                defaultvalue={user.last_name}
-            />
-            <Input
-                onChange={handleInputChange}
-                name="Email"
-                placeholder="Email"
-                defaultvalue={user.email}
-            />
-            <Input
-                onChange={handleInputChange}
-                name="Password"
-                placeholder="Password"
-                defualtvalue={user.password}
-            />
-            <button
-                  type="Submit New User"
-                  className="btn "
-                  id="search-btn"
-                  onClick={handleFormSubmit}
-            >
-            Submit New User
+            <form>
+                <Input
+                    onChange={handleInputChange}
+                    name="first_name"
+                    placeholder="First Name"
+                    defaultvalue={user.first_name}
+                />
+                <Input
+                    onChange={handleInputChange}
+                    name="last_name"
+                    placeholder="Last Name"
+                    defaultvalue={user.last_name}
+                />
+                <Input
+                    onChange={handleInputChange}
+                    name="Email"
+                    placeholder="Email"
+                    defaultvalue={user.email}
+                />
+                <Input
+                    onChange={handleInputChange}
+                    name="Password"
+                    placeholder="Password"
+                    defualtvalue={user.password}
+                />
+                <button
+                    type="Submit New User"
+                    className="btn "
+                    id="search-btn"
+                    onClick={handleFormSubmit}
+                >
+                    Submit New User
             </button>
-           
-           </form>
+
+
+                <button
+                    type="Login"
+                    className="btn"
+                    id="search-btn"
+                    onClick={handleLogin}
+                >
+                    Login
+            </button>
+
+
+            </form>
 
         </div>
     )
