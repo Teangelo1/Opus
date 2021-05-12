@@ -21,6 +21,10 @@ let API = {
     return axios.post("/api/books", bookData);
   },
 
+ bookShelfData: function() {
+return axios.get("/api/books")
+ },
+
  // for testing only
   testRoute: function(id){
     return axios.get(ISBNURL + id); 

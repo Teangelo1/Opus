@@ -1,110 +1,106 @@
-import React from 'react';
-import {Row} from "react-bootstrap";
+import React, { useState, useEffect } from "react";
+import { Row } from "react-bootstrap";
 import "../styles/bookshelf.css";
-import Footer from "../components/Footer/footer";
+import BookDetail from '../components/BookDisplay'
+// import Footer from "../components/Footer/footer";
 import Header from "../components/Navbar/navbar";
+import API from '../utils/API'
 
-export default class Bookshelf extends React.Component {
-    render(){
-    return (
-        <div>
+  function Bookshelf() {
+     
+ 
+    
+    const [nyBooks, setNyBooks] = useState([])
+    
+    useEffect(() => {
+        bookShelfData()
+      }, [])
+    
+      function bookShelfData() {
+        API.bookShelfData().then(data => { console.log(data); return data }).then(res => setNyBooks(
+         res.data
+        )).catch(err => console.log(err))
+      } 
+    
+    
+     
+        return (
+            <div>
+
+                
 
 
-<Header></Header>
+                <Header></Header>
 
-{/* Currently Reading Section */}
-    <Row>
-    <div className="col-12 pagetitle">Currently Reading</div>
-    </Row>  
+                {/* Currently Reading Section */}
+                <Row>
+                    <div className="col-12 pagetitle">Currently Reading</div>
+                </Row>
 
-    <Row>
-    <div className="col-4"></div>
-    <div className="col-2 favbook">Book Here</div>
-    <div className="col-2 aboutme">Name current page here</div>
-    <div className="col-4"></div>
-    </Row> 
-
-
-
-{/* Want to Read Section */}
-    <Row>
-    <div className="col-12 subtitle">Want to Read</div>
-    </Row>  
-    <Row>
-    <div className="col-1"></div>
-    <div className="col-2 book">Book Here</div>
-    <div className="col-2 book">Book Here</div>
-    <div className="col-2 book">Book Here</div>
-    <div className="col-2 book">Book Here</div>
-    <div className="col-2 book">Book Here</div>
-    <div className="col-1"></div>
-    </Row>  
-
-{/* Suggestions for you... Section */}
-    <Row>
-    <div className="col-12 subtitle">Suggestions for you...</div>
-    </Row>  
-    <Row>
-    <div className="col-1"></div>
-    <div className="col-2 book">Book Here</div>
-    <div className="col-2 book">Book Here</div>
-    <div className="col-2 book">Book Here</div>
-    <div className="col-2 book">Book Here</div>
-    <div className="col-2 book">Book Here</div>
-    <div className="col-1"></div>
-    </Row>  
-
-{/* Read Section */}
-    <Row>
-    <div className="col-12 subtitle">Read</div>
-    </Row>  
-    <Row>
-    <div className="col-1"></div>
-    <div className="col-2 book">Book Here</div>
-    <div className="col-2 book">Book Here</div>
-    <div className="col-2 book">Book Here</div>
-    <div className="col-2 book">Book Here</div>
-    <div className="col-2 book">Book Here</div>
-    <div className="col-1"></div>
-    </Row>  
-
-{/* search for more Section */}
-
-{/* <div class="input-group">
-  <div class="form-outline">
-    <input type="search" id="form1" class="form-control" />
-    <label class="form-label" for="form1">Search</label>
-  </div>
-  <button  type="button" class="btn btn-primary">
-    <i class="fas fa-search"></i>
-  </button>
-</div> */}
+                <Row>
+                    <div className="col-4"></div>
+                    <div className="col-2 favbook">Book Here</div>
+                    <div className="col-2 aboutme">Name current page here</div>
+                    <div className="col-4"></div>
+                </Row>
 
 
 
-
-{/* <Row>
-<NavLink 
-className="nav-link search"
-activeClassName="active"
-isActive={()=>window.location.pathname==="/search"}
-to = "/search" 
->Search</NavLink>
-    </Row>   */}
-
-
-
-
-    <Row></Row>
-
+                {/* Want to Read Section */}
+                <Row>
+                    <div className="col-12 subtitle">Want to Read</div>
+                </Row>
+                <Row>
+                <div>We want to display data here</div>
+          {!nyBooks.length ? (
+            <h2>No Trending Books available at this moment </h2>
+          ) :
+            <div>
+              {nyBooks.map((books) => (
+                <BookDetail
+                  image={books.img}
 
 
+                />
+              ))}
 
+            </div>
+          }
 
+        
+                </Row>
 
-<Footer/>
+                {/* Suggestions for you... Section */}
+                <Row>
+                    <div className="col-12 subtitle">Suggestions for you...</div>
+                </Row>
+                <Row>
+                    <div className="col-1"></div>
+                    <div className="col-2 book">Book Here</div>
+                    <div className="col-2 book">Book Here</div>
+                    <div className="col-2 book">Book Here</div>
+                    <div className="col-2 book">Book Here</div>
+                    <div className="col-2 book">Book Here</div>
+                    <div className="col-1"></div>
+                </Row>
 
+                {/* Read Section */}
+                <Row>
+                    <div className="col-12 subtitle">Read</div>
+                </Row>
+                <Row>
+                    <div className="col-1"></div>
+                    <div className="col-2 book">Book Here</div>
+                    <div className="col-2 book">Book Here</div>
+                    <div className="col-2 book">Book Here</div>
+                    <div className="col-2 book">Book Here</div>
+                    <div className="col-2 book">Book Here</div>
+                    <div className="col-1"></div>
+                </Row>
 
-        </div>
-    )
-}}
+            </div>
+        )
+    
+}
+
+export default Bookshelf
