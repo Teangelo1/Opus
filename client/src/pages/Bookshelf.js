@@ -6,101 +6,99 @@ import BookDetail from '../components/BookDisplay'
 import Header from "../components/Navbar/navbar";
 import API from '../utils/API'
 
-  function Bookshelf() {
-     
- 
-    
-    const [nyBooks, setNyBooks] = useState([])
-    
-    useEffect(() => {
-        bookShelfData()
-      }, [])
-    
-      function bookShelfData() {
-        API.bookShelfData().then(data => { console.log(data); return data }).then(res => setNyBooks(
-         res.data
-        )).catch(err => console.log(err))
-      } 
-    
-    
-     
-        return (
-            <div>
-
-                
-
-
-                <Header></Header>
-
-                {/* Currently Reading Section */}
-                <Row>
-                    <div className="col-12 pagetitle">Currently Reading</div>
-                </Row>
-
-                <Row>
-                    <div className="col-4"></div>
-                    <div className="col-2 favbook">Book Here</div>
-                    <div className="col-2 aboutme">Name current page here</div>
-                    <div className="col-4"></div>
-                </Row>
+function Bookshelf() {
 
 
 
-                {/* Want to Read Section */}
-                <Row>
-                    <div className="col-12 subtitle">Want to Read</div>
-                </Row>
-                <Row>
-                <div>We want to display data here</div>
-          {!nyBooks.length ? (
-            <h2>No Trending Books available at this moment </h2>
-          ) :
-            <div>
-              {nyBooks.map((books) => (
-                <BookDetail
-                  image={books.img}
+  const [nyBooks, setNyBooks] = useState([])
+
+  useEffect(() => {
+    bookShelfData()
+  }, [])
+
+  function bookShelfData() {
+    API.bookShelfData().then(data => { console.log(data); return data }).then(res => setNyBooks(
+      res.data
+    )).catch(err => console.log(err))
+  }
 
 
-                />
-              ))}
 
-            </div>
-          }
+  return (
+    <div>
 
-        
-                </Row>
 
-                {/* Suggestions for you... Section */}
-                <Row>
-                    <div className="col-12 subtitle">Suggestions for you...</div>
-                </Row>
-                <Row>
-                    <div className="col-1"></div>
-                    <div className="col-2 book">Book Here</div>
-                    <div className="col-2 book">Book Here</div>
-                    <div className="col-2 book">Book Here</div>
-                    <div className="col-2 book">Book Here</div>
-                    <div className="col-2 book">Book Here</div>
-                    <div className="col-1"></div>
-                </Row>
 
-                {/* Read Section */}
-                <Row>
-                    <div className="col-12 subtitle">Read</div>
-                </Row>
-                <Row>
-                    <div className="col-1"></div>
-                    <div className="col-2 book">Book Here</div>
-                    <div className="col-2 book">Book Here</div>
-                    <div className="col-2 book">Book Here</div>
-                    <div className="col-2 book">Book Here</div>
-                    <div className="col-2 book">Book Here</div>
-                    <div className="col-1"></div>
-                </Row>
 
-            </div>
-        )
-    
+      <Header></Header>
+
+      {/* Currently Reading Section */}
+      <Row>
+        <div className="col-12 pagetitle">Currently Reading</div>
+      </Row>
+
+      <Row>
+        <div className="col-4"></div>
+        <div className="col-2 favbook">Book Here</div>
+        <div className="col-2 aboutme">Name current page here</div>
+        <div className="col-4"></div>
+      </Row>
+
+
+
+      {/* Want to Read Section */}
+      <Row>
+        <div className="col-12 subtitle">Want to Read</div>
+      </Row>
+      <Row>
+        <div>We want to display data here</div>
+        {!nyBooks.length ? (
+          <h2>No Trending Books available at this moment </h2>
+        ) :
+          <div>
+            {nyBooks.map((books) => (
+              <BookDetail
+                image={books.img}
+              />
+            ))}
+
+          </div>
+        }
+
+
+      </Row>
+
+      {/* Suggestions for you... Section */}
+      <Row>
+        <div className="col-12 subtitle">Suggestions for you...</div>
+      </Row>
+      <Row>
+        <div className="col-1"></div>
+        <div className="col-2 book">Book Here</div>
+        <div className="col-2 book">Book Here</div>
+        <div className="col-2 book">Book Here</div>
+        <div className="col-2 book">Book Here</div>
+        <div className="col-2 book">Book Here</div>
+        <div className="col-1"></div>
+      </Row>
+
+      {/* Read Section */}
+      <Row>
+        <div className="col-12 subtitle">Read</div>
+      </Row>
+      <Row>
+        <div className="col-1"></div>
+        <div className="col-2 book">Book Here</div>
+        <div className="col-2 book">Book Here</div>
+        <div className="col-2 book">Book Here</div>
+        <div className="col-2 book">Book Here</div>
+        <div className="col-2 book">Book Here</div>
+        <div className="col-1"></div>
+      </Row>
+
+    </div>
+  )
+
 }
 
 export default Bookshelf

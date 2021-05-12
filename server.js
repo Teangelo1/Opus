@@ -22,6 +22,7 @@ app.use(passport.session());
 // Add routes, both API and view
 app.use(routes);
 
+
 // app.get('/books', function (req, res) {
 //   // Connecting to the database.
 //   connection.getConnection(function (err, connection) {
