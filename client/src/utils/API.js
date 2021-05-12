@@ -32,7 +32,12 @@ return axios.get("/api/books")
 
   // new user login route
   newUser:  function(userData){
-    return axios.post("/api/user/signup", userData);
+    return axios.post("/api/user/signup/", userData);
+  },
+
+  // Returning User Login
+  login: function(email){
+    return axios.get("api/user/login/" + email)
   }
 };
 
