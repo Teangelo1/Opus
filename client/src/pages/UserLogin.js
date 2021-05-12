@@ -3,15 +3,13 @@ import Input from "../components/Input";
 import API from "../utils/API";
 
 function UserLogin() {
+    const [user, setUserData] = useState("")
+    const [status, setStatus] = useState("New User")
 
-    const initial = {
-        first_name: "",
-        last_name: "",
-        email: "",
-        password: "",
+    function changeState() {
+        setStatus("Returning User")
+        alert(status)
     }
-
-    const [user, setUserData] = useState(initial)
 
     function handleInputChange(event) {
         const { name, value } = event.target;
@@ -20,32 +18,29 @@ function UserLogin() {
 
     function handleFormSubmit(event) {
         event.preventDefault();
-        console.log(user.first_name)
         API.newUser({
             first_name: user.first_name,
             last_name: user.last_name,
             email: user.email,
             password: user.password,
-        }).then(console.log(user))
-        // .then(() => setUserData({
-        //     first_name: "",
-        //     last_name: "",
-        //     email: "",
-        //     password: ""
-        // }))
+        }).then(() => setUserData({
+            first_name: "",
+            last_name: "",
+            email: "",
+            password: ""
+        }))
     }
 
-    // function handleLogin(event) {
-    //     event.preventDefault();
-    //     API.login({
-    //         email: user.email
-    //     })
-    //         .then(console.log(user))
-    // }
-
+    function handleLogin(event) {
+        event.preventDefault();
+        API.login({
+            email: user.email
+        }).then(alert(user))
+    }
 
     return (
         <div>
+
             <form onSubmit={handleFormSubmit}>
                 <Input
                     value={user.first_name}
@@ -60,7 +55,7 @@ function UserLogin() {
                     label="Last Name"
                 />
                 <Input
-                    value={user.email}
+                    value={user.email} // need to validate email somehow, so unique and email
                     onChange={handleInputChange}
                     name="email"
                     label="Email"
@@ -77,19 +72,32 @@ function UserLogin() {
                 >
                     Submit New User
             </button>
-
-{/* 
-                <button
-                    type="submit"
-                    className="btn"
-                    id="search-btn"
-                    onClick={handleLogin}
-                >
-                    Login
-            </button> */}
-
-
+                <p onClick={changeState}>Returning User? Login</p>
             </form>
+
+            
+            {/* Some sort of switch needs to go here */}
+            <form onSubmit={handleLogin}>
+            <Input
+                value={user.email}
+                onChange={handleInputChange}
+                name="email"
+                label="Email"
+            />
+            <Input
+                value={user.password}
+                onChange={handleInputChange}
+                name="password"
+                label="Password"
+            />
+            <button
+                type="submit"
+                className="btn"
+            >
+                Login
+            </button>
+            </form>
+
 
         </div>
     )
