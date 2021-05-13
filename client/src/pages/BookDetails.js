@@ -6,10 +6,12 @@ import { useParams } from "react-router-dom";
 import { List, ListItem } from "../components/List";
 
 function BookDetails() {
-  const [books, setBooks] = useState([])
-  let { id } = useParams(); // useParams will always reference the id in our url
 
-  useEffect(() => {
+ const [books, setBooks] = useState([])
+ let {id} = useParams(); // useParams will always reference the id in our url
+
+ useEffect(() => {
+
     loadBooks(id)
   }, [id])
 
@@ -18,8 +20,7 @@ function BookDetails() {
       .then(res => {
         console.log(id)
         setBooks(res.data.items)
-      })
-      .catch(err => console.log(err));
+  }).catch(err => console.log(err));
   };
 
   function addBookRead(index) {
@@ -60,33 +61,32 @@ function BookDetails() {
 
   return (
     <Container>
-      {books.length ? (
-        <List>
-
-          {books.map((book, index) => (
-            <ListItem key={book._id}>
-              <BookCard
-                title={book.volumeInfo.title}
-                authors={book.volumeInfo.authors}
-                description={book.volumeInfo.description}
-                image={book.volumeInfo.imageLinks.thumbnail}
-                id={book.volumeInfo.industryIdentifiers[0].identifier} 
-                // key={book.volumeInfo.industryIdentifiers[0].identifier}
-                rating={book.volumeInfo.averageRating}
-                pages={book.volumeInfo.pageCount}
-                genre={book.volumeInfo.categories}
-                read={() => addBookRead(index)}
-                want={() => addBookWant(index)}
-                current={() => addBookCurrent(index)}
-              />
-            </ListItem>
-
-          ))}
-        </List>
-      ) : (
-          <h2 id="noBook">
+    {books.length ? (
+      
+            <div>
+              {books.map((book, index) => (
+                
+                <BookCard
+                  title={book.volumeInfo.title}
+                  authors={book.volumeInfo.authors}
+                  description={book.volumeInfo.description}
+                  image={book.volumeInfo.imageLinks.thumbnail}
+                  id={book.volumeInfo.industryIdentifiers[0].identifier}
+                  key={book.volumeInfo.industryIdentifiers[0].identifier}
+                  rating={book.volumeInfo.averageRating}
+                  pages={book.volumeInfo.pageCount}
+                  genre={book.volumeInfo.categories}
+                  read={() => addBookRead(index)}
+                  want={() => addBookWant(index)}
+                  current={() => addBookCurrent(index)}
+                />
+              ))}
+            </div>
+          ) : (
+            <h2 id="noBook">
             📚 Search a book from our Search Page 📚
-          </h2>)}
+            </h2>)}
+
     </Container>
   );
 }

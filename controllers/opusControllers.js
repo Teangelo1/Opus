@@ -10,7 +10,7 @@ module.exports = {
   },
   findById: function(req, res) {
     db.Book
-      .findOne({where: {title: req.params.title}})
+      .findOne({where: {isbn: req.params.isbn}})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

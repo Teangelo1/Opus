@@ -25,6 +25,11 @@ let API = {
 return axios.get("/api/books")
  },
 
+ // Return one book in Db
+ returnSaved: function(isbn){
+   return axios.get("/api/books/" + isbn);
+ },
+ 
  // for testing only
   testRoute: function(id){
     return axios.get(ISBNURL + id); 

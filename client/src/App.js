@@ -5,6 +5,7 @@ import Search from "./pages/Search";
 import BookDetails from "./pages/BookDetails";
 import UserLogin from "./pages/UserLogin"; 
 import UserDetails from "./pages/UserDetails";
+import UserReviews from "./pages/UserReview"
 
 
 
@@ -20,6 +21,7 @@ function App() {
 <Route exact path = "/search" component={Search} />
 <Route exact path = "/details/:id" component={BookDetails} />
 <Route exact path = "/account" component={UserDetails} />
+<Route exact path = "/review/:id" component={UserReviews} />
 
 </Switch>
 
