@@ -14,9 +14,9 @@ export default class Header extends React.Component{
 
 
 <header>
-<div className="row">
-<div className="col-2 headerselectors"><NavLink 
-className="nav-link search"
+<div className="row headerrow">
+<div className="col-2"><NavLink 
+className="nav-link search headerselectors"
 activeClassName="active"
 isActive={()=>window.location.pathname==="/search"}
 to = "/search" 
@@ -28,23 +28,23 @@ to = "/search"
 
 
 
-<div className="col-2 headerselectors"><NavLink 
-className="nav-link search"
+<div className="col-2"><NavLink 
+className="nav-link search headerselectors"
 activeClassName="active"
 isActive={()=>window.location.pathname==="/bookshelf"}
 to = "/bookshelf" 
 >My Bookshelf</NavLink></div>
 
-<div className="col-2 headerselectors"><NavLink 
-className="nav-link search"
+<div className="col-2"><NavLink 
+className="nav-link search headerselectors"
 activeClassName="active"
 isActive={()=>window.location.pathname==="/search"}
 to = "/search" 
->Search for New Books</NavLink></div>
+>Search for Books</NavLink></div>
 
 
-<div className="col-2 headerselectors"><NavLink 
-className="nav-link search"
+<div className="col-2"><NavLink 
+className="nav-link search headerselectors"
 activeClassName="active"
 isActive={()=>window.location.pathname==="/account"}
 to = "/account" 
