@@ -7,10 +7,14 @@ const opusController = require("../../controllers/opusControllers");
 
 const db = require("../../models/book")
 
-// // Matches with "/api/books"
+// Matches with "/api/books"
 router.route("/")
   .get(opusController.findAll)
-  .post(opusController.create); // add to a page? may not need 
+  .post(opusController.create);
+  
+// /api/books/isbn
+router.route("/:isbn")
+  .get(opusController.findById); 
 
   router.get('/api/bookshelf', (req, res) => {
     console.log(req.body)
