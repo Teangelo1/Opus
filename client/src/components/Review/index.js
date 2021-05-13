@@ -20,10 +20,10 @@ function Review(props) {
         
             <div className="form-group">
                 <label for="exampleFormControlTextarea1">What did you think of the book?</label>
-                <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea className="form-control" id="exampleFormControlTextarea1" onChange={props.onChange} rows="3"></textarea>
             </div>
             <button type="submit" className="btn">
-                Submit Review
+                Save
             </button>
             </Col>
             </Row>
