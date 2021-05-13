@@ -5,7 +5,8 @@ import Search from "./pages/Search";
 import BookDetails from "./pages/BookDetails";
 import UserLogin from "./pages/UserLogin"; 
 import UserDetails from "./pages/UserDetails";
-import UserReviews from "./pages/UserReview"
+import UserSignup from "./pages/UserSignup";
+import UserReviews from "./pages/UserReview";
 
 
 
@@ -17,6 +18,7 @@ function App() {
 <Switch>
 {/* Paths for pages */}
 <Route exact path = "/" component={UserLogin} />
+<Route exact path = "/newuser" component={UserSignup} />
 <Route exact path = "/bookshelf" component={Bookshelf} />
 <Route exact path = "/search" component={Search} />
 <Route exact path = "/details/:id" component={BookDetails} />

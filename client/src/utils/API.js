@@ -5,44 +5,44 @@ const newYorkTimes = "https://api.nytimes.com/svc/books/v3/lists/current/hardcov
 const apiKey = "api-key=YQzPf8Ti4C67VJiMR46a8vL4wH2BAOXW";
 
 let API = {
-
   // Google Books API Route
-  searchBooks: function(query) {
+  searchBooks: function (query) {
     return axios.get(BASEURL + query);
   },
-  
+
+  // Google Books API Indvidual Books Details
+  testRoute: function (id) {
+    return axios.get(ISBNURL + id);
+  },
+
   // NYT Routes
-  trendingBooks: function() {
+  trendingBooks: function () {
     return axios.get(`${newYorkTimes}${apiKey}`);
   },
 
-  // db connect 
-  saveBooks: function(bookData){
+  // save to the books database 
+  saveBooks: function (bookData) {
     return axios.post("/api/books", bookData);
   },
 
- bookShelfData: function() {
-return axios.get("/api/books")
- },
+  // Get all Books in the books database 
+  bookShelfData: function () {
+    return axios.get("/api/books")
+  },
 
- // Return one book in Db
- returnSaved: function(isbn){
-   return axios.get("/api/books/" + isbn);
- },
- 
- // for testing only
-  testRoute: function(id){
-    return axios.get(ISBNURL + id); 
+  // Return one book in Db
+  returnSaved: function (isbn) {
+    return axios.get("/api/books/" + isbn);
   },
 
   // new user login route
-  newUser:  function(userData){
+  newUser: function (userData) {
     return axios.post("/api/user/signup/", userData);
   },
 
   // Returning User Login
-  login: function(email){
-    return axios.get("/api/user/login/" + email)
+  login: function (email) {
+    return axios.post("/api/user/login/", email)
   }
 };
 

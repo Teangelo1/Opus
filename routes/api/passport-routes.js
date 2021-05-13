@@ -1,28 +1,37 @@
-// Requiring our models and passport as we've configured it
-
 const passport = require("../../config/passport");
 const router = require("express").Router();
 const db = require("../../models/")
 // const opusController = require("../../controllers/opusControllers");
-  
-//  // log in 
-//  router.post("/api/login", passport.authenticate("local"), function(req, res) {
-//   db.User.findOne({
-//     where: {
-//       email: req.body.email
-//     }
-//   })
-// });
 
   // signup 
   router.post("/signup", (req, res) => {
-    db.User.create({ })
-      .then(() => {
-        res.redirect(307, "https://www.google.com/");
+    db.User.create(req.body)
+      .then((dbUser) => {
+        res.json(dbUser);
       })
       .catch(err => {
         res.status(401).json(err);
       });
+  });
+
+ // log in 
+ router.post("/login", (req, res) => {
+   passport.authenticate(
+  function(email, password, done) {
+    db.User.findOne({ email: email }, 
+      function (err, user) {
+      if (err) { return done(err); }
+      if (!user) { return done(null, false); }
+      if (!user.verifyPassword(password)) { return done(null, false); }
+      return done(null, user);
+    });
+  }
+);
+ })
+
+ // Route for logging user out
+  router.get("/logout", function(req, res) {
+    req.logout();
   });
   
   // router.route("/existing").get(
@@ -31,14 +40,6 @@ const db = require("../../models/")
   //   .catch(err => res.status(422).json(err))
   
   // )
-
-//  .get(opusController.allUsers)
-
-  // // Route for logging user out
-  // app.get("/logout", function(req, res) {
-  //   req.logout();
-  //   res.redirect("/");
-  // });
 
 //   // Route for getting some data about our user to be used client side
 //   app.get("/api/user_data", function(req, res) {
