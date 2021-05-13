@@ -20,7 +20,9 @@ text-align: center;
 
 .book {
 text-align: center;
-
+height: 6cm;
+margin-left: 1cm;
+margin-right: 1cm;
 }
 
 .search {
