@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Input from "../components/Input";
 import API from "../utils/API";
+import {Link} from 'react-router-dom';
+
 
 function UserLogin() {
     const [user, setUserData] = useState("")
@@ -23,13 +25,9 @@ function UserLogin() {
             last_name: user.last_name,
             email: user.email,
             password: user.password,
-        }).then(() => setUserData({
-            first_name: "",
-            last_name: "",
-            email: "",
-            password: ""
-        }))
-    }
+        }).then(() => <Link to={`/details/${user.email}`}>
+     </Link>)
+    };
 
     function handleLogin(event) {
         event.preventDefault();
