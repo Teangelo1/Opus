@@ -53,10 +53,11 @@ import { propTypes } from "react-bootstrap/esm/Image";
                 </Row>
                 <Row>
                 <div>We want to display data here</div>
-          {!nyBooks.length ? (
+          {/* {!nyBooks.length ? 
+          (
             <h2>No Trending Books available at this moment </h2>
-          ) :
-            <div>
+          ) : */}
+            {/* <div>
               {nyBooks.map((books) => (
                 <BookDetail
                   image={books.img}
@@ -64,25 +65,19 @@ import { propTypes } from "react-bootstrap/esm/Image";
                 />
               ))}
 
-            </div>
-          }
+            </div> */}
+          {/* } */}
 
         
                 </Row>
 
                 {/* Suggestions for you... Section */}
-                <Row>
-                    <div className="col-12 subtitle">Suggestions for you...</div>
-                </Row>
-                <Row>
-                    <div className="col-1"></div>
-                    <div className="col-2 book">Book Here</div>
-                    <div className="col-2 book">Book Here</div>
-                    <div className="col-2 book">Book Here</div>
-                    <div className="col-2 book">Book Here</div>
-                    <div className="col-2 book">Book Here</div>
-                    <div className="col-1"></div>
-                </Row>
+            
+                <div className="row book">
+                    {nyBooks.map((books) => (<BookDetail image={books.img} gID={`/review/${books.isbn}`} /> ))}
+
+
+                    </div>
 
                 {/* Read Section */}
                 <Row>
