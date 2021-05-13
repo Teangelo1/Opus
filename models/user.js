@@ -7,11 +7,10 @@ module.exports = (sequelize, DataTypes) => {
     password: DataTypes.STRING
   }, {}); 
   User.associate = function(models) {
-    User.belongsToMany(models.Books, {through: 'UsersBooks', foreignKey: 'id', as: 'userId'})
+    User.belongsToMany(models.Book, {through: 'UsersBooks', foreignKey: 'id', as: 'userId'})
   };
   return User;
 };
    
-
 
 

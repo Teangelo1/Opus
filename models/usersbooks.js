@@ -9,8 +9,8 @@ module.exports = (sequelize, DataTypes) => {
     shelf: DataTypes.STRING
   }, {});
   UsersBooks.associate = (models) => {
-    UsersBooks.belongsTo(models.Users, {foreignKey: 'userId'})
-    UsersBooks.belongsTo(models.Books, {foreignKey: 'bookId'})
+    UsersBooks.belongsTo(models.User, {foreignKey: 'userId'})
+    UsersBooks.belongsTo(models.Book, {foreignKey: 'bookId'})
   }; 
   return UsersBooks; 
 };
