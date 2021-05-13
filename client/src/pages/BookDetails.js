@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 function BookDetails() {
  const [books, setBooks] = useState([])
  let {id} = useParams(); // useParams will always reference the id in our url
- 
+
  useEffect(() => {
     loadBooks(id)
   }, [])
@@ -16,8 +16,7 @@ function BookDetails() {
     API.testRoute(id)
       .then(res => {console.log(id)
         setBooks(res.data.items)
-  })
-      .catch(err => console.log(err));
+  }).catch(err => console.log(err));
   };
 
   function addBookRead(index) {
@@ -59,9 +58,10 @@ function BookDetails() {
   return (
     <Container>
     {books.length ? (
+      
             <div>
               {books.map((book, index) => (
-
+                
                 <BookCard
                   title={book.volumeInfo.title}
                   authors={book.volumeInfo.authors}
@@ -82,6 +82,7 @@ function BookDetails() {
             <h2 id="noBook">
             📚 Search a book from our Search Page 📚
             </h2>)}
+
     </Container>
   );
 }
