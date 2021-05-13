@@ -3,6 +3,7 @@ import BookDetail from "../components/BookDisplay";
 import '../styles/search.css';
 import API from '../utils/API';
 import Input from "../components/Input";
+import Header from "../components/Navbar/navbar";
 
 function Search() {
   const [books, setBooks] = useState([])
@@ -35,7 +36,12 @@ function Search() {
 
   return (
 
+
+
+
     <div>
+
+<Header></Header>
       <div className="container search-content">
         <div className="row">
           <div className="col-12">
