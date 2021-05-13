@@ -72,7 +72,7 @@ function Search() {
             image={book.volumeInfo.imageLinks.smallThumbnail}
             key={book.id}
             id={index}
-            gID={book.volumeInfo.industryIdentifiers[0].identifier}
+            gID={`/details/${book.volumeInfo.industryIdentifiers[0].identifier}`}
             />
           ))}
           </div>

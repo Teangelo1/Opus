@@ -72,16 +72,12 @@ import API from '../utils/API'
                 </Row>
 
                 {/* Suggestions for you... Section */}
-                <Row>
+            
+                <div className="row book">
+                    {nyBooks.map((books) => (<BookDetail image={books.img} gID={`/review/${books.isbn}`} /> ))}
 
-                    <div className="col-2 book">{nyBooks.map((books) => (<BookDetail image={books.img} /> ))}</div>
-                    <div className="col-2 book">{nyBooks.map((books) => (<BookDetail image={books.img} /> ))}</div>
-                    <div className="col-2 book">{nyBooks.map((books) => (<BookDetail image={books.img} /> ))}</div>
-                    <div className="col-2 book">{nyBooks.map((books) => (<BookDetail image={books.img} /> ))}</div>
-                    <div className="col-2 book">{nyBooks.map((books) => (<BookDetail image={books.img} /> ))}</div>
 
-                    <div className="col-1"></div>
-                </Row>
+                    </div>
 
                 {/* Read Section */}
                 <Row>
