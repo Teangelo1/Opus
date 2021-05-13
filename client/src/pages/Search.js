@@ -86,14 +86,12 @@ function Search() {
           <h1>Trending Books</h1>
           <h3 id="trendingQoute">“Today a reader, tomorrow a leader.”</h3>
           <hr />
-          <div>We want to display data here</div>
           {!nyBooks.length ? (
             <h2>No Trending Books available at this moment </h2>
           ) :
             <div>
               {nyBooks.map((book) => (
                 <BookDetail
-                  title={book.title}
                   image={book.book_image}
                   key={book.id}
 
