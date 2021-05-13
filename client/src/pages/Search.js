@@ -4,6 +4,7 @@ import '../styles/search.css';
 import API from '../utils/API';
 import Input from "../components/Input";
 import Header from "../components/Navbar/navbar";
+import { List, ListItem } from "../components/List";
 
 function Search() {
   const [books, setBooks] = useState([])
@@ -70,18 +71,20 @@ function Search() {
               </div>
             </div>
 
-          {!books.length ? (<p>""</p>) : <div>
+          {!books.length ? (<p>""</p>) : <List>
           {books.map((book, index) =>(
             // console.log(book.volumeInfo.industryIdentifiers)
+            <ListItem key={book.id}>
             <BookDetail
             title={book.volumeInfo.title}
             image={book.volumeInfo.imageLinks.smallThumbnail}
-            key={book.id}
+            li key={book.id}
             id={index}
             gID={`/details/${book.volumeInfo.industryIdentifiers[0].identifier}`}
             />
+            </ListItem>
           ))}
-          </div>
+          </List>
           }
           </div>
         </div>

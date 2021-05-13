@@ -5,6 +5,7 @@ import BookDetail from '../components/BookDisplay'
 // import Footer from "../components/Footer/footer";
 import Header from "../components/Navbar/navbar";
 import API from '../utils/API'
+import { propTypes } from "react-bootstrap/esm/Image";
 
   function Bookshelf() {
      
@@ -60,8 +61,7 @@ import API from '../utils/API'
               {nyBooks.map((books) => (
                 <BookDetail
                   image={books.img}
-
-
+                  gID={`/review/${books.isbn}`}
                 />
               ))}
 
@@ -96,6 +96,7 @@ import API from '../utils/API'
             </div>
         )
     
+
 }
 
 export default Bookshelf
