@@ -37,7 +37,7 @@ return axios.get("/api/books")
 
   // Returning User Login
   login: function(email){
-    return axios.get("api/user/login/" + email)
+    return axios.get("/api/user/login/" + email)
   }
 };
 

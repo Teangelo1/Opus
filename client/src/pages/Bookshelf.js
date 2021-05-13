@@ -8,8 +8,6 @@ import API from '../utils/API'
 
 function Bookshelf() {
 
-
-
   const [nyBooks, setNyBooks] = useState([])
 
   useEffect(() => {
@@ -22,14 +20,9 @@ function Bookshelf() {
     )).catch(err => console.log(err))
   }
 
-
-
   return (
     <div>
-
-
-
-
+      
       <Header></Header>
 
       {/* Currently Reading Section */}

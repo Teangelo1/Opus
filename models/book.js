@@ -12,7 +12,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       this.belongsTo(models.User, {
-        // foreignKey: UserId,
+        foreignKey:{ allowNull: false
+        },
         onDelete: 'cascade'
       })
       // define association here - we will put passport here, make passport id will be primary key
@@ -25,7 +26,10 @@ module.exports = (sequelize, DataTypes) => {
     pages: DataTypes.INTEGER,
     isbn: DataTypes.STRING,
     img: DataTypes.STRING,
-    shelf: DataTypes.STRING
+    shelf: DataTypes.STRING,
+    // rating: DataTypes.INTEGER,
+    // review: DataTypes.TEXT
+
   }, {
     sequelize,
     modelName: 'Book',
