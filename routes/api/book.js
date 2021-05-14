@@ -54,6 +54,30 @@ router.route("/:isbn")
     });
   });
 
+  router.get('/shelf/read', (req, res) => {
+    db.Book.findAll({
+      where: {
+        shelf: "Read"
+      }
+    }).then(response => {
+      return res.render("results", {
+        results: response
+      })
+    })
+  })
+
+  router.get('/shelf/want', (req, res) => {
+    db.Book.findAll({
+      where: {
+        shelf: "Want to Read"
+      }
+    }).then(response => {
+      return res.render("results", {
+        results: response
+      })
+    })
+  })
+
   // })
 
 // // Matches with "/api/books/:id"
