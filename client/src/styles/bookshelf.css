@@ -18,11 +18,12 @@ text-align: center;
 text-align: center;
 }
 
-.book {
+.books {
 text-align: center;
-height: 6cm;
+height: 8cm;
 margin-left: 1cm;
 margin-right: 1cm;
+align-content: center;
 }
 
 .search {

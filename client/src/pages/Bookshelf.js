@@ -92,7 +92,7 @@ import { propTypes } from "react-bootstrap/esm/Image";
 
                 {/* Suggestions for you... Section */}
             
-                <div className="row book">
+                <div className="row books">
                     {nyBooks.map((books) => (<BookDetail image={books.img} gID={`/review/${books.isbn}`} /> ))}
 
 
