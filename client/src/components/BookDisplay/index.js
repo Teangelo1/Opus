@@ -7,7 +7,7 @@ function BookDetail(props) {
     <Link to={props.gID} >
 
     <img alt={props.title} className="book" src={props.image}  />
-    <div>Title(s): {props.title}</div>
+    <div className="booktitle">{props.title}</div>
 
   </Link>
   );

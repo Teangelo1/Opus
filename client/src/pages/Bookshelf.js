@@ -53,11 +53,11 @@ import { propTypes } from "react-bootstrap/esm/Image";
                 <Header></Header>
 
                 {/* Currently Reading Section */}
-                <Row>
-                    <div className="col-12 pagetitle">Currently Reading</div>
+                <Row className="currentlyreadingheader">
+                    <div className="col-12 subtitle">Currently Reading</div>
                 </Row>
 
-                <Row>
+                <Row className="bookreadingrow">
                     <div className="col-4"></div>
                     <div className="col-2 favbook">Book Here</div>
                     <div className="col-2 aboutme">Name current page here</div>

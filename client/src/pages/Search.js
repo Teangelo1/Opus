@@ -61,6 +61,9 @@ function Search() {
               />
 
           
+
+
+          
               <div className="col-3 btncol">
                 <button
                   type="submit"
@@ -98,11 +101,11 @@ function Search() {
           <h1>Trending Books</h1>
           <h3 id="trendingQoute">“Today a reader, tomorrow a leader.”</h3>
           <hr />
-          <div>We want to display data here</div>
+          {/* <div>We want to display data here</div> */}
           {!nyBooks.length ? (
             <h2>No Trending Books available at this moment </h2>
           ) :
-            <div>
+            <div className="trendingbooks">
               {nyBooks.map((book) => (
                 <BookDetail
                   title={book.title}

@@ -31,4 +31,9 @@
   .list-overflow-container li:last-child {
     border-bottom: none;
   }
+
+  .list-group-item {
+    text-align: center;
+    border: 0ch;
+  }
   
