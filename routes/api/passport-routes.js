@@ -16,8 +16,8 @@ const db = require("../../models/")
 
  // log in 
  router.post("/login", (req, res) => {
-   passport.authenticate(
-  function(email, password, done) {
+   console.log(req.body)
+   passport.authenticate("user-local"), (email, password, done) => {
     db.User.findOne({ email: email }, 
       function (err, user) {
       if (err) { return done(err); }
@@ -26,7 +26,6 @@ const db = require("../../models/")
       return done(null, user);
     });
   }
-);
  })
 
  // Route for logging user out
