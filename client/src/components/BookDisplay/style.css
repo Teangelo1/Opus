@@ -1,0 +1,25 @@
+.book {
+    height: 9cm;
+    padding-left: 1cm;
+    padding-right: 1cm;
+    padding-top: 1.5cm;
+    text-decoration: none;
+
+}
+
+.book:hover {
+
+    text-decoration: none;
+}
+
+.booktitle {
+ font-size: 20pt;
+text-decoration: none;
+color: black;
+}
+
+.booktitle:hover {
+    text-decoration: none;
+
+
+}

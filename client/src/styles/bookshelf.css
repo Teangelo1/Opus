@@ -5,8 +5,10 @@ text-align: center;
 }
 
 .subtitle {
-font-size: 20pt;
-font-weight: bold;
+    color: black;
+
+    font-size: 1.7vw;
+    font-weight: 500;
 text-align: center;
 }
 
@@ -18,14 +20,28 @@ text-align: center;
 text-align: center;
 }
 
-.book {
+.books {
 text-align: center;
-height: 6cm;
+height: 10cm;
 margin-left: 1cm;
 margin-right: 1cm;
+
+
 }
 
 .search {
 text-align: center;
+
+}
+
+.bookreadingrow {
+
+    height: 6cm;
+}
+
+
+.currentlyreadingheader {
+
+    height: 2cm;
 
 }

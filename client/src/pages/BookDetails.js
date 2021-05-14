@@ -4,6 +4,7 @@ import API from "../utils/API";
 import { Container } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { List, ListItem } from "../components/List";
+import Header from "../components/Navbar/navbar";
 
 function BookDetails() {
 
@@ -60,6 +61,9 @@ function BookDetails() {
   }
 
   return (
+
+<div>
+    <Header></Header>
     <Container>
     {books.length ? (
       
@@ -88,6 +92,7 @@ function BookDetails() {
             </h2>)}
 
     </Container>
+    </div>
   );
 }
 

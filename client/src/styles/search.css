@@ -30,3 +30,32 @@ h1 {
 .jumbotron {
     
 }
+
+
+.searchrow {
+align-items: center;
+padding-bottom: 0%;
+margin: 0;
+
+
+
+}
+
+.btn {
+    height: 1.2cm;
+}
+
+.btncol {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 0;
+    padding-bottom: .62cm;
+}
+
+.trendingbooks {
+    text-align: center;
+    padding: 0cm;
+
+}

@@ -51,6 +51,8 @@ function Search() {
             </div>
             <div className="card-body">
 
+
+<div className="row searchrow">
               <Input
                 name="bookSearch"
                 value={bookSearch}
@@ -59,8 +61,11 @@ function Search() {
                 placeholder='“A room without books is like a body without a soul.”'
               />
 
-              <br />
-              <div className="button-center">
+          
+
+
+          
+              <div className="col-3 btncol">
                 <button
                   type="submit"
                   className="btn btn-dark btn-md"
@@ -70,9 +75,10 @@ function Search() {
                   <span className=""></span> Find the Book for you
                 </button>
               </div>
+              </div>
             </div>
 
-          {!books.length ? (<p>""</p>) : <List>
+          {/* {!books.length ? (<p>""</p>) : <List> */}
           {books.map((book, index) =>(
             // console.log(book.volumeInfo.industryIdentifiers)
             <ListItem key={book.id}>
@@ -85,8 +91,8 @@ function Search() {
             />
             </ListItem>
           ))}
-          </List>
-          }
+          {/* </List> */}
+          {/* } */}
           </div>
         </div>
       </div>
@@ -96,11 +102,11 @@ function Search() {
           <h1>Trending Books</h1>
           <h3 id="trendingQoute">“Today a reader, tomorrow a leader.”</h3>
           <hr />
-          <div>We want to display data here</div>
+          {/* <div>We want to display data here</div> */}
           {!nyBooks.length ? (
             <h2>No Trending Books available at this moment </h2>
           ) :
-            <div>
+            <div className="trendingbooks">
               {nyBooks.map((book) => (
                 <BookDetail
                   title={book.title}
