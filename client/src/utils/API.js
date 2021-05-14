@@ -41,9 +41,23 @@ let API = {
   },
 
   // Returning User Login
+
   login: function (email) {
     return axios.post("/api/user/login/", email)
-  }
+  },
+
+
+  // function for getting read books
+ getReadBooks: function() {
+   return axios.get("/api/books/shelf/read")
+   
+ },
+
+ wantToReadBooks: function() {
+  return axios.get("/api/books/shelf/want")
+  
+}
+
 };
 
 
