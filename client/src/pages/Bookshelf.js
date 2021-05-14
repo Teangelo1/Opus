@@ -12,9 +12,13 @@ import { propTypes } from "react-bootstrap/esm/Image";
  
     
     const [nyBooks, setNyBooks] = useState([])
+    const [readBooks, setReadBooks] = useState([])
+    const [wantBooks, setWantBooks] = useState([])
     
     useEffect(() => {
         bookShelfData()
+        getReadBooks()
+        wantToReadBooks()
       }, [])
     
       function bookShelfData() {
@@ -22,6 +26,21 @@ import { propTypes } from "react-bootstrap/esm/Image";
          res.data
         )).catch(err => console.log(err))
       } 
+
+      function getReadBooks() {
+        API.getReadBooks().then(data => { console.log(data); return data }).then(res => setReadBooks(
+          res.data
+         )).catch(err => console.log(err))
+        
+      }
+
+      function wantToReadBooks() {
+        API.wantToReadBooks().then(data => { console.log(data); return data }).then(res => setWantBooks(
+          res.data
+         )).catch(err => console.log(err))
+        
+      }
+    
     
     
      
@@ -52,7 +71,7 @@ import { propTypes } from "react-bootstrap/esm/Image";
                     <div className="col-12 subtitle">Want to Read</div>
                 </Row>
                 <Row>
-                <div>We want to display data here</div>
+
           {/* {!nyBooks.length ? 
           (
             <h2>No Trending Books available at this moment </h2>
@@ -82,6 +101,12 @@ import { propTypes } from "react-bootstrap/esm/Image";
                 {/* Read Section */}
                 <Row>
                     <div className="col-12 subtitle">Read</div>
+
+                    <div className="row book">
+                    {readBooks.map((books) => (<BookDetail image={books.img} /> ))}
+
+
+                    </div>
                 </Row>
                 <Row>
                     <div className="col-1"></div>

@@ -43,7 +43,18 @@ return axios.get("/api/books")
   // Returning User Login
   login: function(email){
     return axios.get("/api/user/login/" + email)
-  }
+  },
+
+  // function for getting read books
+ getReadBooks: function() {
+   return axios.get("/api/books/shelf/read")
+   
+ },
+
+ wantToReadBooks: function() {
+  return axios.get("/api/books/shelf/want")
+  
+}
 };
 
 
