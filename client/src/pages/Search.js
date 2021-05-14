@@ -55,6 +55,7 @@ function Search() {
                 name="bookSearch"
                 value={bookSearch}
                 onChange={handleInputChange}
+                type="text"
                 placeholder='“A room without books is like a body without a soul.”'
               />
 
