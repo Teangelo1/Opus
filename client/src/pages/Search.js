@@ -51,6 +51,8 @@ function Search() {
             </div>
             <div className="card-body">
 
+
+<div className="row searchrow">
               <Input
                 name="bookSearch"
                 value={bookSearch}
@@ -58,8 +60,8 @@ function Search() {
                 placeholder='“A room without books is like a body without a soul.”'
               />
 
-              <br />
-              <div className="button-center">
+          
+              <div className="col-3 btncol">
                 <button
                   type="submit"
                   className="btn btn-dark btn-md"
@@ -69,9 +71,10 @@ function Search() {
                   <span className=""></span> Find the Book for you
                 </button>
               </div>
+              </div>
             </div>
 
-          {!books.length ? (<p>""</p>) : <List>
+          {/* {!books.length ? (<p>""</p>) : <List> */}
           {books.map((book, index) =>(
             // console.log(book.volumeInfo.industryIdentifiers)
             <ListItem key={book.id}>
@@ -84,8 +87,8 @@ function Search() {
             />
             </ListItem>
           ))}
-          </List>
-          }
+          {/* </List> */}
+          {/* } */}
           </div>
         </div>
       </div>
