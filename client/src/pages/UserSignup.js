@@ -28,24 +28,28 @@ function UserSignup() {
                 <Input
                     value={user.first_name}
                     onChange={handleInputChange}
+                    type="text"
                     name="first_name"
                     label="First Name"
                 />
                 <Input
                     value={user.last_name}
                     onChange={handleInputChange}
+                    type="text"
                     name="last_name"
                     label="Last Name"
                 />
                 <Input
                     value={user.email} // need to validate email somehow, so unique and email
                     onChange={handleInputChange}
+                    type="email"
                     name="email"
                     label="Email"
                 />
                 <Input
                     value={user.password}
                     onChange={handleInputChange}
+                    type="password"
                     name="password"
                     label="Password"
                 />

@@ -15,19 +15,23 @@ const db = require("../../models/")
   });
 
  // log in 
- router.post("/login", (req, res) => {
+ router.post("/login", (req, res, next) => {
    console.log(req.body)
-   passport.authenticate("user-local"), (email, password, done) => {
-    db.User.findOne({ email: email }, 
-      function (err, user) {
-      if (err) { return done(err); }
-      if (!user) { return done(null, false); }
-      if (!user.verifyPassword(password)) { return done(null, false); }
-      return done(null, user);
-    });
-  }
- })
-
+   next();
+ },
+   passport.authenticate('local'),
+   (req, res) => {
+     const user = {
+       id: req.user.id,
+       first_name: req.user.first_name, 
+       last_name: req.user.last_name, 
+       email: req.user.email,
+     }
+     console.log(user.first_name + " " + user.last_name + " logged in")
+     res.send(user);
+}
+ );
+ 
  // Route for logging user out
   router.get("/logout", function(req, res) {
     req.logout();

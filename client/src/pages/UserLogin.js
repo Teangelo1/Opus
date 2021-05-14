@@ -13,7 +13,7 @@ function UserLogin() {
     function handleLogin(event) {
         event.preventDefault();
         console.log(user)
-        API.login(user).then(alert(user))
+        API.login(user)
     }
 
     return (
@@ -22,12 +22,14 @@ function UserLogin() {
                 <Input
                     value={user.email}
                     onChange={handleInputChange}
+                    type="email"
                     name="email"
                     label="Email"
                 />
                 <Input
                     value={user.password}
                     onChange={handleInputChange}
+                    type="password"
                     name="password"
                     label="Password"
                 />
