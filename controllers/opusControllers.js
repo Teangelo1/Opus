@@ -20,6 +20,18 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  shelfWant: function(req, res) {
+    db.Book
+    .findAll({where: {shelf: "Want to Read"}})
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
+  }, 
+  shelfRead: function(req, res) {
+    db.Book
+    .findAll({where: {shelf: "Read"}})
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err)); 
+  }
 //   update: function(req, res) {
 //     db.Book
 //       .findOneAndUpdate({ _id: req.params.id }, req.body)
@@ -33,20 +45,4 @@ module.exports = {
 //       .then(dbModel => res.json(dbModel))
 //       .catch(err => res.status(422).json(err));
 //   }
-
-// User 
-
-// newUser: function(req, res) {
-//   db.User
-//   .create(req.body)
-//   .then(dbUser => res.json(dbUser))
-//   .catch(err => res.status(422).json(err)); 
-// },
-// allUsers: function(req, res) {
-//   db.User
-//   .findAll(req.query)
-//   .then(dbModel => res.json(dbModel))
-//   .catch(err => res.status(422).json(err));
-
-// }
 };

@@ -16,67 +16,68 @@ router.route("/")
 router.route("/:isbn")
   .get(opusController.findById); 
 
-  router.get('/api/bookshelf', (req, res) => {
-    console.log(req.body)
-    db.Book.findAll({
-      where: {
-        shelf: req.body.shelf
-      }
-    }).then(response => {
-      return res.render("results", {
-        results: response
-      })
-    })
-    console.log(response)
-  }) // look at activity 13 post routes for giving user an ID
+router.route("/shelf/want")
+  .get(opusController.shelfWant);
 
-  router.get('/api/bookshelf/:id', (req, res) => {
-    db.Book.findById({
-      where: {
-        id: req.body.id,
-        shelf: req.body.shelf // may have to associate shelf with user with FK that references the users PK
-      }
-    }).then(response => {
-      return res.render("results", {
-        results: response
-      })
-    })
-  })
+  // // api/books/api/bookshelf
+  // router.get('/api/bookshelf', (req, res) => {
+  //   console.log(req.body)
+  //   db.Book.findAll({
+  //     where: {
+  //       shelf: req.body.shelf
+  //     }
+  //   }).then(response => {
+  //     return res.render("results", {
+  //       results: response
+  //     })
+  //   })
+  //   console.log(response)
+  // }) // look at activity 13 post routes for giving user an ID
 
-  // may need route that grabs by id
+  // router.get('/api/bookshelf/:id', (req, res) => {
+  //   db.Book.findById({
+  //     where: {
+  //       id: req.body.id,
+  //       shelf: req.body.shelf // may have to associate shelf with user with FK that references the users PK
+  //     }
+  //   }).then(response => {
+  //     return res.render("results", {
+  //       results: response
+  //     })
+  //   })
+  // })
 
- router.post("/api/bookshelf", (req, res) => {
-    console.log("events-api.js app post route fired");
-    console.log(req.body);
-    db.Book.create({
-      title: req.body.title,
-      
-    });
-  });
 
-  router.get('/shelf/read', (req, res) => {
-    db.Book.findAll({
-      where: {
-        shelf: "Read"
-      }
-    }).then(response => {
-      return res.render("results", {
-        results: response
-      })
-    })
-  })
+  // router.route("/existing").get(
+//   db.User.findAll({})
+//   .then(dbModel => res.json(dbModel))
+//   .catch(err => res.status(422).json(err))
 
-  router.get('/shelf/want', (req, res) => {
-    db.Book.findAll({
-      where: {
-        shelf: "Want to Read"
-      }
-    }).then(response => {
-      return res.render("results", {
-        results: response
-      })
-    })
-  })
+// )
+// /api/books/shelf/read
+
+
+  // router.get('/shelf/read', function(req, res) {
+  //   db.Book.findOne({
+  //     where: {
+  //       id: 1
+  //     }
+  //   })
+  //   .then(dbModel => res.json(dbModel)
+  // )
+  //   });
+
+  // router.get('/shelf/want', (req, res) => {
+  //   db.Book.findAll({
+  //     where: {
+  //       shelf: "Want to Read"
+  //     }
+  //   }).then(response => {
+  //     return res.render("results", {
+  //       results: response
+  //     })
+  //   })
+  // })
 
   // })
 
