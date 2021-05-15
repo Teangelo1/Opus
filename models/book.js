@@ -7,11 +7,9 @@ module.exports = (sequelize, DataTypes) => {
     isbn: DataTypes.STRING,
     img: DataTypes.STRING,
     shelf: DataTypes.STRING,
-    // rating: DataTypes.INTEGER,
-    // review: DataTypes.TEXT
   }, {});
   Book.associate = function(models) { 
-    Book.belongsToMany(models.User, { through: 'UsersBooks', foreignKey: 'isbn', as: 'bookId' }) };
+    Book.belongsToMany(models.User, { through: 'UsersBooks', foreignKey: 'id', as: 'bookId' }) };
 
     
     return Book;

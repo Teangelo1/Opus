@@ -1,6 +1,8 @@
 const db = require("../models");
 
-// Defining methods for the booksController
+// Defining methods for the booksController 
+
+// need to reference usersbooks and ids for each users 
 module.exports = {
   findAll: function(req, res) {
     db.Book
@@ -16,8 +18,17 @@ module.exports = {
   },
   create: function(req, res) {
     db.Book
-      .create(req.body)
-      .then(dbModel => res.json(dbModel))
+      .findCreateFind({ 
+        where: { isbn: req.body.book.isbn },
+        defaults: req.body.book
+    })
+      .then(book =>{
+        db.UsersBooks.create({
+          userId: req.body.userId,
+          shelf: req.body.shelf,
+          bookId: book[0].id
+        })
+      })
       .catch(err => res.status(422).json(err));
   },
   shelfWant: function(req, res) {
