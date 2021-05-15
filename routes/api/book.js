@@ -18,6 +18,9 @@ router.route("/shelf/want")
 router.route("/shelf/read")
   .get(opusController.shelfRead);
 
+router.route("/shelf/currentlyreading")
+  .get(opusController.shelfCurrentRead)
+
   // // api/books/api/bookshelf
   // router.get('/api/bookshelf', (req, res) => {
   //   console.log(req.body)
