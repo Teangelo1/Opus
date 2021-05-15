@@ -1,15 +1,11 @@
 import React, { useContext } from "react";
 import Input from "../components/Input";
 // import API from "../utils/API";
-import UserContext from "../utils/UserContext"; 
 
 function UserDetials() {
-const userData = useContext(UserContext.context); 
-const userName = userData.name
     
     return (
         <div>
-        <p>{userName}</p>
             <form>
                 <Input
                     id="firstName"

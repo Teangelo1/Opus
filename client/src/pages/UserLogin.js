@@ -1,34 +1,33 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import Input from "../components/Input";
+import { useUserContext, UserProvider } from "../utils/UserContext"; 
 import API from "../utils/API";
 
 function UserLogin() {
-    const [user, setUserData] = useState("")
-
-    function handleInputChange(event) {
-        const { name, value } = event.target;
-        setUserData({ ...user, [name]: value })
-    }
+    const [state, dispatch] = useUserContext()
+    const emailRef = useRef(null)
+    const passwordRef = useRef()
 
     function handleLogin(event) {
         event.preventDefault();
-        console.log(user)
-        API.login(user)
+        console.log(emailRef.current.value)
+        API.login(emailRef.current.value).then((res) => {
+            console.log(res)
+        }
+        )
     }
 
     return (
         <div>
             <form onSubmit={handleLogin}>
                 <Input
-                    value={user.email}
-                    onChange={handleInputChange}
+                    ref={emailRef}
                     type="email"
                     name="email"
                     label="Email"
                 />
                 <Input
-                    value={user.password}
-                    onChange={handleInputChange}
+                    ref={passwordRef}
                     type="password"
                     name="password"
                     label="Password"

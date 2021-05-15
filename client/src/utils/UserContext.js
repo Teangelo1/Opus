@@ -1,28 +1,27 @@
+import React, { createContext, useReducer, useContext } from "react";
 
-import React, { createContext, useState, useEffect } from "react";
-const context = createContext(null);
+const userContext = createContext(); 
+const { Provider } = userContext; 
 
-const UserProvider = ({ children }) => {
-  const [user, setUser] = useState({});
-
-  useEffect(() => {
-      fetch("/api/user/userdata/")
-          .then(res => res.json())
-          .then(res => setUser(res))
-          .then(console.log(user))
-          .catch(err => {
-              console.log(err);
-          });
-          console.log("inside provider fyi")
-  }, []);
-
-  return (
-      <context.Provider value={user}>
-          {children}
-      </context.Provider>
-  );
+const reducer = (state, action) => { //set user and clear user 
+  switch (action.type) {
+  case "Login":
+    return { user: action.user };
+  case "Logout":
+    return { user: {} }; 
+  default:
+    throw new Error(`Invalid action type`);
+  }
 };
 
-UserProvider.context = context;
+const UserProvider = ({ value=[], ...props }) => {
+  const [state, dispatch] = useReducer(reducer, { user: value });
 
-export default UserProvider;
+  return <Provider value={[state, dispatch]} {...props} />;
+};
+
+const useUserContext = () => {
+  return useContext(userContext);
+};
+
+export { UserProvider, useUserContext };
