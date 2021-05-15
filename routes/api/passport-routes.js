@@ -14,10 +14,6 @@ router.post("/signup", (req, res) => {
 });
 
 // log in 
-//  router.post("/login", passport.authenticate('local', {
-//    successRedirect: "/bookshelf",
-//    failureRedirect: "/login"
-//  }));
 router.post("/login",(req, res, next) => {
   //console.log(req.body)
   passport.authenticate('local',
@@ -27,9 +23,9 @@ router.post("/login",(req, res, next) => {
     else {
       req.logIn(user, (err) => {
         if (err) throw err;
-        res.redirect("/bookshelf");
-        console.log(req.user);
-      });
+        console.log('logged in ', req.user);
+        res.send(req.user)
+      }); 
     }
   })(req, res, next);
 });
@@ -46,19 +42,20 @@ router.get("/logout", function (req, res) {
 
 // )
 
-//   // Route for getting some data about our user to be used client side
-//   app.get("/api/user_data", function(req, res) {
-//     if (!req.user) {
-//       // The user is not logged in, send back an empty object
-//       res.json({});
-//     } else {
-//       // Otherwise send back the user's email and id
-//       res.json({
-//         email: req.user.email,
-//         id: req.user.id
-//       });
-//     }
-//   });
-// };
+// working
+  // Route for getting some data about our user to be used client side
+  router.get("/userdata", function(req, res) {
+    console.log(res)
+    if (!req.user) {
+      // The user is not logged in, send back an empty object
+      res.json({});
+    } else {
+      // Otherwise send back the user's email and id
+      res.json(
+      req.user
+      );
+    }
+  });
+
 
 module.exports = router;
