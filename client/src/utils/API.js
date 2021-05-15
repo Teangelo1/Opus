@@ -55,6 +55,11 @@ let API = {
  wantToReadBooks: function() {
   return axios.get("/api/books/shelf/want")
   
+},
+
+ currentlyReading: function() {
+  return axios.get("/api/books/shelf/currentlyreading")
+  
 }
 
 };
