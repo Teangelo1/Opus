@@ -5,12 +5,12 @@ import API from "../utils/API";
 
 function UserLogin() {
     const [state, dispatch] = useUserContext()
-    const emailRef = useRef(null)
+    const emailRef = useRef()
     const passwordRef = useRef()
 
     function handleLogin(event) {
         event.preventDefault();
-        console.log(emailRef.current.value)
+        console.log(emailRef.current.value + " " + passwordRef.current.value)
         API.login(emailRef.current.value).then((res) => {
             console.log(res)
         }
