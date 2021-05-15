@@ -23,6 +23,7 @@ router.post("/login",(req, res, next) => {
     else {
       req.logIn(user, (err) => {
         if (err) throw err;
+        delete req.user.password; 
         console.log('logged in ', req.user);
         res.send(req.user) //specify what sending 
       }); 

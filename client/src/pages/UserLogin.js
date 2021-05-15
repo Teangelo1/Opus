@@ -11,8 +11,16 @@ function UserLogin() {
     function handleLogin(event) {
         event.preventDefault();
         console.log(emailRef.current.value + " " + passwordRef.current.value)
-        API.login(emailRef.current.value).then((res) => {
+        const user = {
+            email: emailRef.current.value,
+            password: passwordRef.current.value
+        }
+        API.login(user).then((res) => {
             console.log(res)
+            dispatch({
+                type: "Login",
+                user: res.data
+            });
         }
         )
     }

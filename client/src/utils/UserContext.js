@@ -14,7 +14,7 @@ const reducer = (state, action) => { //set user and clear user
   }
 };
 
-const UserProvider = ({ value=[], ...props }) => {
+const UserProvider = ({ value={}, ...props }) => {
   const [state, dispatch] = useReducer(reducer, { user: value });
 
   return <Provider value={[state, dispatch]} {...props} />;
