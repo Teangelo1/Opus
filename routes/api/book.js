@@ -1,11 +1,5 @@
-// import DB from '../..//db'
-
 const router = require("express").Router();
-const { response } = require("express");
 const opusController = require("../../controllers/opusControllers");
-
-
-const db = require("../../models/book")
 
 // Matches with "/api/books"
 router.route("/")
@@ -16,8 +10,13 @@ router.route("/")
 router.route("/:isbn")
   .get(opusController.findById); 
 
+// /api/books/shelf/want
 router.route("/shelf/want")
   .get(opusController.shelfWant);
+
+// /api/books/shelf/read
+router.route("/shelf/read")
+  .get(opusController.shelfRead);
 
   // // api/books/api/bookshelf
   // router.get('/api/bookshelf', (req, res) => {
