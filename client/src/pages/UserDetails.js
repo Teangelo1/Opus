@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import Input from "../components/Input";
 // import API from "../utils/API";
 import Header from "../components/Navbar/navbar";
 
 function UserDetials() {
-
+    
     return (
         <div>
 

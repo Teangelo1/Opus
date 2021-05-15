@@ -41,9 +41,8 @@ let API = {
   },
 
   // Returning User Login
-
-  login: function (email) {
-    return axios.post("/api/user/login/", email)
+  login: function (user) {
+    return axios.post("/api/user/login/", user)
   },
 
 
