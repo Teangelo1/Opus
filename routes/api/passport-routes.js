@@ -24,7 +24,7 @@ router.post("/login",(req, res, next) => {
       req.logIn(user, (err) => {
         if (err) throw err;
         console.log('logged in ', req.user);
-        res.send(req.user)
+        res.send(req.user) //specify what sending 
       }); 
     }
   })(req, res, next);

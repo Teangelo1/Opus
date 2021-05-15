@@ -9,6 +9,7 @@ import UserSignup from "./pages/UserSignup";
 import BookDetails from "./pages/BookDetails";
 import UserReviews from "./pages/UserReview";
 
+// set a session within my app and send it back and forth 
 
 function App() {
   // const [status, setStatus] = useState(); 
