@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
     bookId: DataTypes.INTEGER,
     rating: DataTypes.INTEGER,
     review: DataTypes.STRING,
-    shelf: DataTypes.STRING
+    // shelf: DataTypes.STRING
   }, {});
   UsersBooks.associate = (models) => {
     UsersBooks.belongsTo(models.User, {foreignKey: 'userId'})

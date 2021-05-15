@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
     pages: DataTypes.INTEGER,
     isbn: DataTypes.STRING,
     img: DataTypes.STRING,
-    shelf: DataTypes.STRING,
+    // shelf: DataTypes.STRING,
     // rating: DataTypes.INTEGER,
     // review: DataTypes.TEXT
   }, {});
