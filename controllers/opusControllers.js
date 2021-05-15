@@ -31,7 +31,20 @@ module.exports = {
     .findAll({where: {shelf: "Read"}})
     .then(dbModel => res.json(dbModel))
     .catch(err => res.status(422).json(err)); 
+  },
+
+  shelfCurrentRead: function (req, res) {
+    db.Book
+    .findAll({where: {shelf: "Currently Reading"}})
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err)); 
   }
+
+
+
+
+
+
 //   update: function(req, res) {
 //     db.Book
 //       .findOneAndUpdate({ _id: req.params.id }, req.body)
