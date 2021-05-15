@@ -12,5 +12,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Book.associate = function(models) { 
     Book.belongsToMany(models.User, { through: 'UsersBooks', foreignKey: 'isbn', as: 'bookId' }) };
+
+    
     return Book;
 };
