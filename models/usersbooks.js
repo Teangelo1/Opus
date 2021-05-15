@@ -1,5 +1,7 @@
 'use strict';
 
+const { Sequelize } = require(".");
+
 module.exports = (sequelize, DataTypes) => {
   const UsersBooks = sequelize.define('UsersBooks', {
     userId: DataTypes.INTEGER,
@@ -11,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
   UsersBooks.associate = (models) => {
     UsersBooks.belongsTo(models.User, {foreignKey: 'userId'})
     UsersBooks.belongsTo(models.Book, {foreignKey: 'bookId'})
-  }; 
-  return UsersBooks; 
+ 
+}; 
+return UsersBooks; 
 };

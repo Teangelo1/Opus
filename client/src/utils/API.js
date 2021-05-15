@@ -55,6 +55,9 @@ let API = {
  wantToReadBooks: function() {
   return axios.get("/api/books/shelf/want")
   
+},
+getUser: function() {
+  return axios.get("/api/user/userdata")
 }
 
 };
