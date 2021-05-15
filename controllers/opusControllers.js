@@ -16,20 +16,27 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  create: function(req, res) {
-    db.Book
-      .findCreateFind({ 
-        where: { isbn: req.body.book.isbn },
-        defaults: req.body.book
+  create: function (req, res) {
+    db.Book.findCreateFind({
+      where: { isbn: req.body.book.isbn },
+      defaults: req.body.book,
     })
-      .then(book =>{
-        db.UsersBooks.create({
-          userId: req.body.userId,
-          shelf: req.body.shelf,
-          bookId: book[0].id
-        })
+      .then((book) => {
+        db.UsersBooks.upsert({
+            userId: req.body.userId,
+            shelf: req.body.shelf,
+            bookId: book[0].id,
+          },
+        )
+          .then((ub) => {
+            res.json(ub);
+          })
+          .catch((err) => {
+            console.log(err);
+            res.status(422).json(err);
+          });
       })
-      .catch(err => res.status(422).json(err));
+      .catch((err) => res.status(422).json(err));
   },
   shelfWant: function(req, res) {
     db.Book

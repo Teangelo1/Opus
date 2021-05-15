@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     shelf: DataTypes.STRING,
   }, {});
   Book.associate = function(models) { 
-    Book.belongsToMany(models.User, { through: 'UsersBooks', foreignKey: 'id', as: 'bookId' }) };
+    Book.belongsToMany(models.User, { through: 'UsersBooks', foreignKey: 'bookId', as: 'bookId' }) };
 
     
     return Book;
