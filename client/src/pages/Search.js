@@ -53,7 +53,7 @@ function Search() {
         <div className="row">
           <div className="col-12 opusbackground">
             <div>
-              <h1><strong>Opus</strong></h1>
+              <h1 className="opusTitle">Opus</h1>
             </div>
             <div className="card-body">
 
