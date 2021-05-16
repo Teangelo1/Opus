@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { useUserContext, UserProvider } from "./utils/UserContext";
+import { UserProvider } from "./utils/UserContext";
 import UserLogin from "./pages/UserLogin";
 import Bookshelf from "./pages/Bookshelf";
 import Search from "./pages/Search";
@@ -23,7 +23,7 @@ function App() {
           <Route exact path="/search" component={Search} />
           <Route exact path="/details/:id" component={BookDetails} />
           <Route exact path="/account" component={UserDetails} />
-          <Route exact path="/review/:id" component={UserReviews} />
+          <Route exact path="/review" component={UserReviews} />
         </UserProvider>
       </Switch>
 

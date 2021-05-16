@@ -1,40 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Row } from "react-bootstrap";
 import "../styles/bookshelf.css";
 import BookDetail from '../components/BookDisplay'
 // import Footer from "../components/Footer/footer";
 import Header from "../components/Navbar/navbar";
 import API from '../utils/API'
+import { useUserContext, UserProvider } from "../utils/UserContext"; 
 
 function Bookshelf() {
   const [nyBooks, setNyBooks] = useState([])
   const [readBooks, setReadBooks] = useState([])
   const [wantBooks, setWantBooks] = useState([])
   const [currentBooks, setCurrentBooks] = useState([])
-  const [user, setUser] = useState([]);
+  const [state, dispatch] = useUserContext()
 
   useEffect(() => {
-    getUser()
     bookShelfData()
     getReadBooks()
     wantToReadBooks()
     currentlyReading()
   }, [])
 
-  function getUser() {
-    API.getUser().then(res => {
-      setUser(res.data.id)
-    });
-  }
-
   function bookShelfData() {
+    console.log(state)
     API.bookShelfData().then(data => { console.log(data); return data }).then(res => setNyBooks(
       res.data
     )).catch(err => console.log(err))
   }
 
   function getReadBooks() {
-    console.log(user)
     API.getReadBooks().then(data => { console.log(data); return data }).then(res => setReadBooks(
       res.data
     )).catch(err => console.log(err))
@@ -51,6 +45,7 @@ function Bookshelf() {
       res.data
     )).catch(err => console.log(err))
   }
+
   return (
     <div>
       <Header></Header>

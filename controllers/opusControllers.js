@@ -10,12 +10,14 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+
   findById: function (req, res) {
     db.Book
       .findOne({ where: { isbn: req.params.isbn } })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+
   create: function (req, res) {
     db.Book.findCreateFind({
       where: { isbn: req.body.book.isbn },
@@ -74,6 +76,42 @@ module.exports = {
       })
     .catch((err) => res.status(422).json(err));
   },
+  userShelf: function (req, res) {
+    db.UsersBooks
+      .findAll({ 
+        userId: 1,
+        include: db.Book 
+      })
+      .then((ub) => {
+        res.json(ub)
+      })
+    .catch((err) => res.status(422).json(err));
+  },
+  updateSaved: function (req, res) {
+    db.UsersBooks
+    .findOne({
+      where:{
+      userId: 1,
+      bookId: 3
+    }
+  }).then((book) => {
+    console.log(book.dataValues)
+    db.UsersBooks.upsert({
+      bookId: book.dataValues.bookId,
+      userId: book.dataValues.userId,
+      review: req.body.review,
+    },
+    )
+      .then((ub) => {
+        res.json(ub);
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(422).json(err);
+      });
+  })
+  .catch((err) => res.status(422).json(err));
+  }
   //   update: function(req, res) {
   //     db.Book
   //       .findOneAndUpdate({ _id: req.params.id }, req.body)

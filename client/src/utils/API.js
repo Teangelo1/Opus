@@ -34,6 +34,15 @@ let API = {
   returnSaved: function (isbn) {
     return axios.get("/api/books/" + isbn);
   },
+  
+  // return one book in db by book id
+  returnSavedDB: function (){
+    return axios.get("/api/books/load")
+  },
+  // // post new rating 
+  // saveRating: function (isbn, bookData) {
+  //   return axios.post("/api/books/" + isbn, bookData)
+  // },
 
   // new user login route
   newUser: function (userData) {
@@ -52,18 +61,25 @@ let API = {
 
   wantToReadBooks: function () {
     return axios.get("/api/books/shelf/want")
-
   },
 
   currentlyReading: function() {
-    return axios.get("/api/shelf/current")
+    return axios.get("/api/books/shelf/current")
+  },
+
+  // returns a users complete shelf 
+  completeShelf: function (){
+    return axios.get("/api/books/shelf/user")
+  },
+
+  updateSaved: function(bookReview) {
+    return axios.post("/api/books/shelf/user/", bookReview)
   },
 
   // log in route shows if you are logged in or not 
   getUser: function () {
     return axios.get("/api/user/userdata")
   }
-
 };
 
 
