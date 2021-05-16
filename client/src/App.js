@@ -19,11 +19,11 @@ function App() {
         <UserProvider>
           <Route exact path="/" component={UserLogin} />
           <Route exact path="/newuser" component={UserSignup} />
-          <Route exact path="/bookshelf" component={Bookshelf} />
+          <Route exact path="/bookshelf/:userId" component={Bookshelf} />
           <Route exact path="/search" component={Search} />
           <Route exact path="/details/:id" component={BookDetails} />
           <Route exact path="/account" component={UserDetails} />
-          <Route exact path="/review/:userId" component={UserReviews} />
+          <Route exact path="/reviews/:userId" component={UserReviews} />
         </UserProvider>
       </Switch>
 

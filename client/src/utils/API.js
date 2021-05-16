@@ -39,10 +39,6 @@ let API = {
   returnSavedDB: function (){
     return axios.get("/api/books/load")
   },
-  // // post new rating 
-  // saveRating: function (isbn, bookData) {
-  //   return axios.post("/api/books/" + isbn, bookData)
-  // },
 
   // new user login route
   newUser: function (userData) {
@@ -55,16 +51,16 @@ let API = {
   },
 
   // next three functions get books for the book shelf 
-  getReadBooks: function () {
-    return axios.get("/api/books/shelf/read")
+  getReadBooks: function (userId) {
+    return axios.get("/api/books/shelf/read/" + userId)
   },
 
-  wantToReadBooks: function () {
-    return axios.get("/api/books/shelf/want")
+  wantToReadBooks: function (userId) {
+    return axios.get("/api/books/shelf/want/" + userId)
   },
 
-  currentlyReading: function() {
-    return axios.get("/api/books/shelf/current")
+  currentlyReading: function(userId) {
+    return axios.get("/api/books/shelf/current/" + userId)
   },
 
   // returns a users complete shelf 
@@ -73,7 +69,7 @@ let API = {
   },
 
   updateSaved: function(bookReview) {
-    return axios.post("/api/books/shelf/user/", bookReview)
+    return axios.post("/api/books/shelf/user/" + 2, bookReview)
   },
 
   // log in route shows if you are logged in or not 

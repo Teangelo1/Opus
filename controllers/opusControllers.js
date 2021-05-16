@@ -43,8 +43,7 @@ module.exports = {
   shelfWant: function (req, res) {
     db.UsersBooks
       .findAll({ 
-        userId: 1,
-        where: { shelf: "Want to Read" }, 
+        where: { userId: req.params.userId, shelf: "Want to Read" }, 
         include: db.Book 
       })
       .then((ub) => {
@@ -55,8 +54,7 @@ module.exports = {
   shelfRead: function (req, res) {
     db.UsersBooks
       .findAll({ 
-        userId: 1,
-        where: { shelf: "Read" }, 
+        where: { userId: req.params.userId, shelf: "Read" }, 
         include: db.Book 
       })
       .then((ub) => {
@@ -67,8 +65,7 @@ module.exports = {
   shelfCurrentRead: function (req, res) {
     db.UsersBooks
       .findAll({ 
-        userId: 1,
-        where: { shelf: "Currently Reading" }, 
+        where: { userId: req.params.userId, shelf: "Currently Reading" }, 
         include: db.Book 
       })
       .then((ub) => {
@@ -91,8 +88,8 @@ module.exports = {
     db.UsersBooks
     .findOne({
       where:{
-      userId: req.params,
-      bookId: 3
+      userId: req.params.userId,
+      bookId: 1
     }
   }).then((book) => {
     console.log(book.dataValues)

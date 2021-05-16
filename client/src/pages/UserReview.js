@@ -16,6 +16,7 @@ function UserReview() {
     }, [userId])
 
     function userComplete(userId) {
+        console.log(userId)
         API.completeShelf(userId)
             .then(res => {
                 console.log(res.data)
@@ -39,6 +40,7 @@ function UserReview() {
         console.log(starReview)
         console.log(bookReview)
         API.updateSaved({
+            userId: 2,
             review: bookReview
         })
 
