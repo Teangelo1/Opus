@@ -17,7 +17,6 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-
   create: function (req, res) {
     db.Book.findCreateFind({
       where: { isbn: req.body.book.isbn },
@@ -88,14 +87,14 @@ module.exports = {
     db.UsersBooks
     .findOne({
       where:{
-      userId: req.params.userId,
-      bookId: 1
+      userId: req.body.userId,
+      bookId: req.body.bookId
     }
   }).then((book) => {
     console.log(book.dataValues)
     db.UsersBooks.upsert({
-      bookId: book.dataValues.bookId,
-      userId: book.dataValues.userId,
+      bookId: req.body.bookId,
+      userId: req.body.userId,
       review: req.body.review,
     },
     )

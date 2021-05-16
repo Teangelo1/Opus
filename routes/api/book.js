@@ -6,7 +6,7 @@ router.route("/")
   .get(opusController.findAll)
   .post(opusController.create)
   
-// /api/books/isbn
+// /api/books/isbn -- not sure we are actually using 
 router.route("/:isbn")
   .get(opusController.findById)
 
@@ -29,6 +29,9 @@ router.route("/shelf/current/:userId")
 // /api/books/shelf/user-- this is getting the users entire shelf 
 router.route("/shelf/user/:userId")
   .get(opusController.userShelf)
+
+// /api/shelf/update
+router.route("/shelf/update")
   .post(opusController.updateSaved)
 
 module.exports = router;

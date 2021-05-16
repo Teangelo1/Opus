@@ -35,12 +35,14 @@ function UserReview() {
         setReview(value);
     };
 
-    function handleReviewSubmit(event) {
-        event.preventDefault();
-        console.log(starReview)
+    function handleReviewSubmit(e, book) {
+        e.preventDefault()
+        console.log(book.bookId)
+        console.log(book.userId)
         console.log(bookReview)
         API.updateSaved({
-            userId: 2,
+            userId: book.userId,
+            bookId: book.bookId,
             review: bookReview
         })
 
@@ -58,7 +60,7 @@ function UserReview() {
                     placeholder={book.review}
                     value={bookReview}
                     onChange={handleInputChange}
-                    onClick={handleReviewSubmit}
+                    onClick={(e) => {handleReviewSubmit(e, book)}}
                     //star={<StarsRating count={5} onChange={ratingChanged} size={24} color2={'#ffd700'} />}
                 />
             )}
