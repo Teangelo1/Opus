@@ -45,20 +45,24 @@ let API = {
     return axios.post("/api/user/login/", user)
   },
 
+  // next three functions get books for the book shelf 
+  getReadBooks: function () {
+    return axios.get("/api/books/shelf/read")
+  },
 
-  // function for getting read books
- getReadBooks: function() {
-   return axios.get("/api/books/shelf/read")
-   
- },
+  wantToReadBooks: function () {
+    return axios.get("/api/books/shelf/want")
 
- wantToReadBooks: function() {
-  return axios.get("/api/books/shelf/want")
-  
-},
-getUser: function() {
-  return axios.get("/api/user/userdata")
-}
+  },
+
+  currentlyReading: function() {
+    return axios.get("/api/shelf/current")
+  },
+
+  // log in route shows if you are logged in or not 
+  getUser: function () {
+    return axios.get("/api/user/userdata")
+  }
 
 };
 
