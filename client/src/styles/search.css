@@ -70,7 +70,7 @@ margin: 0;
 
 
 
-body {
+.searchPage {
     background-image: url("./assets/Books.png");
     background-repeat: no-repeat;
     background-size: cover;

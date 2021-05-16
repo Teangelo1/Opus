@@ -41,7 +41,7 @@ function Search() {
 
 
 
-    <div>
+    <div className="searchPage">
 
 <Header></Header>
 <Row className="opusmain">

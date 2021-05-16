@@ -31,9 +31,15 @@ import { propTypes } from "react-bootstrap/esm/Image";
          )).catch(err => console.log(err))
       }
         return (
-            <div>
-                <Header></Header>
+          
+          <div className="bookshelfPage">
+          <Header></Header>
+          <Row>
+  <div className="col-1 sidebar"></div>
+  <div className="col-10 transparent">
+
                 {/* Currently Reading Section */}
+                <form className="currentlyReadingForm">
                 <Row className="currentlyreadingheader">
                     <div className="col-12 subtitle">Currently Reading</div>
                 </Row>
@@ -43,10 +49,14 @@ import { propTypes } from "react-bootstrap/esm/Image";
                     <div className="col-2 aboutme">Name current page here</div>
                     <div className="col-4"></div>
                 </Row>
+                </form>
                 {/* Want to Read Section */}
+                <form className="currentlyReadingForm">
                 <Row>
                     <div className="col-12 subtitle">Want to Read</div>
                 </Row>
+
+                
                 <Row>
           {/* {!nyBooks.length ? 
           (
@@ -62,27 +72,30 @@ import { propTypes } from "react-bootstrap/esm/Image";
             </div> */}
           {/* } */}
                 </Row>
+               
                 {/* Suggestions for you... Section */}
                 <div className="row books">
                     {wantBooks.map((books) => (<BookDetail image={books.img} gID={`/review/${books.isbn}`} /> ))}
                     </div>
                 {/* Read Section */}
+                </form>
+                <form className="currentlyReadingForm">
                 <Row>
                     <div className="col-12 subtitle">Read</div>
-                    <div className="row book">
+                    <div className="row books">
                     {readBooks.map((books) => (<BookDetail image={books.img} /> ))}
                     </div>
                 </Row>
-                <Row>
-                    <div className="col-1"></div>
-                    <div className="col-2 book">Book Here</div>
-                    <div className="col-2 book">Book Here</div>
-                    <div className="col-2 book">Book Here</div>
-                    <div className="col-2 book">Book Here</div>
-                    <div className="col-2 book">Book Here</div>
-                    <div className="col-1"></div>
-                </Row>
-            </div>
+</form>
+            
+
+
+</div>
+  <div className="col-1 sidebar"></div>
+
+
+          </Row>
+</div>
         )
 }
 export default Bookshelf

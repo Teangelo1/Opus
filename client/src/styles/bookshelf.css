@@ -7,7 +7,7 @@ text-align: center;
 .subtitle {
     color: black;
 
-    font-size: 1.7vw;
+    font-size: 2.5vw;
     font-weight: 500;
 text-align: center;
 }
@@ -44,4 +44,29 @@ text-align: center;
 
     height: 2cm;
 
+}
+
+
+
+
+
+.currentlyReadingForm {
+    background-color: rgba(222, 173, 133, .8);
+}
+
+.currentlyReadingForm:hover {
+
+    background-color: rgba(222, 173, 133, .85);
+}
+
+.sidebar {
+    background-image: url("./assets/Books.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.transparent {
+
+    background-color: rgba(243, 222, 241, 0.1);
 }
