@@ -23,7 +23,7 @@ function App() {
           <Route exact path="/search" component={Search} />
           <Route exact path="/details/:id" component={BookDetails} />
           <Route exact path="/account" component={UserDetails} />
-          <Route exact path="/review" component={UserReviews} />
+          <Route exact path="/review/:userId" component={UserReviews} />
         </UserProvider>
       </Switch>
 

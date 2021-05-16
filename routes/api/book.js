@@ -27,7 +27,7 @@ router.route("/shelf/current")
   .get(opusController.shelfCurrentRead)
 
 // /api/books/shelf/user-- this is getting the users entire shelf 
-router.route("/shelf/user")
+router.route("/shelf/user/:userId")
   .get(opusController.userShelf)
   .post(opusController.updateSaved)
 

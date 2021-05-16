@@ -79,7 +79,7 @@ module.exports = {
   userShelf: function (req, res) {
     db.UsersBooks
       .findAll({ 
-        userId: 1,
+       where:{ userId: req.params.userId },
         include: db.Book 
       })
       .then((ub) => {
@@ -91,7 +91,7 @@ module.exports = {
     db.UsersBooks
     .findOne({
       where:{
-      userId: 1,
+      userId: req.params,
       bookId: 3
     }
   }).then((book) => {

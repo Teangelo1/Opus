@@ -68,8 +68,8 @@ let API = {
   },
 
   // returns a users complete shelf 
-  completeShelf: function (){
-    return axios.get("/api/books/shelf/user")
+  completeShelf: function (userId){
+    return axios.get("/api/books/shelf/user/" + userId)
   },
 
   updateSaved: function(bookReview) {
