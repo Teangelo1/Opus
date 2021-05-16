@@ -7,10 +7,7 @@ import Header from "../components/Navbar/navbar";
 import API from '../utils/API'
 import { propTypes } from "react-bootstrap/esm/Image";
 
-  function Bookshelf() {
-     
- 
-    
+ function Bookshelf() {
     const [nyBooks, setNyBooks] = useState([])
     const [readBooks, setReadBooks] = useState([])
     const [wantBooks, setWantBooks] = useState([])
@@ -23,7 +20,7 @@ import { propTypes } from "react-bootstrap/esm/Image";
         wantToReadBooks()
         currentlyReading()
       }, [])
-    
+
       function bookShelfData() {
         API.bookShelfData().then(data => { console.log(data); return data }).then(res => setNyBooks(
          res.data
@@ -43,6 +40,7 @@ import { propTypes } from "react-bootstrap/esm/Image";
          )).catch(err => console.log(err))
         
       }
+<<<<<<< HEAD
 
       function currentlyReading() {
         API.currentlyReading().then(data => { console.log(data); return data }).then(res => setCurrentBooks(
@@ -55,13 +53,11 @@ import { propTypes } from "react-bootstrap/esm/Image";
     
     
     
+=======
+>>>>>>> b63e0944fa7bdc926c363ac74447d863a2903dc1
      
         return (
             <div>
-
-                
-
-
                 <Header></Header>
 
                 {/* Currently Reading Section */}

@@ -56,10 +56,15 @@ let API = {
   return axios.get("/api/books/shelf/want")
   
 },
+<<<<<<< HEAD
 
  currentlyReading: function() {
   return axios.get("/api/books/shelf/currentlyreading")
   
+=======
+getUser: function() {
+  return axios.get("/api/user/userdata")
+>>>>>>> b63e0944fa7bdc926c363ac74447d863a2903dc1
 }
 
 };

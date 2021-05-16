@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
 
   User.associate = function (models) {
-    User.belongsToMany(models.Book, { through: 'UsersBooks', foreignKey: 'id', as: 'userId' })
+    User.belongsToMany(models.Book, { through: 'UsersBooks', foreignKey: 'userId', as: 'userId' })
   };
 
   User.prototype.validPassword = function (password) {
@@ -33,6 +33,5 @@ module.exports = (sequelize, DataTypes) => {
 
   return User;
 };
-
 
 

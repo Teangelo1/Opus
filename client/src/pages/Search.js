@@ -73,7 +73,7 @@ function Search() {
                   onClick={handleFormSubmit}
                  >
                   <span className=""></span> Find the Book for you
-                </button>
+</button>
               </div>
               </div>
             </div>
@@ -112,7 +112,7 @@ function Search() {
                   title={book.title}
                   image={book.book_image}
                   key={book.id}
-
+                  gID={`/details/${book.isbns[0].isbn13}`}
                 />
               ))}
 
