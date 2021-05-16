@@ -59,3 +59,26 @@ margin: 0;
     padding: 0cm;
 
 }
+
+
+body {
+    background-image: url("./assets/Books.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+.opusbackground {
+    background-color: rgba(222, 173, 133, .7);
+    margin-bottom: 1cm;
+    padding-top: .4cm;
+    border-radius: 10pt;
+}
+
+.opusbackground:hover {
+    background-color: rgba(222, 173, 133, .8);
+    margin-bottom: 1cm;
+    padding-top: .4cm;
+    border-radius: 10pt;
+}
