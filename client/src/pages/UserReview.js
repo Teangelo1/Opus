@@ -24,35 +24,65 @@ function UserReview() {
             }).catch(err => console.log(err));
     };
 
-    function ratingChanged1() {
+    function ratingChanged1(e, book) {
+        e.preventDefault()
         const btn = document.getElementById("star1")
         const label = document.getElementById("starRating")
         label.append(btn.value)
         setStarReview(btn.value)
+        API.updateStar({
+            userId: book.userId,
+            bookId: book.bookId,
+            rating: btn.value 
+        })
     }
-    function ratingChanged2() {
+    function ratingChanged2(e, book) {
+        e.preventDefault()
         const btn = document.getElementById("star2")
         const label = document.getElementById("starRating")
         label.append(btn.value)
         setStarReview(btn.value)
+        API.updateStar({
+            userId: book.userId,
+            bookId: book.bookId,
+            rating: btn.value 
+        })
     }
-    function ratingChanged3() {
+    function ratingChanged3(e, book) {
+        e.preventDefault()
         const btn = document.getElementById("star3")
         const label = document.getElementById("starRating")
         label.append(btn.value)
         setStarReview(btn.value)
+        API.updateStar({
+            userId: book.userId,
+            bookId: book.bookId,
+            rating: btn.value 
+        })
     }
-    function ratingChanged4() {
+    function ratingChanged4(e, book) {
+        e.preventDefault()
         const btn = document.getElementById("star4")
         const label = document.getElementById("starRating")
         label.append(btn.value)
         setStarReview(btn.value)
+        API.updateStar({
+            userId: book.userId,
+            bookId: book.bookId,
+            rating: btn.value 
+        })
     }
-    function ratingChanged5() {
+    function ratingChanged5(e, book) {
+        e.preventDefault()
         const btn = document.getElementById("star5")
         const label = document.getElementById("starRating")
         label.append(btn.value)
         setStarReview(btn.value)
+        API.updateStar({
+            userId: book.userId,
+            bookId: book.bookId,
+            rating: btn.value 
+        })
     }
 
     function handleInputChange(event) {
@@ -65,12 +95,10 @@ function UserReview() {
         console.log(book.bookId)
         console.log(book.userId)
         console.log(bookReview)
-        console.log(starReview)
         API.updateSaved({
             userId: book.userId,
             bookId: book.bookId,
             review: bookReview,
-            rating: starReview
         })
 
     };
@@ -89,11 +117,11 @@ function UserReview() {
                     onChange={handleInputChange}
                     onClick={(e) => {handleReviewSubmit(e, book)}}
                     stars={book.rating}
-                    star1={() => ratingChanged1()}
-                    star2={(e) => ratingChanged2(e)}
-                    star3={(e) => ratingChanged3(e)}
-                    star4={(e) => ratingChanged4(e)}
-                    star5={(e) => ratingChanged5(e)}
+                    star1={(e) => ratingChanged1(e, book)}
+                    star2={(e) => ratingChanged2(e, book)}
+                    star3={(e) => ratingChanged3(e, book)}
+                    star4={(e) => ratingChanged4(e, book)}
+                    star5={(e) => ratingChanged5(e, book)}
                 />
             )}
         

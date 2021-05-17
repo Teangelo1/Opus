@@ -38,7 +38,7 @@ function Review(props) {
                                 ⭐️ Rating 
                              </button>
                             <div className="dropdown-menu" aria-labelledby="starRating">                                
-                                <li><button className="dropdown-item" id="star1" type="button" value="1" onClick={props.star}>1</button></li>
+                                <li><button className="dropdown-item" id="star1" type="button" value="1" onClick={props.star1}>1</button></li>
                                 <li><button className="dropdown-item" id="star2" type="button" value="2" onClick={props.star2}>2</button></li>
                                 <li><button className="dropdown-item" id="star3" type="button" value="3" onClick={props.star3}>3</button></li>
                                 <li><button className="dropdown-item" id="star4" type="button" value="4" onClick={props.star4}>4</button></li>

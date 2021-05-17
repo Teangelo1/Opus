@@ -34,9 +34,9 @@ let API = {
   returnSaved: function (isbn) {
     return axios.get("/api/books/" + isbn);
   },
-  
+
   // return one book in db by book id -- are we using?
-  returnSavedDB: function (){
+  returnSavedDB: function () {
     return axios.get("/api/books/load")
   },
 
@@ -59,18 +59,23 @@ let API = {
     return axios.get("/api/books/shelf/want/" + userId)
   },
 
-  currentlyReading: function(userId) {
+  currentlyReading: function (userId) {
     return axios.get("/api/books/shelf/current/" + userId)
   },
 
   // returns a users complete shelf 
-  completeShelf: function (userId){
+  completeShelf: function (userId) {
     return axios.get("/api/books/shelf/user/" + userId)
   },
 
   // update a review for a user 
-  updateSaved: function(bookReview) {
+  updateSaved: function (bookReview) {
     return axios.post("/api/books/shelf/update", bookReview)
+  },
+
+  // // update a review for a user 
+  updateStar: function (starRating) {
+    return axios.post("/api/books/shelf/updatestar", starRating)
   },
 
   // log in route shows if you are logged in or not -- for testing mainly? may need
