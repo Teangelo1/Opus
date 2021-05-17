@@ -5,6 +5,7 @@ import API from '../utils/API';
 import Input from "../components/Input";
 import Header from "../components/Navbar/navbar";
 import { List, ListItem } from "../components/List";
+import { Row } from "react-bootstrap";
 
 function Search() {
   const [books, setBooks] = useState([])
@@ -40,14 +41,19 @@ function Search() {
 
 
 
-    <div>
+    <div className="searchPage">
 
 <Header></Header>
+<Row className="opusmain">
+<div className="col-2"></div>
+<div className="col-8 opusheader">
+
+<form>
       <div className="container search-content">
         <div className="row">
-          <div className="col-12">
+          <div className="col-12 opusbackground">
             <div>
-              <h1><strong>Opus</strong></h1>
+              <h1 className="opusTitle">Opus</h1>
             </div>
             <div className="card-body">
 
@@ -77,6 +83,10 @@ function Search() {
               </div>
               </div>
             </div>
+           
+
+
+
 
           {/* {!books.length ? (<p>""</p>) : <List> */}
           {books.map((book, index) =>(
@@ -96,6 +106,11 @@ function Search() {
           </div>
         </div>
       </div>
+      </form>
+</div>
+      <div className="col-2"></div>
+</Row>
+
 
       <div className="container">
         <div className="jumbotron">

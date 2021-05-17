@@ -39,6 +39,7 @@ module.exports = {
       })
       .catch((err) => res.status(422).json(err));
   },
+  
   shelfWant: function (req, res) {
     db.UsersBooks
       .findAll({ 
@@ -121,4 +122,5 @@ module.exports = {
   //       .then(dbModel => res.json(dbModel))
   //       .catch(err => res.status(422).json(err));
   //   }
+
 };

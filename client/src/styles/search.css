@@ -28,9 +28,22 @@ h1 {
 }
 
 .jumbotron {
-    
+    background-color: rgba(222, 173, 133, .8);
+    border-radius: 10pt;
 }
 
+.jumbotron:hover {
+    background-color: rgba(222, 173, 133, .85);
+    border-radius: 10pt;
+}
+
+.trendingbooks {
+    text-align: center;
+    padding: 0cm;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 10pt;
+
+}
 
 .searchrow {
 align-items: center;
@@ -54,8 +67,33 @@ margin: 0;
     padding-bottom: .62cm;
 }
 
-.trendingbooks {
-    text-align: center;
-    padding: 0cm;
+
+
+
+.searchPage {
+    background-image: url("./assets/Books.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+.opusbackground {
+    background-color: rgba(222, 173, 133, .8);
+    margin-bottom: 1cm;
+    padding-top: .4cm;
+    border-radius: 10pt;
+}
+
+.opusbackground:hover {
+    background-color: rgba(222, 173, 133, .85);
+    margin-bottom: 1cm;
+    padding-top: .4cm;
+    border-radius: 10pt;
+}
+
+.opusTitle {
+    font-size: 56pt;
+    color: black;
 
 }
