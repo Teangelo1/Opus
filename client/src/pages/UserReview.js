@@ -24,11 +24,35 @@ function UserReview() {
             }).catch(err => console.log(err));
     };
 
-    function ratingChanged() {
-        const btn = document.getElementById('star1')
-        console.log("changed " + btn.value)
+    function ratingChanged1() {
+        const btn = document.getElementById("star1")
+        const label = document.getElementById("starRating")
+        label.append(btn.value)
         setStarReview(btn.value)
-        console.log(starReview)
+    }
+    function ratingChanged2() {
+        const btn = document.getElementById("star2")
+        const label = document.getElementById("starRating")
+        label.append(btn.value)
+        setStarReview(btn.value)
+    }
+    function ratingChanged3() {
+        const btn = document.getElementById("star3")
+        const label = document.getElementById("starRating")
+        label.append(btn.value)
+        setStarReview(btn.value)
+    }
+    function ratingChanged4() {
+        const btn = document.getElementById("star4")
+        const label = document.getElementById("starRating")
+        label.append(btn.value)
+        setStarReview(btn.value)
+    }
+    function ratingChanged5() {
+        const btn = document.getElementById("star5")
+        const label = document.getElementById("starRating")
+        label.append(btn.value)
+        setStarReview(btn.value)
     }
 
     function handleInputChange(event) {
@@ -65,11 +89,11 @@ function UserReview() {
                     onChange={handleInputChange}
                     onClick={(e) => {handleReviewSubmit(e, book)}}
                     stars={book.rating}
-                    star={() => ratingChanged()}
-                    star2={(e) => ratingChanged(e)}
-                    star3={(e) => ratingChanged(e)}
-                    star4={(e) => ratingChanged(e)}
-                    star5={(e) => ratingChanged(e)}
+                    star1={() => ratingChanged1()}
+                    star2={(e) => ratingChanged2(e)}
+                    star3={(e) => ratingChanged3(e)}
+                    star4={(e) => ratingChanged4(e)}
+                    star5={(e) => ratingChanged5(e)}
                 />
             )}
         

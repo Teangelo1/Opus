@@ -35,7 +35,7 @@ function Review(props) {
                     <Col size="4">
                         <div className="dropdown">
                             <button className="btn btn-secondary dropdown-toggle" type="button" id="starRating" data-bs-toggle="dropdown" aria-expanded="false">
-                                ⭐️ Rating
+                                ⭐️ Rating 
                              </button>
                             <div className="dropdown-menu" aria-labelledby="starRating">                                
                                 <li><button className="dropdown-item" id="star1" type="button" value="1" onClick={props.star}>1</button></li>
