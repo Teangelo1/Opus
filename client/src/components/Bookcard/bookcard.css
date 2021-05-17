@@ -1,0 +1,31 @@
+.cardwhole {
+    margin: 1cm;
+    background-color: rgba(196, 208, 197, 0.9);
+
+    border-radius: 10pt;
+}
+
+.cardwhole:hover {
+    margin: 1cm;
+    background-color: rgba(196, 208, 197, 0.98);
+    border-radius: 10pt;
+}
+
+.cardwhole:hover {
+    margin: 1cm;
+    background-color: rgba(196, 208, 197, 0.95);
+}
+
+.textbackground {
+    background-color: rgba(255, 255, 255, .5);
+    padding: 1cm;
+    border-radius: 10pt;
+
+
+
+}
+
+
+.columnleft {
+    text-align: center;
+}

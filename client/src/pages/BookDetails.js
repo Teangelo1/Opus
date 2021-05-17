@@ -4,6 +4,7 @@ import API from "../utils/API";
 import { Container } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import Header from "../components/Navbar/navbar";
+import "../styles/bookdetails.css"
 
 function BookDetails() {
  const [books, setBooks] = useState([])
@@ -77,9 +78,10 @@ function BookDetails() {
   }
 
   return (
-
+    <div  className="mainpage">
 <div>
     <Header></Header>
+
     <Container>
     {books.length ? (
       
@@ -87,6 +89,7 @@ function BookDetails() {
               {books.map((book, index) => (
                 
                 <BookCard
+                className="bookcard"
                   title={book.volumeInfo.title}
                   authors={book.volumeInfo.authors}
                   description={book.volumeInfo.description}
@@ -108,6 +111,7 @@ function BookDetails() {
             </h2>)}
 
     </Container>
+    </div>
     </div>
   );
 }
