@@ -30,8 +30,12 @@ router.route("/shelf/current/:userId")
 router.route("/shelf/user/:userId")
   .get(opusController.userShelf)
 
-// /api/shelf/update
+// /api/books/shelf/update
 router.route("/shelf/update")
   .post(opusController.updateSaved)
+
+//   /api/books/shelf/updatestar
+router.route("/shelf/updatestar")
+  .post(opusController.updateStar)
 
 module.exports = router;
