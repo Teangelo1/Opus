@@ -6,11 +6,8 @@ module.exports = (sequelize, DataTypes) => {
     pages: DataTypes.INTEGER,
     isbn: DataTypes.STRING,
     img: DataTypes.STRING,
-    shelf: DataTypes.STRING,
   }, {});
   Book.associate = function(models) { 
     Book.belongsToMany(models.User, { through: 'UsersBooks', foreignKey: 'bookId', as: 'bookId' }) };
-
-    
     return Book;
 };

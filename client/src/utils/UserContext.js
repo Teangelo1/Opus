@@ -6,7 +6,7 @@ const { Provider } = userContext;
 const reducer = (state, action) => { //set user and clear user 
   switch (action.type) {
   case "Login":
-    return { user: action.user };
+    return {...state, data: action.payload}
   case "Logout":
     return { user: {} }; 
   default:

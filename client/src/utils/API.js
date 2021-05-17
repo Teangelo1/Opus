@@ -10,7 +10,7 @@ let API = {
     return axios.get(BASEURL + query);
   },
 
-  // Google Books API Indvidual Books Details
+  // Google Books API Indvidual Books Details -- rename this to not test route
   testRoute: function (id) {
     return axios.get(ISBNURL + id);
   },
@@ -25,14 +25,19 @@ let API = {
     return axios.post("/api/books", bookData);
   },
 
-  // Get all Books in the books database 
+  // Get all Books in the books database -- are we using? 
   bookShelfData: function () {
     return axios.get("/api/books")
   },
 
-  // Return one book in Db
+  // Return one book in Db -- are we using? 
   returnSaved: function (isbn) {
     return axios.get("/api/books/" + isbn);
+  },
+  
+  // return one book in db by book id -- are we using?
+  returnSavedDB: function (){
+    return axios.get("/api/books/load")
   },
 
   // new user login route
@@ -45,21 +50,33 @@ let API = {
     return axios.post("/api/user/login/", user)
   },
 
+  // next three functions get books for the book shelf 
+  getReadBooks: function (userId) {
+    return axios.get("/api/books/shelf/read/" + userId)
+  },
 
-  // function for getting read books
- getReadBooks: function() {
-   return axios.get("/api/books/shelf/read")
-   
- },
+  wantToReadBooks: function (userId) {
+    return axios.get("/api/books/shelf/want/" + userId)
+  },
 
- wantToReadBooks: function() {
-  return axios.get("/api/books/shelf/want")
-  
-},
-getUser: function() {
-  return axios.get("/api/user/userdata")
-}
+  currentlyReading: function(userId) {
+    return axios.get("/api/books/shelf/current/" + userId)
+  },
 
+  // returns a users complete shelf 
+  completeShelf: function (userId){
+    return axios.get("/api/books/shelf/user/" + userId)
+  },
+
+  // update a review for a user 
+  updateSaved: function(bookReview) {
+    return axios.post("/api/books/shelf/update", bookReview)
+  },
+
+  // log in route shows if you are logged in or not -- for testing mainly? may need
+  getUser: function () {
+    return axios.get("/api/user/userdata")
+  }
 };
 
 

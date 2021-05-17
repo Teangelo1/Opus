@@ -15,11 +15,14 @@ function UserLogin() {
             email: emailRef.current.value,
             password: passwordRef.current.value
         }
+
         API.login(user).then((res) => {
-            console.log(res)
+            console.log(res.data)
+            console.log(user)
+           
             dispatch({
                 type: "Login",
-                user: res.data
+                user: res.data.id
             });
         }
         )
