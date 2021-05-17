@@ -84,32 +84,32 @@ module.exports = {
       })
     .catch((err) => res.status(422).json(err));
   },
-  updateSaved: function (req, res) {
-    db.UsersBooks
-    .findOne({
-      where:{
-      userId: req.body.userId,
-      bookId: req.body.bookId
-    }
-  }).then((book) => {
-    console.log(book.dataValues)
-    db.UsersBooks.upsert({
-      bookId: req.body.bookId,
-      userId: req.body.userId,
-      review: req.body.review,
-      rating: req.body.rating,
-    },
-    )
-      .then((ub) => {
-        res.json(ub);
-      })
-      .catch((err) => {
-        console.log(err);
-        res.status(422).json(err);
-      });
-  })
-  .catch((err) => res.status(422).json(err));
-  },
+  // updateSaved: function (req, res) {
+  //   db.UsersBooks
+  //   .findOne({
+  //     where:{
+  //     userId: req.body.userId,
+  //     bookId: req.body.bookId
+  //   }
+  // }).then((book) => {
+  //   console.log(book.dataValues)
+  //   db.UsersBooks.upsert({
+  //     bookId: req.body.bookId,
+  //     userId: req.body.userId,
+  //     review: req.body.review,
+  //     rating: req.body.rating,
+  //   },
+  //   )
+  //     .then((ub) => {
+  //       res.json(ub);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //       res.status(422).json(err);
+  //     });
+  // })
+  // .catch((err) => res.status(422).json(err));
+  // },
   updateSaved: function (req, res) {
     db.UsersBooks
     .findOne({
