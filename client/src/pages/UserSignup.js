@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import Input from "../components/Input";
 import API from "../utils/API";
+import { Link } from "react-router-dom"; 
+import { createBrowserHistory } from "history"; 
 
 function UserSignup() {
     const [user, setUserData] = useState("")
+    
+    const history = createBrowserHistory({forceRefresh:true}); 
 
     function handleInputChange(event) {
         const { name, value } = event.target;
@@ -17,7 +21,7 @@ function UserSignup() {
             last_name: user.last_name,
             email: user.email,
             password: user.password,
-        }).then(console.log(user))
+        }).then(history.push("/"))
  
     };
 
@@ -59,7 +63,7 @@ function UserSignup() {
                 >
                     Submit New User
             </button>
-                <p>Returning User? Login</p>
+                <Link to="/">Returning User? Login</Link>
             </form>
 
         </div>

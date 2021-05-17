@@ -1,16 +1,25 @@
 import React, { useRef } from "react";
 import Input from "../components/Input";
-import { useUserContext, UserProvider } from "../utils/UserContext"; 
+import { useUserContext } from "../utils/UserContext"; 
 import API from "../utils/API";
+import { Link } from "react-router-dom"; 
+// import { createBrowserHistory } from "history"; 
+import { Container } from "react-bootstrap";
+
 
 function UserLogin() {
     const [state, dispatch] = useUserContext()
     const emailRef = useRef()
     const passwordRef = useRef()
 
+    // const history = createBrowserHistory({forceRefresh: true}); 
+
     function handleLogin(event) {
         event.preventDefault();
         console.log(emailRef.current.value + " " + passwordRef.current.value)
+        let btn = document.getElementById("signin")
+        let search = document.getElementById("search")
+
         const user = {
             email: emailRef.current.value,
             password: passwordRef.current.value
@@ -24,12 +33,16 @@ function UserLogin() {
                 type: "Login",
                 user: res.data.id
             });
-        }
+        })
+        .then(
+            btn.append("Hooray! You're Logged in!"),
+            search.append("Get Reading! 📚🐛 ")
         )
     }
 
     return (
         <div>
+        <Container>
             <form onSubmit={handleLogin}>
                 <Input
                     ref={emailRef}
@@ -46,10 +59,16 @@ function UserLogin() {
                 <button
                     type="submit"
                     className="btn"
+                    id="signin"
                 >
-                    Login
+                    Sign In 📚🐛 
                 </button>
+                <div>
+                <Link to="/newuser">New User? Sign Up</Link>
+                <Link to="/search" id="search"></Link>
+                </div>
             </form>
+        </Container>
 
         </div>
     )
