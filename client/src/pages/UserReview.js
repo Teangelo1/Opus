@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import API from "../utils/API";
 import { Container } from "react-bootstrap";
 import Review from "../components/Review";
-import StarsRating from 'stars-rating';
 import { useParams } from "react-router-dom";
+import Stars from 'simple-rating-stars';
 
 function UserReview() {
     const [books, setBooks] = useState([])
@@ -63,12 +63,17 @@ function UserReview() {
                     onClick={(e) => {handleReviewSubmit(e, book)}}
                     //star={<StarsRating count={5} onChange={ratingChanged} size={24} color2={'#ffd700'} />}
                 />
+                
             )}
-            <StarsRating
-                count={5}
-                onChange={ratingChanged}
-                size={24}
-                color2={'#ffd700'} />         
+
+        <Stars
+        stars={3}
+        outOf={5}
+        full={'#d00'}
+    empty={'#E1F1FF'}
+    stroke={'#369'}
+      />
+        
         </Container>
     );
 }
