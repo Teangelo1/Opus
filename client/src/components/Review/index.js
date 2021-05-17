@@ -1,5 +1,6 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
+import Stars from 'simple-rating-stars';
 
 function Review(props) {
     return (
@@ -17,7 +18,13 @@ function Review(props) {
                         <img id="bookImg" src={props.image} className="img-fluid" alt="bookimg" />
                     </Col>
                     <Col size="8">
-                    <div>{props.star}</div>
+                        <Stars
+                                stars={props.stars}
+                                outOf={5}
+                                full={'#d00'}
+                                empty={'#E1F1FF'}
+                                stroke={'#369'}
+                            />
                         <div className="form-group">
                             <label for="exampleFormControlTextarea1">What did you think of the book?</label>
                             <textarea className="form-control" id="exampleFormControlTextarea1" onChange={props.onChange} rows="3" placeholder={props.placeholder}></textarea>

@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   const UsersBooks = sequelize.define('UsersBooks', {
     userId: DataTypes.INTEGER,
     bookId: DataTypes.INTEGER,
-    rating: DataTypes.INTEGER,
+    rating: { type: DataTypes.INTEGER, defaultValue: 0 },
     review: DataTypes.STRING,
     shelf: DataTypes.STRING
   }, {});
