@@ -1,19 +1,17 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
-
+import "./bookcard.css"
 function BookCard(props) {
   return (
     <div>
-      <div className="card" id={props.id}>
+      <div className="card cardwhole" id={props.id}>
         <div className="card-body">
           <Row>
-            <Col size="12">
-              <h2 id="bookTitle">{props.title}</h2>
-              <h3 id="bookAuth">{props.authors}</h3>
-            </Col>
-          </Row>
-          <Row>
-            <Col size="4">
+            <Col size="6">
+              <h2 id="bookTitle columnleft">{props.title}</h2>
+              <h3 id="bookAuth columnleft">{props.authors}</h3>
+
+              <div className="columnleft">
               <img id="bookImg" src={props.image} className="img-fluid" alt="bookimg" />
               <p>Average Rating: {props.rating} /5</p>
               <p>{props.pages} pages</p>
@@ -28,13 +26,14 @@ function BookCard(props) {
                     <li><button className="dropdown-item" type="button" value="currently reading" onClick={props.current}>Currently Reading</button></li>
                   </div>
                 </div>
+                </div>
                 {/* <button type="button" className="btn btn-info" value="read" onClick={props.read}>Read</button>
                 <button type="button" className="btn btn-info" value="want to read" onClick={props.want}>Want to read</button>
                 <button type="button" className="btn btn-info" value="currently reading" onClick={props.current}>Currently Reading</button> */}
               </div>
             </Col>
-            <Col size="8">
-              <p>{props.description}</p>
+            <Col size="6">
+              <p className="textbackground">{props.description}</p>
             </Col>
           </Row>
         </div>
