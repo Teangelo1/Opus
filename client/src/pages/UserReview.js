@@ -25,8 +25,9 @@ function UserReview() {
     };
 
     function ratingChanged() {
-        console.log("changed")
-        setStarReview(starReview)
+        const btn = document.getElementById('star1')
+        console.log("changed " + btn.value)
+        setStarReview(btn.value)
         console.log(starReview)
     }
 
@@ -40,10 +41,12 @@ function UserReview() {
         console.log(book.bookId)
         console.log(book.userId)
         console.log(bookReview)
+        console.log(starReview)
         API.updateSaved({
             userId: book.userId,
             bookId: book.bookId,
-            review: bookReview
+            review: bookReview,
+            rating: starReview
         })
 
     };
@@ -62,8 +65,12 @@ function UserReview() {
                     onChange={handleInputChange}
                     onClick={(e) => {handleReviewSubmit(e, book)}}
                     stars={book.rating}
+                    star={() => ratingChanged()}
+                    star2={(e) => ratingChanged(e)}
+                    star3={(e) => ratingChanged(e)}
+                    star4={(e) => ratingChanged(e)}
+                    star5={(e) => ratingChanged(e)}
                 />
-                
             )}
         
         </Container>

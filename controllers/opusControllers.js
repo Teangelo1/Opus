@@ -97,6 +97,7 @@ module.exports = {
       bookId: req.body.bookId,
       userId: req.body.userId,
       review: req.body.review,
+      rating: req.body.rating,
     },
     )
       .then((ub) => {
