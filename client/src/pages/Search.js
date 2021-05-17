@@ -6,6 +6,7 @@ import Input from "../components/Input";
 import Header from "../components/Navbar/navbar";
 import { List, ListItem } from "../components/List";
 import { Row } from "react-bootstrap";
+import Footer from "../components/Footer";
 
 function Search() {
   const [books, setBooks] = useState([])
@@ -18,9 +19,9 @@ function Search() {
 
   function trendingBooks() {
     API.trendingBooks().then(data => { console.log(data); return data }).then(res => setNyBooks(
-     res.data.results.books
+      res.data.results.books
     )).catch(err => console.log(err))
-  } 
+  }
 
   function handleInputChange(event) {
     const { value } = event.target;
@@ -29,12 +30,14 @@ function Search() {
 
   function handleFormSubmit(event) {
     event.preventDefault();
-      API.searchBooks(bookSearch)
-        .then(res => { let filtered = res.data.items.filter(book => book.volumeInfo.industryIdentifiers != undefined) // filtering out books for now that does not have a isbn number
-          setBooks(filtered)})
-        .catch(err => console.log(err));
-      
- };
+    API.searchBooks(bookSearch)
+      .then(res => {
+        let filtered = res.data.items.filter(book => book.volumeInfo.industryIdentifiers != undefined) // filtering out books for now that does not have a isbn number
+        setBooks(filtered)
+      })
+      .catch(err => console.log(err));
+
+  };
 
   return (
 
@@ -43,73 +46,72 @@ function Search() {
 
     <div className="searchPage">
 
-<Header></Header>
-<Row className="opusmain">
-<div className="col-2"></div>
-<div className="col-8 opusheader">
+      <Header></Header>
+      <Row className="opusmain">
+        <div className="col-2"></div>
+        <div className="col-8 opusheader">
 
-<form>
-      <div className="container search-content">
-        <div className="row">
-          <div className="col-12 opusbackground">
-            <div>
-              <h1 className="opusTitle">Opus</h1>
-            </div>
-            <div className="card-body">
-
-
-<div className="row searchrow">
-              <Input
-                name="bookSearch"
-                value={bookSearch}
-                onChange={handleInputChange}
-                type="text"
-                placeholder='“A room without books is like a body without a soul.”'
-              />
-
-          
+          <form>
+            <div className="container search-content">
+              <div className="row">
+                <div className="col-12 opusbackground">
+                  <div>
+                    <h1 className="opusTitle">Opus</h1>
+                  </div>
+                  <div className="card-body">
 
 
-          
-              <div className="col-3 btncol">
-                <button
-                  type="submit"
-                  className="btn btn-dark btn-md"
-                  id="search-btn"
-                  onClick={handleFormSubmit}
-                 >
-                  <span className=""></span> Find the Book for you
-</button>
+                    <div className="row searchrow">
+                      <Input
+                        name="bookSearch"
+                        value={bookSearch}
+                        onChange={handleInputChange}
+                        type="text"
+                        placeholder='“A room without books is like a body without a soul.”'
+                      />
+
+
+
+
+
+                      <div className="col-3 btncol">
+                        <button
+                          type="submit"
+                          className="btn btn-dark btn-md"
+                          id="search-btn"
+                          onClick={handleFormSubmit}
+                        >
+                          <span className=""></span> Find the Book for you</button>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+
+                  {/* {!books.length ? (<p>""</p>) : <List> */}
+                  {books.map((book, index) => (
+                    // console.log(book.volumeInfo.industryIdentifiers)
+                    <ListItem key={book.id}>
+                      <BookDetail
+                        title={book.volumeInfo.title}
+                        image={book.volumeInfo.imageLinks.smallThumbnail}
+                        li key={book.id}
+                        id={index}
+                        gID={`/details/${book.volumeInfo.industryIdentifiers[0].identifier}`}
+                      />
+                    </ListItem>
+                  ))}
+                  {/* </List> */}
+                  {/* } */}
+                </div>
               </div>
-              </div>
             </div>
-           
-
-
-
-
-          {/* {!books.length ? (<p>""</p>) : <List> */}
-          {books.map((book, index) =>(
-            // console.log(book.volumeInfo.industryIdentifiers)
-            <ListItem key={book.id}>
-            <BookDetail
-            title={book.volumeInfo.title}
-            image={book.volumeInfo.imageLinks.smallThumbnail}
-            li key={book.id}
-            id={index}
-            gID={`/details/${book.volumeInfo.industryIdentifiers[0].identifier}`}
-            />
-            </ListItem>
-          ))}
-          {/* </List> */}
-          {/* } */}
-          </div>
+          </form>
         </div>
-      </div>
-      </form>
-</div>
-      <div className="col-2"></div>
-</Row>
+        <div className="col-2"></div>
+      </Row>
 
 
       <div className="container">
@@ -139,6 +141,7 @@ function Search() {
 
 
       </div>
+      <Footer />
     </div>
 
 

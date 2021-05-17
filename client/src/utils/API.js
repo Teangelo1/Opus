@@ -50,6 +50,11 @@ let API = {
     return axios.post("/api/user/login/", user)
   },
 
+  // logout 
+  logout: function(){
+    return axios.get("/api/user/logout")
+  },
+
   // next three functions get books for the book shelf 
   getReadBooks: function (userId) {
     return axios.get("/api/books/shelf/read/" + userId)

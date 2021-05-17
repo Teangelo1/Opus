@@ -3,7 +3,6 @@ import Input from "../components/Input";
 import { useUserContext } from "../utils/UserContext"; 
 import API from "../utils/API";
 import { Link } from "react-router-dom"; 
-// import { createBrowserHistory } from "history"; 
 import { Container } from "react-bootstrap";
 
 
@@ -11,8 +10,6 @@ function UserLogin() {
     const [state, dispatch] = useUserContext()
     const emailRef = useRef()
     const passwordRef = useRef()
-
-    // const history = createBrowserHistory({forceRefresh: true}); 
 
     function handleLogin(event) {
         event.preventDefault();
