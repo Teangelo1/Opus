@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { useHoverIntent } from 'react-use-hoverintent';
+// import { useHoverIntent } from 'react-use-hoverintent';
 // import BookCard from "../components/Bookcard";
 import API from "../utils/API";
 import { Container, Row } from "react-bootstrap";
-import { useParams } from "react-router-dom";
 import Header from "../components/Navbar/navbar";
 import BookDetail from "../components/BookDisplay";
-import "../styles/opusleague.css"
+import "../styles/opusleague.css";
+import Review from "../components/Review"; 
 
 
-function OpusLeague(props) {
-    const [books, setBooks] = useState([]);
+function OpusLeague() {
     const [user, setUser] = useState([]);
-    const [opusBook, setOpusData] = useState([]); 
+    const [opusBook, setOpusData] = useState([]);
     // const [isHovering, ref] = useHoverIntent({
     //     timeout: 100,
     //     sensitivity: 10,
@@ -20,30 +19,18 @@ function OpusLeague(props) {
     //   });
     // const opusLeague = [4, 5, 6];
 
-    let { id } = useParams(); // useParams will always reference the id in our url
-
     useEffect(() => {
-        loadBooks(id)
         getUser()
         opusBookData()
-    }, [id])
+    }, [])
 
     function getUser() {
         API.getUser().then(res => {
             setUser(res.data.id)
         })
     }
-
-    function loadBooks(id) {
-        API.testRoute(id)
-            .then(res => {
-                console.log(id)
-                setBooks(res.data.items)
-            }).catch(err => console.log(err));
-    };
-
     // when calling for book club books : API.opusLeague 
-    function opusBookData(){
+    function opusBookData() {
         API.opusLeague(1).then(res => {
             setOpusData(res.data)
             console.log(res.data)
@@ -69,39 +56,36 @@ function OpusLeague(props) {
         <div className="league">
             <div>
                 <Header></Header>
-                
+
                 <Container>
                     {/* {books.length ? ( */}
                     <div>
-                    <Row>
-                        
-                        <BookDetail image={"http://books.google.com/books/content?id=AIjCDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_ap"}  />
-                        <BookDetail image={"http://books.google.com/books/content?id=3s8DEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"} />
-                        <BookDetail image={"http://books.google.com/books/content?id=vH3LDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"} />
-                        
-                    </Row>
-                    </div>
-                        {/* <BookCard
-                    className="bookcard"
-                      title={book.volumeInfo.title}
-                      authors={book.volumeInfo.authors}
-                      description={book.volumeInfo.description}
-                      image={book.volumeInfo.imageLinks.thumbnail}
-                      id={book.volumeInfo.industryIdentifiers[4].identifier}
-                      key={book.volumeInfo.industryIdentifiers[0].identifier}
-                      rating={book.volumeInfo.averageRating}
-                      pages={book.volumeInfo.pageCount}
-                      genre={book.volumeInfo.categories}
-                      league={() => addToLeague(index)}
-                    /> */}
-                        {/* //   )} */}
+                        <Row>
 
-                    {/* </div> */}
-                    {/* //   : ( */}
-                    {/* <h2 id="noBook">
-                        📚 Search a book from our Search Page 📚
-                </h2> */}
-                    {/* )} */}
+                            <BookDetail gID={"/details/9781501160851"} image={"http://books.google.com/books/content?id=AIjCDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_ap"} />
+                            <button className="btn btn-light" value={1} onClick={(e) => opusBookData(e)}>💰In Da Club🕵️‍♂️</button>
+                            <BookDetail gID={"/details/9781501171345"} image={"http://books.google.com/books/content?id=3s8DEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"} />
+                            <button className="btn btn-light" value={2} onClick={(e) => opusBookData(e)}>🕵️‍♀️In Da Club📝</button>
+                            <BookDetail gID={"/details/9780765387585"} image={"http://books.google.com/books/content?id=vH3LDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"} />
+                            <button className="btn btn-light" value={3} onClick={(e) => opusBookData(e)}>✨In Da Club🥀</button>
+                              
+                        </Row>
+
+                    </div>
+
+                    <div id="reviews">
+
+                        {opusBook.map((book) =>
+                            <Review
+                                title={book.User.first_name} //firstname={book.User.first_name}
+                                // lastname={book.User.last_name}
+                                placeholder={book.review} //review={book.review}
+                                stars={book.rating}
+                                />
+                        )}
+
+
+                    </div>
 
                 </Container>
             </div>
