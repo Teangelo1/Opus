@@ -12,6 +12,7 @@ import "../styles/opusleague.css"
 function OpusLeague(props) {
     const [books, setBooks] = useState([]);
     const [user, setUser] = useState([]);
+    const [opusBook, setOpusData] = useState([]); 
     // const [isHovering, ref] = useHoverIntent({
     //     timeout: 100,
     //     sensitivity: 10,
@@ -24,6 +25,7 @@ function OpusLeague(props) {
     useEffect(() => {
         loadBooks(id)
         getUser()
+        opusBookData()
     }, [id])
 
     function getUser() {
@@ -40,21 +42,28 @@ function OpusLeague(props) {
             }).catch(err => console.log(err));
     };
 
-
-    function addToLeague(index) {
-        API.saveBooks({
-            book: {
-                title: books[index].volumeInfo.title,
-                author: books[index].volumeInfo.authors[0],
-                genre: books[index].volumeInfo.genre,
-                pages: books[index].volumeInfo.pageCount,
-                isbn: books[index].volumeInfo.industryIdentifiers[0].identifier,
-                img: books[index].volumeInfo.imageLinks.thumbnail,
-            },
-            bookId: books.id[4],
-            shelf: "Want to Read"
-        }).then(alert("You added " + books[index].volumeInfo.title + " to your Want to Read Shelf"))
+    // when calling for book club books : API.opusLeague 
+    function opusBookData(){
+        API.opusLeague(1).then(res => {
+            setOpusData(res.data)
+            console.log(res.data)
+        })
     }
+
+    // function addToLeague(index) {
+    //     API.saveBooks({
+    //         book: {
+    //             title: books[index].volumeInfo.title,
+    //             author: books[index].volumeInfo.authors[0],
+    //             genre: books[index].volumeInfo.genre,
+    //             pages: books[index].volumeInfo.pageCount,
+    //             isbn: books[index].volumeInfo.industryIdentifiers[0].identifier,
+    //             img: books[index].volumeInfo.imageLinks.thumbnail,
+    //         },
+    //         bookId: books.id[4],
+    //         shelf: "Want to Read"
+    //     }).then(alert("You added " + books[index].volumeInfo.title + " to your Want to Read Shelf"))
+    // }
 
     return (
         <div className="league">
