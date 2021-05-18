@@ -1,16 +1,44 @@
 import React, { useState, useEffect } from "react";
+import {
+  Carousel,
+  CarouselItem,
+  CarouselControl,
+  CarouselIndicators,
+  CarouselCaption
+} from 'reactstrap';
 import BookDetail from "../components/BookDisplay";
 import '../styles/search.css';
 import API from '../utils/API';
 import SearchInput from "../components/SearchIndex/searchindex";
-import Header from "../components/Navbar/navbar"; import { List, ListItem } from "../components/List";
+import Header from "../components/Navbar/navbar";
+import { List, ListItem } from "../components/List";
 import { Row } from "react-bootstrap";
 import Footer from "../components/Footer";
+
 
 function Search() {
   const [books, setBooks] = useState([])
   const [nyBooks, setNyBooks] = useState([])
   const [bookSearch, setBookSearch] = useState("")
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [animating, setAnimating] = useState(false);
+
+  const next = () => {
+    if (animating) return;
+    const nextIndex = activeIndex === books.length - 1 ? 0 : activeIndex + 1;
+    setActiveIndex(nextIndex);
+  }
+
+  const previous = () => {
+    if (animating) return;
+    const nextIndex = activeIndex === 0 ? books.length - 1 : activeIndex - 1;
+    setActiveIndex(nextIndex);
+  }
+
+  const goToIndex = (newIndex) => {
+    if (animating) return;
+    setActiveIndex(newIndex);
+  }
 
   useEffect(() => {
     trendingBooks()
@@ -31,12 +59,24 @@ function Search() {
     event.preventDefault();
     API.searchBooks(bookSearch)
       .then(res => {
-        let filtered = res.data.items.filter(book => book.volumeInfo.industryIdentifiers !== undefined) // filtering out books for now that does not have a isbn number
+        let filtered = res.data.books.filter(book => book.volumeInfo.industryIdentifiers !== undefined) // filtering out books for now that does not have a isbn number
         setBooks(filtered)
       })
       .catch(err => console.log(err));
   };
+  const slides = nyBooks.map((book) => {
+    return (
+      <CarouselItem
+        onExiting={() => setAnimating(true)}
+        onExited={() => setAnimating(false)}
+        key={book.id}
+      >
 
+        <img src={book.book_image} alt={book.altText} />
+        {/* <CarouselCaption captionText={book.caption} captionHeader={book.caption} /> */}
+      </CarouselItem>
+    );
+  });
   return (
     <div className="searchPage">
 
@@ -113,17 +153,21 @@ function Search() {
 
           {!nyBooks.length ? (
             <h2>No Trending Books available at this moment </h2>
-          ) :
-            <div className="trendingbooks">
-              {nyBooks.map((book) => (
-                <BookDetail
-                  title={book.title}
-                  image={book.book_image}
-                  key={book.id}
-                  gID={`/details/${book.isbns[0].isbn13}`}
-                />
-              ))}
+          ) : 
+          
+          <div className= "trendingbooks">
+          <Carousel
+            activeIndex={activeIndex}
+            next={next}
+            previous={previous}
+          >
+              <CarouselIndicators items={books} activeIndex={activeIndex} onClickHandler={goToIndex} />
+              {slides}
+              <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
+              <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
+            </Carousel>
             </div>
+
           }
 
         </div>
@@ -143,3 +187,13 @@ function Search() {
 
 export default Search;
 
+            // <div className="trendingbooks">
+            //   {nyBooks.map((book) => (
+            //     <BookDetail
+            //       title={book.title}
+            //       image={book.book_image}
+            //       key={book.id}
+            //       gID={`/details/${book.isbns[0].isbn13}`}
+            //     />
+            //   ))}
+            // </div>

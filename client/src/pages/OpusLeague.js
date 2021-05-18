@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 // import { useHoverIntent } from 'react-use-hoverintent';
-// import BookCard from "../components/Bookcard";
+
 import API from "../utils/API";
 import { Container, Row } from "react-bootstrap";
 import Header from "../components/Navbar/navbar";

@@ -5,30 +5,24 @@ import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import "../styles/userlogin.css";
-import welcome from "../styles/assets/opuswelcome.png"
-
-
+import welcome from "../styles/assets/opuswelcome.png";
 
 function UserLogin() {
     const [state, dispatch] = useUserContext()
     const emailRef = useRef()
     const passwordRef = useRef()
-
     function handleLogin(event) {
         event.preventDefault();
         console.log(emailRef.current.value + " " + passwordRef.current.value)
         let btn = document.getElementById("signin")
         let search = document.getElementById("search")
-
         const user = {
             email: emailRef.current.value,
             password: passwordRef.current.value
         }
-
         API.login(user).then((res) => {
             console.log(res.data)
             console.log(user)
-
             dispatch({
                 type: "Login",
                 user: res.data.id
@@ -39,13 +33,9 @@ function UserLogin() {
                 search.append("Get Reading! 📚🐛 ")
             )
     }
-
     return (
         <div className="row background">
             <Container>
-
-
-
                 <form className="mainform" onSubmit={handleLogin}>
                     <Row>
                         <Col className="col-2"></Col>
@@ -66,7 +56,6 @@ function UserLogin() {
                     />
                     {/* <form> thisform tag cannot exist it breaks the logic of the sign in */}
                     <Row>
-
                         <div className="col-2"></div>
                         <div className="col-8">
                             <button
@@ -82,14 +71,11 @@ function UserLogin() {
                             </div>
                         </div>
                         <div className="col-2"></div>
-
                     </Row>
                     {/* // </form> */}
                 </form>
             </Container>
-
         </div>
     )
 }
-
 export default UserLogin;
