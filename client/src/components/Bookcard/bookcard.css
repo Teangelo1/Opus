@@ -1,7 +1,6 @@
 .cardwhole {
     margin: 1cm;
     background-color: rgba(196, 208, 197, 0.9);
-
     border-radius: 10pt;
 }
 
@@ -29,3 +28,11 @@
     text-align: center;
 }
 
+
+.bookTitle {
+    text-align: center;
+}
+
+.bookAuth {
+    text-align: center;
+}

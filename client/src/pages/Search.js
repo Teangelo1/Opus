@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import BookDetail from "../components/BookDisplay";
 import '../styles/search.css';
 import API from '../utils/API';
-import Input from "../components/Input";
+import SearchInput from "../components/SearchIndex/searchindex";
 import Header from "../components/Navbar/navbar";
 import { List, ListItem } from "../components/List";
 import { Row } from "react-bootstrap";
@@ -46,66 +46,46 @@ function Search() {
 
     <div className="searchPage">
 
-      <Header></Header>
-      <Row className="opusmain">
-        <div className="col-2"></div>
-        <div className="col-8 opusheader">
+<Header></Header>
+<Row className="opusmain">
+<div className="col-2"></div>
+<div className="col-8 opusheader">
 
-          <form>
-            <div className="container search-content">
-              <div className="row">
-                <div className="col-12 opusbackground">
-                  <div>
-                    <h1 className="opusTitle">Opus</h1>
-                  </div>
-                  <div className="card-body">
-
-
-                    <div className="row searchrow">
-                      <Input
-                        name="bookSearch"
-                        value={bookSearch}
-                        onChange={handleInputChange}
-                        type="text"
-                        placeholder='“A room without books is like a body without a soul.”'
-                      />
+<form>
+      <div className="container search-content">
+        <div className="row">
+          <div className="col-12 opusbackground">
+            <div>
+              <h1 className="opusTitle">Opus</h1>
+            </div>
+            <div className="card-body">
 
 
+<div className="row searchrow">
+
+              <SearchInput
+                name="bookSearch"
+                value={bookSearch}
+                onChange={handleInputChange}
+                type="text"
+                placeholder='“A room without books is like a body without a soul.”'
+              />
+
+          
 
 
+          
+              <div className="col-3 btncol">
+                <button
+                  type="submit"
+                  className="btn btn-dark btn-md"
+                  id="search-btn"
+                  onClick={handleFormSubmit}
+                 >
+                  <span className=""></span> Find the Book for you
+</button>
+              </div>
 
-                      <div className="col-3 btncol">
-                        <button
-                          type="submit"
-                          className="btn btn-dark btn-md"
-                          id="search-btn"
-                          onClick={handleFormSubmit}
-                        >
-                          <span className=""></span> Find the Book for you</button>
-                      </div>
-                    </div>
-                  </div>
-
-
-
-
-
-                  {/* {!books.length ? (<p>""</p>) : <List> */}
-                  {books.map((book, index) => (
-                    // console.log(book.volumeInfo.industryIdentifiers)
-                    <ListItem key={book.id}>
-                      <BookDetail
-                        title={book.volumeInfo.title}
-                        image={book.volumeInfo.imageLinks.smallThumbnail}
-                        li key={book.id}
-                        id={index}
-                        gID={`/details/${book.volumeInfo.industryIdentifiers[0].identifier}`}
-                      />
-                    </ListItem>
-                  ))}
-                  {/* </List> */}
-                  {/* } */}
-                </div>
               </div>
             </div>
           </form>

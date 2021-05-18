@@ -1,6 +1,7 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
 import Stars from 'simple-rating-stars';
+import "./review.css"
 
 function Review(props) {
     return (
@@ -14,14 +15,18 @@ function Review(props) {
                 </Row>
 
                 <Row>
-                    <Col size="4">
-                        <img id="bookImg" src={props.image} className="img-fluid" alt="bookimg" />
+                <Col className="col-5"></Col>
+                    <Col size="2">
+                        <img id="bookImg" src={props.image} className="saved" alt="bookimg" />
                     </Col>
+                    <Col className="col-5"></Col>
                 </Row>
 
                 <Row>
-                    <Col size="8">
+                <Col className="col-5"></Col>
+                    <Col size="2 saved">
                         <Stars
+                      
                             stars={props.stars}
                             outOf={5}
                             full={'#d00'}
@@ -29,12 +34,14 @@ function Review(props) {
                             stroke={'#369'}
                         />
                     </Col>
+                    <Col className="col-5"></Col>
                 </Row>
 
                 <Row>
-                    <Col size="4">
+                <Col className="col-5"></Col>
+                    <Col className="col-2 saved">
                         <div className="dropdown">
-                            <button className="btn btn-secondary dropdown-toggle" type="button" id="starRating" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button className="btn btn-dark dropdown-toggle" type="button" id="starRating" data-bs-toggle="dropdown" aria-expanded="false">
                                 ⭐️ Rating 
                              </button>
                             <div className="dropdown-menu" aria-labelledby="starRating">                                
@@ -46,17 +53,20 @@ function Review(props) {
                             </div>
                         </div>
                     </Col>
+                    <Col className="col-5"></Col>
                 </Row>
 
                 <Row>
                     <Col size="8">
                         <div className="form-group">
-                            <label for="exampleFormControlTextarea1">What did you think of the book?</label>
+                            <label for="exampleFormControlTextarea1" className="whatdidyouthink">What did you think of the book?</label>
                             <textarea className="form-control" id="exampleFormControlTextarea1" onChange={props.onChange} rows="3" placeholder={props.placeholder}></textarea>
                         </div>
-                        <button type="submit" className="btn" onClick={props.onClick}>
+                        <div className="save">
+                        <button type="submit" className="btn btn-dark" onClick={props.onClick}>
                             Save
                         </button>
+                        </div>
                     </Col>
                 </Row>
 

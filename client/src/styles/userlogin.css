@@ -1,0 +1,36 @@
+.mainform {
+    background-color: rgba(196, 208, 197, 0.9);
+    margin: 2cm;
+  padding: 2cm;
+  border-radius: 10pt;
+
+}
+
+.mainform:hover {
+    background-color: rgba(196, 208, 197, 0.95);
+    margin: 2cm;
+  padding: 2cm;
+  border-radius: 10pt;
+
+}
+
+.background {
+    background-image: url("./assets/LoginPageImage.jpg");
+    height: 100vh;
+
+    
+
+}
+
+.textform {
+    background-color: transparent;
+}
+
+.welcome {
+    width: 25vw;
+
+}
+
+.imgcenter {
+    text-align: center;
+}

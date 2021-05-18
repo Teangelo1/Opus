@@ -1,9 +1,10 @@
 import React from "react";
+import "./signup.css"
 
 function Signup() {
     return (
         <div>
-            <form>
+            <form className="mainform">
 
                 <div className="form-group">
                     <label for="exampleInputEmail1">Email address</label>

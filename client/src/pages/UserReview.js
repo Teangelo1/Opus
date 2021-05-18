@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from "react";
 import API from "../utils/API";
-import { Container } from "react-bootstrap";
+import { Container, Navbar } from "react-bootstrap";
 import Review from "../components/Review";
 import { useParams } from "react-router-dom";
+
+import "../styles/UserReview.css"
+import Header from "../components/Navbar/navbar";
+
+
 import Footer from "../components/Footer";
 import { createBrowserHistory } from "history"; 
+
 
 function UserReview() {
     const [books, setBooks] = useState([])
@@ -105,7 +111,9 @@ function UserReview() {
     };
 
     return (
-        
+      <div>
+<Header></Header>
+
         <Container>
             {books.map((book) =>
                 <Review
@@ -127,6 +135,7 @@ function UserReview() {
             )}
             <Footer />
         </Container>
+        </div>  
     );
 }
 

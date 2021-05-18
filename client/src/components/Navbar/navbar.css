@@ -1,14 +1,14 @@
 .headerselectors {
 color: white;
 text-decoration: none;
-font-size: 1.7vw;
+font-size: 1.5vw;
 font-weight: 400;
 }
 
 .headerselectors:hover {
 color: rgba(238, 195, 103, 0.836);
 text-decoration: none;
-font-size: 1.71vw;
+font-size: 1.51vw;
 font-weight: 400;
 overflow: hidden;
 }

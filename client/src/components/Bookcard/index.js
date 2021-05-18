@@ -8,8 +8,8 @@ function BookCard(props) {
         <div className="card-body">
           <Row>
             <Col size="6">
-              <h2 id="bookTitle columnleft">{props.title}</h2>
-              <h3 id="bookAuth columnleft">{props.authors}</h3>
+              <h2 id="columnleft" className="bookTitle ">{props.title}</h2>
+              <h3 id="columnleft" className="bookAuth">{props.authors}</h3>
 
               <div className="columnleft">
                 <img id="bookImg" src={props.image} className="img-fluid" alt="bookimg" />

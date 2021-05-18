@@ -3,7 +3,10 @@ import Input from "../components/Input";
 import { useUserContext } from "../utils/UserContext"; 
 import API from "../utils/API";
 import { Link } from "react-router-dom"; 
-import { Container } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
+import "../styles/userlogin.css"
+import welcome from "../styles/assets/opuswelcome.png"
+
 
 
 function UserLogin() {
@@ -38,9 +41,17 @@ function UserLogin() {
     }
 
     return (
-        <div>
+        <div className="row background">
         <Container>
-            <form onSubmit={handleLogin}>
+
+
+
+            <form className="mainform" onSubmit={handleLogin}>
+            <Row>
+            <Col className="col-2"></Col>
+            <Col className="col-8 imgcenter"><img className="welcome" alt="welcome" src={(welcome)}></img></Col>
+            <Col className="col-2"></Col>
+        </Row>
                 <Input
                     ref={emailRef}
                     type="email"
@@ -53,6 +64,11 @@ function UserLogin() {
                     name="password"
                     label="Password"
                 />
+                <form className="textform">
+<Row>
+
+<div className="col-2"></div>
+<div className="col-8">
                 <button
                     type="submit"
                     className="btn"
@@ -64,6 +80,11 @@ function UserLogin() {
                 <Link to="/newuser">New User? Sign Up</Link>
                 <Link to="/search" id="search"></Link>
                 </div>
+                </div>
+                <div className="col-2"></div>
+                
+</Row>
+</form>
             </form>
         </Container>
 
