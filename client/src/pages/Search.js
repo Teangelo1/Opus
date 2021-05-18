@@ -93,11 +93,11 @@ function Search() {
       <div className="container">
         <div className="jumbotron">
           <h1>Trending Books</h1>
-          <h3 id="trendingQoute">“Today a reader, tomorrow a leader.”</h3>
-          <CarouselBooks />
+  
+          
           <br />
           <div>
-
+          <CarouselBooks />
           </div>
 
         <div>   
@@ -130,11 +130,3 @@ function Search() {
 
 
 export default Search;
-            // <div className="trendingbooks">
-            //   {nyBooks.map((book) => (
-            //     <BookDetail
-            //       title={book.title}
-            //       image={book.book_image}
-            //       key={book.id}
-            //       gID={`/details/${book.isbns[0].isbn13}`}
-            //     />
