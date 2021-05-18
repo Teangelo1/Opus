@@ -6,7 +6,7 @@ import { Container, Row } from "react-bootstrap";
 import Header from "../components/Navbar/navbar";
 import BookDetail from "../components/BookDisplay";
 import "../styles/opusleague.css";
-import Review from "../components/Review"; 
+import ClubComments from "../components/ClubComments"; 
 
 
 function OpusLeague() {
@@ -61,10 +61,10 @@ function OpusLeague() {
                     <div id="reviews">
 
                         {opusBook.map((book) =>
-                            <Review
-                                title={book.User.first_name} //firstname={book.User.first_name}
-                                // lastname={book.User.last_name}
-                                placeholder={book.review} //review={book.review}
+                            <ClubComments
+                                firstName={book.User.first_name}
+                                lastName={book.User.last_name}
+                                review={book.review}
                                 stars={book.rating}
                                 />
                         )}
