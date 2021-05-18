@@ -6,6 +6,7 @@ import SearchInput from "../components/SearchIndex/searchindex";
 import Header from "../components/Navbar/navbar";
 import { List, ListItem } from "../components/List";
 import { Row } from "react-bootstrap";
+import Footer from "../components/Footer";
 
 function Search() {
   const [books, setBooks] = useState([])
@@ -18,9 +19,9 @@ function Search() {
 
   function trendingBooks() {
     API.trendingBooks().then(data => { console.log(data); return data }).then(res => setNyBooks(
-     res.data.results.books
+      res.data.results.books
     )).catch(err => console.log(err))
-  } 
+  }
 
   function handleInputChange(event) {
     const { value } = event.target;
@@ -29,12 +30,14 @@ function Search() {
 
   function handleFormSubmit(event) {
     event.preventDefault();
-      API.searchBooks(bookSearch)
-        .then(res => { let filtered = res.data.items.filter(book => book.volumeInfo.industryIdentifiers != undefined) // filtering out books for now that does not have a isbn number
-          setBooks(filtered)})
-        .catch(err => console.log(err));
-      
- };
+    API.searchBooks(bookSearch)
+      .then(res => {
+        let filtered = res.data.items.filter(book => book.volumeInfo.industryIdentifiers != undefined) // filtering out books for now that does not have a isbn number
+        setBooks(filtered)
+      })
+      .catch(err => console.log(err));
+
+  };
 
   return (
 
@@ -82,35 +85,13 @@ function Search() {
                   <span className=""></span> Find the Book for you
 </button>
               </div>
+
               </div>
             </div>
-           
-
-
-
-
-          {/* {!books.length ? (<p>""</p>) : <List> */}
-          {books.map((book, index) =>(
-            // console.log(book.volumeInfo.industryIdentifiers)
-            <ListItem key={book.id}>
-            <BookDetail
-            title={book.volumeInfo.title}
-            image={book.volumeInfo.imageLinks.smallThumbnail}
-            li key={book.id}
-            id={index}
-            gID={`/details/${book.volumeInfo.industryIdentifiers[0].identifier}`}
-            />
-            </ListItem>
-          ))}
-          {/* </List> */}
-          {/* } */}
-          </div>
+          </form>
         </div>
-      </div>
-      </form>
-</div>
-      <div className="col-2"></div>
-</Row>
+        <div className="col-2"></div>
+      </Row>
 
 
       <div className="container">
@@ -140,6 +121,7 @@ function Search() {
 
 
       </div>
+      <Footer />
     </div>
 
 

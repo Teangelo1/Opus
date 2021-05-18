@@ -17,6 +17,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-star-ratings": "^2.3.0",
+    "react-use-hoverintent": "^1.2.3",
     "simple-rating-star": "0.0.5",
     "simple-rating-stars": "^1.6.0",
     "stars-rating": "^1.1.0",

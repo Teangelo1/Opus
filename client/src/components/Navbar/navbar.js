@@ -44,9 +44,9 @@ function Header() {
                 <div className="col-2"><NavLink
                     className="nav-link search headerselectors"
                     activeClassName="active"
-                    isActive={() => window.location.pathname === "/search"}
-                    to="/search"
-                >Search for Books</NavLink></div>
+                    isActive={() => window.location.pathname === "/opusleague"}
+                    to="/opusleague"
+                >Opus League</NavLink></div>
 
 
 

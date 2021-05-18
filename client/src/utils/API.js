@@ -50,6 +50,11 @@ let API = {
     return axios.post("/api/user/login/", user)
   },
 
+  // logout 
+  logout: function(){
+    return axios.get("/api/user/logout")
+  },
+
   // next three functions get books for the book shelf 
   getReadBooks: function (userId) {
     return axios.get("/api/books/shelf/read/" + userId)
@@ -66,6 +71,11 @@ let API = {
   // returns a users complete shelf 
   completeShelf: function (userId) {
     return axios.get("/api/books/shelf/user/" + userId)
+  },
+  
+  // opus league route - get book by book Id
+  opusLeague: function(bookId){
+    return axios.get("/api/books/opusleague/" + bookId)
   },
 
   // update a review for a user 

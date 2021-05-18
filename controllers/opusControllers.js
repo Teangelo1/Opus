@@ -84,6 +84,18 @@ module.exports = {
       })
     .catch((err) => res.status(422).json(err));
   },
+opusLeague: function (req, res) {
+  db.UsersBooks
+  .findAll({
+   where:{ bookId: req.params.bookId },
+    include: [db.Book, db.User]
+  })
+  .then((ub) => {
+    res.json(ub)
+  })
+.catch((err) => res.status(422).json(err));
+},
+
   // updateSaved: function (req, res) {
   //   db.UsersBooks
   //   .findOne({
@@ -110,6 +122,7 @@ module.exports = {
   // })
   // .catch((err) => res.status(422).json(err));
   // },
+
   updateSaved: function (req, res) {
     db.UsersBooks
     .findOne({
