@@ -1,9 +1,10 @@
 import React from "react";
+import "./login.css"
 
 function Login(props) {
     return (
         <div>
-            <form>
+            <form className="mainform">
             
                 <div className="form-group">
                     <label for="name">First Name</label>

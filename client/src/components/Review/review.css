@@ -1,0 +1,39 @@
+.card {
+    margin: 1cm;
+    background-color: rgba(196, 208, 197, 0.9);
+    border-radius: 10pt;
+}
+
+.card:hover {
+    margin: 1cm;
+    background-color: rgba(196, 208, 197, 0.95);
+    border-radius: 10pt;
+}
+
+#bookTitle {
+    text-align: center;
+}
+
+#bookAuth {
+    text-align: center;
+}
+
+#bookImg {
+    text-align: center;
+}
+
+.whatdidyouthink {
+
+    font-size: 14pt;
+}
+
+.save {
+    text-align: center;
+}
+
+.saved {
+    text-align: center;
+    margin-top: .5cm;
+    margin-bottom: .250cm;;
+}
+

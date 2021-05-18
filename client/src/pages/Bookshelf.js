@@ -51,8 +51,8 @@ function Bookshelf() {
                 </Row>
                 <Row className="bookreadingrow">
                     <div className="col-4"></div>
-                    <div className="col-2 favbook">{currentBooks.map((books) => (<BookDetail image={books.Book.img} />))}</div>
-                    <div className="col-2 aboutme">Name current page here</div>
+                    <div className="col-4 favbook">{currentBooks.map((books) => (<BookDetail image={books.Book.img} />))}</div>
+
                     <div className="col-4"></div>
                 </Row>
                 </form>

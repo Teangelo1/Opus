@@ -28,7 +28,7 @@ function Header() {
                     activeClassName="active"
                     isActive={() => window.location.pathname === "/search"}
                     to="/search"
-                >Home</NavLink></div>
+                >Search</NavLink></div>
 
 
                 <div className="col-4"></div>
