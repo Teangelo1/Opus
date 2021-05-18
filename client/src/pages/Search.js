@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import BookDetail from "../components/BookDisplay";
 import '../styles/search.css';
 import API from '../utils/API';
-import Input from "../components/Input";
+import SearchInput from "../components/SearchIndex/searchindex";
 import Header from "../components/Navbar/navbar";
 import { List, ListItem } from "../components/List";
 import { Row } from "react-bootstrap";
@@ -59,7 +59,8 @@ function Search() {
 
 
 <div className="row searchrow">
-              <Input
+
+              <SearchInput
                 name="bookSearch"
                 value={bookSearch}
                 onChange={handleInputChange}
