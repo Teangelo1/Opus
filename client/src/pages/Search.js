@@ -3,8 +3,7 @@ import BookDetail from "../components/BookDisplay";
 import '../styles/search.css';
 import API from '../utils/API';
 import SearchInput from "../components/SearchIndex/searchindex";
-import Header from "../components/Navbar/navbar";
-import { List, ListItem } from "../components/List";
+import Header from "../components/Navbar/navbar"; import { List, ListItem } from "../components/List";
 import { Row } from "react-bootstrap";
 import Footer from "../components/Footer";
 
@@ -32,17 +31,16 @@ function Search() {
     event.preventDefault();
     API.searchBooks(bookSearch)
       .then(res => {
-        let filtered = res.data.items.filter(book => book.volumeInfo.industryIdentifiers != undefined) // filtering out books for now that does not have a isbn number
+        let filtered = res.data.items.filter(book => book.volumeInfo.industryIdentifiers !== undefined) // filtering out books for now that does not have a isbn number
         setBooks(filtered)
       })
       .catch(err => console.log(err));
-
   };
 
   return (
     <div className="searchPage">
 
-      <Header></Header>
+      <Header />
       <Row className="opusmain">
         <div className="col-2"></div>
         <div className="col-8 opusheader">
@@ -78,16 +76,28 @@ function Search() {
                           <span className=""></span> Find the Book for you
                         </button>
                       </div>
-
                     </div>
                   </div>
 
+                  {books.map((book, index) => (
+                    // console.log(book.volumeInfo.industryIdentifiers)
+                    <ListItem key={book.id}>
+                      <BookDetail
+                        title={book.volumeInfo.title}
+                        image={book.volumeInfo.imageLinks.smallThumbnail}
+                        key={book.id}
+                        id={index}
+                        gID={`/details/${book.volumeInfo.industryIdentifiers[0].identifier}`}
+                      />
+                    </ListItem>
+                  ))}
+
                 </div>
               </div>
-          </div>
+            </div>
           </form>
-          </div>
-        
+        </div>
+
         <div className="col-2"></div>
       </Row>
 
@@ -97,7 +107,10 @@ function Search() {
           <h1>Trending Books</h1>
           <h3 id="trendingQoute">“Today a reader, tomorrow a leader.”</h3>
           <hr />
-          {/* <div>We want to display data here</div> */}
+          <div>
+
+          </div>
+
           {!nyBooks.length ? (
             <h2>No Trending Books available at this moment </h2>
           ) :
@@ -110,7 +123,6 @@ function Search() {
                   gID={`/details/${book.isbns[0].isbn13}`}
                 />
               ))}
-
             </div>
           }
 
