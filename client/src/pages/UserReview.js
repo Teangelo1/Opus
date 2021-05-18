@@ -3,12 +3,14 @@ import API from "../utils/API";
 import { Container } from "react-bootstrap";
 import Review from "../components/Review";
 import { useParams } from "react-router-dom";
+import Footer from "../components/Footer";
+import { createBrowserHistory } from "history"; 
 
 function UserReview() {
     const [books, setBooks] = useState([])
     const [bookReview, setReview] = useState([])
     const [starReview, setStarReview] = useState([])
-    
+    const history = createBrowserHistory({forceRefresh:true});  
     let {userId} = useParams(); 
 
     useEffect(() => {
@@ -16,7 +18,6 @@ function UserReview() {
     }, [userId])
 
     function userComplete(userId) {
-        console.log(userId)
         API.completeShelf(userId)
             .then(res => {
                 console.log(res.data)
@@ -27,62 +28,62 @@ function UserReview() {
     function ratingChanged1(e, book) {
         e.preventDefault()
         const btn = document.getElementById("star1")
-        const label = document.getElementById("starRating")
-        label.append(btn.value)
         setStarReview(btn.value)
         API.updateStar({
             userId: book.userId,
             bookId: book.bookId,
             rating: btn.value 
-        })
+        }).then(
+           history.push(`/reviews/${userId}`)
+        )
     }
     function ratingChanged2(e, book) {
         e.preventDefault()
         const btn = document.getElementById("star2")
-        const label = document.getElementById("starRating")
-        label.append(btn.value)
         setStarReview(btn.value)
         API.updateStar({
             userId: book.userId,
             bookId: book.bookId,
             rating: btn.value 
-        })
+        }).then(
+            history.push(`/reviews/${userId}`)
+         )
     }
     function ratingChanged3(e, book) {
         e.preventDefault()
         const btn = document.getElementById("star3")
-        const label = document.getElementById("starRating")
-        label.append(btn.value)
         setStarReview(btn.value)
         API.updateStar({
             userId: book.userId,
             bookId: book.bookId,
             rating: btn.value 
-        })
+        }).then(
+            history.push(`/reviews/${userId}`)
+         )
     }
     function ratingChanged4(e, book) {
         e.preventDefault()
         const btn = document.getElementById("star4")
-        const label = document.getElementById("starRating")
-        label.append(btn.value)
         setStarReview(btn.value)
         API.updateStar({
             userId: book.userId,
             bookId: book.bookId,
             rating: btn.value 
-        })
+        }).then(
+            history.push(`/reviews/${userId}`)
+         )
     }
     function ratingChanged5(e, book) {
         e.preventDefault()
         const btn = document.getElementById("star5")
-        const label = document.getElementById("starRating")
-        label.append(btn.value)
         setStarReview(btn.value)
         API.updateStar({
             userId: book.userId,
             bookId: book.bookId,
             rating: btn.value 
-        })
+        }).then(
+            history.push(`/reviews/${userId}`)
+         )
     }
 
     function handleInputChange(event) {
@@ -124,7 +125,7 @@ function UserReview() {
                     star5={(e) => ratingChanged5(e, book)}
                 />
             )}
-        
+            <Footer />
         </Container>
     );
 }
