@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useHoverIntent } from 'react-use-hoverintent';
 // import BookCard from "../components/Bookcard";
 import API from "../utils/API";
 import { Container, Row } from "react-bootstrap";
@@ -8,10 +9,15 @@ import BookDetail from "../components/BookDisplay";
 import "../styles/opusleague.css"
 
 
-function OpusLeague() {
-    const [books, setBooks] = useState([])
+function OpusLeague(props) {
+    const [books, setBooks] = useState([]);
     const [user, setUser] = useState([]);
-    const opusLeague = [4, 5, 6];
+    // const [isHovering, ref] = useHoverIntent({
+    //     timeout: 100,
+    //     sensitivity: 10,
+    //     interval: 200,
+    //   });
+    // const opusLeague = [4, 5, 6];
 
     let { id } = useParams(); // useParams will always reference the id in our url
 
@@ -59,8 +65,8 @@ function OpusLeague() {
                     {/* {books.length ? ( */}
                     <div>
                     <Row>
-
-                        <BookDetail image={"http://books.google.com/books/content?id=AIjCDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_ap"} />
+                        
+                        <BookDetail image={"http://books.google.com/books/content?id=AIjCDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_ap"}  />
                         <BookDetail image={"http://books.google.com/books/content?id=3s8DEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"} />
                         <BookDetail image={"http://books.google.com/books/content?id=vH3LDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"} />
                         
