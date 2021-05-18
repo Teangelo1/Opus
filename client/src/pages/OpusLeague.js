@@ -30,27 +30,12 @@ function OpusLeague() {
         })
     }
     // when calling for book club books : API.opusLeague 
-    function opusBookData() {
-        API.opusLeague(1).then(res => {
+    function opusBookData(bookId) {
+       console.log("button value " + bookId)
+        API.opusLeague(bookId).then(res => {
             setOpusData(res.data)
-            console.log(res.data)
         })
     }
-
-    // function addToLeague(index) {
-    //     API.saveBooks({
-    //         book: {
-    //             title: books[index].volumeInfo.title,
-    //             author: books[index].volumeInfo.authors[0],
-    //             genre: books[index].volumeInfo.genre,
-    //             pages: books[index].volumeInfo.pageCount,
-    //             isbn: books[index].volumeInfo.industryIdentifiers[0].identifier,
-    //             img: books[index].volumeInfo.imageLinks.thumbnail,
-    //         },
-    //         bookId: books.id[4],
-    //         shelf: "Want to Read"
-    //     }).then(alert("You added " + books[index].volumeInfo.title + " to your Want to Read Shelf"))
-    // }
 
     return (
         <div className="league">
@@ -63,11 +48,11 @@ function OpusLeague() {
                         <Row>
 
                             <BookDetail gID={"/details/9781501160851"} image={"http://books.google.com/books/content?id=AIjCDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_ap"} />
-                            <button className="btn btn-light" value={1} onClick={(e) => opusBookData(e)}>💰In Da Club🕵️‍♂️</button>
+                            <button className="btn btn-light" value={1} onClick={() => opusBookData(1)}>💰In Da Club🕵️‍♂️</button>
                             <BookDetail gID={"/details/9781501171345"} image={"http://books.google.com/books/content?id=3s8DEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"} />
-                            <button className="btn btn-light" value={2} onClick={(e) => opusBookData(e)}>🕵️‍♀️In Da Club📝</button>
+                            <button className="btn btn-light" value={2} onClick={() => opusBookData(2)}>🕵️‍♀️In Da Club📝</button>
                             <BookDetail gID={"/details/9780765387585"} image={"http://books.google.com/books/content?id=vH3LDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"} />
-                            <button className="btn btn-light" value={3} onClick={(e) => opusBookData(e)}>✨In Da Club🥀</button>
+                            <button className="btn btn-light" value={3} onClick={() => opusBookData(3)}>✨In Da Club🥀</button>
                               
                         </Row>
 
