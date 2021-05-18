@@ -86,9 +86,9 @@ module.exports = {
   },
 opusLeague: function (req, res) {
   db.UsersBooks
-  .findAll({ 
-   where:{ bookId: req.params.userId },
-    include: db.Book[4]
+  .findAll({
+   where:{ bookId: req.params.bookId },
+    include: [db.Book, db.User]
   })
   .then((ub) => {
     res.json(ub)

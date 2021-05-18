@@ -72,6 +72,11 @@ let API = {
   completeShelf: function (userId) {
     return axios.get("/api/books/shelf/user/" + userId)
   },
+  
+  // opus league route - get book by book Id
+  opusLeague: function(bookId){
+    return axios.get("/api/books/opusleague/" + bookId)
+  },
 
   // update a review for a user 
   updateSaved: function (bookReview) {
