@@ -12,20 +12,24 @@ function BookCard(props) {
               <h3 id="bookAuth columnleft">{props.authors}</h3>
 
               <div className="columnleft">
-              <img id="bookImg" src={props.image} className="img-fluid" alt="bookimg" />
-              <p>Average Rating: {props.rating} /5</p>
-              <p>{props.pages} pages</p>
-              <div>
-                <div className="dropdown">
-                  <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-                    Add to your shelf! 
+                <img id="bookImg" src={props.image} className="img-fluid" alt="bookimg" />
+                <p>Average Rating: {props.rating} /5</p>
+                <p>{props.pages} pages</p>
+                <div>
+                  <div className="dropdown">
+                    <button className="btn btn-light" type="button" id="leagueAdd" data-bs-toggle="button" aria-expanded="false">
+                    ☆ League Worthy Add ☆
                   </button>
-                  <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <li><button className="dropdown-item" type="button" value="read" onClick={props.read}>Read</button></li>
-                    <li><button className="dropdown-item" type="button" value="want to read" onClick={props.want}>Want to Read</button></li>
-                    <li><button className="dropdown-item" type="button" value="currently reading" onClick={props.current}>Currently Reading</button></li>
+                  <br></br>
+                    <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                    〖 You can be Shelf-ish here, we don't mind 〗
+                  </button>
+                    <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
+                      <li><button className="dropdown-item" type="button" value="read" onClick={props.read}>Read</button></li>
+                      <li><button className="dropdown-item" type="button" value="want to read" onClick={props.want}>Want to Read</button></li>
+                      <li><button className="dropdown-item" type="button" value="currently reading" onClick={props.current}>Currently Reading</button></li>
+                    </div>
                   </div>
-                </div>
                 </div>
                 {/* <button type="button" className="btn btn-info" value="read" onClick={props.read}>Read</button>
                 <button type="button" className="btn btn-info" value="want to read" onClick={props.want}>Want to read</button>

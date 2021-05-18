@@ -8,6 +8,7 @@ import UserDetails from "./pages/UserDetails";
 import UserSignup from "./pages/UserSignup";
 import BookDetails from "./pages/BookDetails";
 import UserReviews from "./pages/UserReview";
+import OpusLeague from "./pages/OpusLeague";
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route exact path="/details/:id" component={BookDetails} />
           <Route exact path="/account" component={UserDetails} />
           <Route exact path="/reviews/:userId" component={UserReviews} />
+          <Route exact path="/opusleague" component={OpusLeague} />
         </UserProvider>
       </Switch>
 

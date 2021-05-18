@@ -38,4 +38,8 @@ router.route("/shelf/update")
 router.route("/shelf/updatestar")
   .post(opusController.updateStar)
 
+// /opusleague 
+router.route("/opusleague:userId")
+  .get(opusController.opusLeague)
+
 module.exports = router;
