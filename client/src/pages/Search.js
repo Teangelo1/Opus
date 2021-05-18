@@ -40,56 +40,54 @@ function Search() {
   };
 
   return (
-
-
-
-
     <div className="searchPage">
 
-<Header></Header>
-<Row className="opusmain">
-<div className="col-2"></div>
-<div className="col-8 opusheader">
+      <Header></Header>
+      <Row className="opusmain">
+        <div className="col-2"></div>
+        <div className="col-8 opusheader">
 
-<form>
-      <div className="container search-content">
-        <div className="row">
-          <div className="col-12 opusbackground">
-            <div>
-              <h1 className="opusTitle">Opus</h1>
-            </div>
-            <div className="card-body">
-
-
-<div className="row searchrow">
-
-              <SearchInput
-                name="bookSearch"
-                value={bookSearch}
-                onChange={handleInputChange}
-                type="text"
-                placeholder='“A room without books is like a body without a soul.”'
-              />
-
-          
+          <form>
+            <div className="container search-content">
+              <div className="row">
+                <div className="col-12 opusbackground">
+                  <div>
+                    <h1 className="opusTitle">Opus</h1>
+                  </div>
+                  <div className="card-body">
 
 
-          
-              <div className="col-3 btncol">
-                <button
-                  type="submit"
-                  className="btn btn-dark btn-md"
-                  id="search-btn"
-                  onClick={handleFormSubmit}
-                 >
-                  <span className=""></span> Find the Book for you
-</button>
+                    <div className="row searchrow">
+
+                      <SearchInput
+                        name="bookSearch"
+                        value={bookSearch}
+                        onChange={handleInputChange}
+                        type="text"
+                        placeholder='“A room without books is like a body without a soul.”'
+                      />
+
+
+                      <div className="col-3 btncol">
+                        <button
+                          type="submit"
+                          className="btn btn-dark btn-md"
+                          id="search-btn"
+                          onClick={handleFormSubmit}
+                        >
+                          <span className=""></span> Find the Book for you
+                        </button>
+                      </div>
+
+                    </div>
+                  </div>
+
+                </div>
               </div>
-
-              </div>
-            </div>
+          </div>
           </form>
-        </div>
+          </div>
+        
         <div className="col-2"></div>
       </Row>
 
