@@ -5,9 +5,9 @@ import BookDetail from '../components/BookDisplay'
 import Header from "../components/Navbar/navbar";
 import API from "../utils/API"; 
 import { useParams } from "react-router-dom";
+import Footer from "../components/Footer";
 
 function Bookshelf() {
-  // const [nyBooks, setNyBooks] = useState([])
   const [readBooks, setReadBooks] = useState([])
   const [wantBooks, setWantBooks] = useState([])
   const [currentBooks, setCurrentBooks] = useState([])
@@ -82,6 +82,7 @@ function Bookshelf() {
 
 
           </Row>
+          <Footer />
 </div>
         )
 }
