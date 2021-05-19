@@ -3,11 +3,12 @@ import BookDetail from "../components/BookDisplay";
 import '../styles/search.css';
 import API from '../utils/API';
 import SearchInput from "../components/SearchIndex/searchindex";
-import Navbar from "../components/Navbar"; 
+import Navbar from "../components/Navbar";
 import { ListItem } from "../components/List";
 import { Row } from "react-bootstrap";
 import Footer from "../components/Footer";
-import CarouselBooks from '../components/Carousel'
+import CarouselBooks from '../components/Carousel';
+import ReactTooltip from "react-tooltip";
 
 function Search() {
   const [books, setBooks] = useState([])
@@ -80,6 +81,7 @@ function Search() {
 
                       <div className="col-3 btncol">
                         <button
+                          data-tip="📚🐛 "
                           type="submit"
                           className="btn btn-dark btn-md"
                           id="search-btn"
@@ -120,11 +122,12 @@ function Search() {
           <CarouselBooks id="" className="carousel" />
 
           <br />
-          
+
           <div>
           </div>
         </div>
       </div>
+      <ReactTooltip place="top" type="dark" effect="float" />
       <Footer />
     </div>
 
