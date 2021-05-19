@@ -46,8 +46,9 @@ NPM install for all necessary packages - other files required throughout the app
 
 ## Preview 
 
-<!-- ![Opus](./public/images/letsmove.png)
-![Opus](./public/images/letsmovehome.png) -->
+![Opus](./client/images/opushome.png)
+![Opus](./client/images/opussignin.png)
+
 ---
 
 ## Heroku Link 
