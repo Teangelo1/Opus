@@ -16,9 +16,10 @@
 
 .background {
     background-image: url("./assets/LoginPageImage.jpg");
+    /* background-size: cover;  */
     height: 100vh;
     width: 100vw;
-}
+} 
 
 .textform {
     background-color: transparent;
@@ -30,25 +31,29 @@
     margin-right: auto; 
 }
 
-body{
-    background-image: url("./assets/LoginPageImage.jpg");
-    background-position: center;
-    background-size: cover; 
-}
-
-#submit, #return{
-   text-align: center;
+#submit, #return, #new, #search{
+    text-align: center;
     margin-left: auto; 
     margin-right: auto;  
 }
 
 #newUser{
-    height: 40%;
+    height: 50%;
     width: 50%;
+    padding-bottom: 1cm;
     margin-left: auto; 
-    margin-right: auto; 
-    margin-top: 40px;
+    margin-right: auto;
     background-color: rgba(196, 208, 197, 0.9);
-    /* padding: 2cm; */
     border-radius: 10pt;
+}
+
+#search, #submit {
+    font-size: 20px;
+    color: white;
+    text-shadow: black 2px 2px !important;
+}
+
+#new, #return{
+    font-size: 15px;
+    color: black;
 }

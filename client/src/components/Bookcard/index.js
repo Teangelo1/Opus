@@ -1,6 +1,7 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
 import "./bookcard.css"
+
 function BookCard(props) {
   return (
     <div>
@@ -17,12 +18,12 @@ function BookCard(props) {
                 <p>{props.pages} pages</p>
                 <div>
                   <div className="dropdown">
-                    <button className="btn btn-light detailbutton" type="button" id="leagueAdd" data-bs-toggle="button" aria-expanded="false">
-                    ☆ League Worthy Add ☆
-                  </button>
-                  <br></br>
                     <button className="btn btn-secondary dropdown-toggle detailbutton" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
                     〖 You can be Shelf-ish here, we don't mind 〗
+                  </button>
+                  <br></br>
+                  <button className="btn btn-light detailbutton" type="button" id="leagueAdd" data-bs-toggle="button" aria-expanded="false" disabled>
+                    ☆ League Worthy Add ☆
                   </button>
                     <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
                       <li><button className="dropdown-item" type="button" value="read" onClick={props.read}>Read</button></li>
@@ -31,9 +32,6 @@ function BookCard(props) {
                     </div>
                   </div>
                 </div>
-                {/* <button type="button" className="btn btn-info" value="read" onClick={props.read}>Read</button>
-                <button type="button" className="btn btn-info" value="want to read" onClick={props.want}>Want to read</button>
-                <button type="button" className="btn btn-info" value="currently reading" onClick={props.current}>Currently Reading</button> */}
               </div>
             </Col>
             <Col size="6">

@@ -3,7 +3,8 @@ import BookDetail from "../components/BookDisplay";
 import '../styles/search.css';
 import API from '../utils/API';
 import SearchInput from "../components/SearchIndex/searchindex";
-import Navbar from "../components/Navbar"; import { ListItem } from "../components/List";
+import Navbar from "../components/Navbar"; 
+import { ListItem } from "../components/List";
 import { Row } from "react-bootstrap";
 import Footer from "../components/Footer";
 import CarouselBooks from '../components/Carousel'

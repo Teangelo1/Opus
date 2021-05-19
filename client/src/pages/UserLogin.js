@@ -3,7 +3,7 @@ import Input from "../components/Input";
 import { useUserContext } from "../utils/UserContext";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import "../styles/userlogin.css";
 import welcome from "../styles/assets/opuswelcome.png";
 
@@ -26,8 +26,8 @@ function UserLogin() {
             });
         })
             .then(
-                btn.append("Hooray! You're Logged in!"),
-                search.append("Get Reading! 📚🐛 ")
+                btn.append("  Hooray! You're Logged in!"),
+                search.append("  Get Reading! 📚🐛 ")
             )
     }
     return (
@@ -54,14 +54,15 @@ function UserLogin() {
                         <div className="col-8">
                             <button
                                 type="submit"
-                                className="btn"
+                                className="btn btn-light"
                                 id="signin"
                             >
                                 Sign In 📚🐛
                                 </button>
                             <div>
-                                <Link to="/newuser">New User? Sign Up</Link>
-                                <Link to="/search" id="search"></Link>
+                                <Row><Link to="/search" id="search"></Link></Row>
+                                <Row><Link to="/newuser" id="new">New User? Sign Up</Link></Row>
+                                
                             </div>
                         </div>
                         <div className="col-2"></div>
