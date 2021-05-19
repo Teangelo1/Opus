@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import { useHoverIntent } from 'react-use-hoverintent';
-
 import API from "../utils/API";
 import { Container, Row } from "react-bootstrap";
 import Header from "../components/Navbar/navbar";
@@ -12,12 +10,6 @@ import ClubComments from "../components/ClubComments";
 function OpusLeague() {
     const [user, setUser] = useState([]);
     const [opusBook, setOpusData] = useState([]);
-    // const [isHovering, ref] = useHoverIntent({
-    //     timeout: 100,
-    //     sensitivity: 10,
-    //     interval: 200,
-    //   });
-    // const opusLeague = [4, 5, 6];
 
     useEffect(() => {
         getUser()
@@ -29,7 +21,7 @@ function OpusLeague() {
             setUser(res.data.id)
         })
     }
-    // when calling for book club books : API.opusLeague 
+
     function opusBookData(bookId) {
        console.log("button value " + bookId)
         API.opusLeague(bookId).then(res => {
@@ -40,7 +32,7 @@ function OpusLeague() {
     return (
         <div className="league">
             <div>
-                <Header></Header>
+                <Header />
 
                 <Container>
                     {/* {books.length ? ( */}
@@ -69,7 +61,6 @@ function OpusLeague() {
                                 />
                         )}
 
-
                     </div>
 
                 </Container>
@@ -80,7 +71,3 @@ function OpusLeague() {
 
 
 export default OpusLeague;
-
-// function to add to league, return will show 3 books hard code in 
-// The Last Thing He Told Me[4], Invisible Life Of Addie LaRue[5], Anxious People[6] 
-// do we want to add to league on all? 

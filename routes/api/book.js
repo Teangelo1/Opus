@@ -10,10 +10,6 @@ router.route("/")
 router.route("/:isbn")
   .get(opusController.findById)
 
-// /api/books/:bookId-- doing same as above maybe? bookId
-// router.route("/load/test")
-//   .get(opusController.loadOne)
-
 // /api/books/shelf/want
 router.route("/shelf/want/:userId")
   .get(opusController.shelfWant)

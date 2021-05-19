@@ -1,8 +1,6 @@
 const db = require("../models");
 
 // Defining methods for the booksController 
-
-// need to reference usersbooks and ids for each users 
 module.exports = {
   findAll: function (req, res) {
     db.Book
@@ -103,7 +101,6 @@ module.exports = {
           bookId: req.body.bookId
         }
       }).then((book) => {
-        console.log(book.dataValues)
         db.UsersBooks.upsert({
           bookId: req.body.bookId,
           userId: req.body.userId,
@@ -128,7 +125,6 @@ module.exports = {
           bookId: req.body.bookId
         }
       }).then((book) => {
-        console.log(book.dataValues)
         db.UsersBooks.upsert({
           bookId: req.body.bookId,
           userId: req.body.userId,

@@ -13,7 +13,6 @@ function UserLogin() {
     const passwordRef = useRef()
     function handleLogin(event) {
         event.preventDefault();
-        console.log(emailRef.current.value + " " + passwordRef.current.value)
         let btn = document.getElementById("signin")
         let search = document.getElementById("search")
         const user = {
@@ -21,8 +20,6 @@ function UserLogin() {
             password: passwordRef.current.value
         }
         API.login(user).then((res) => {
-            console.log(res.data)
-            console.log(user)
             dispatch({
                 type: "Login",
                 user: res.data.id

@@ -44,7 +44,7 @@ function UserSignup() {
                     label="Last Name"
                 />
                 <Input
-                    value={user.email} // need to validate email somehow, so unique and email
+                    value={user.email} 
                     onChange={handleInputChange}
                     type="email"
                     name="email"
