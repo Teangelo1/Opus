@@ -26,10 +26,10 @@ Opus follows MERN stack development, using MySQL2, Express, React and Node. The 
         - Browser pages crafted using various components as well as JavaScript & HTML practices
         - React imported for all pages, useContext, useEffect or useState applied 
         - Browser view  
-- [ ] DB  
-    - [ ] Create Workout, workoutSchema using mongoose + connect Mongo  
-    - [ ] Create collection within db allowing for workout and exercises to be stored
-    - [ ] Using MongoDB Atlas with account and process.env used with Heroku 
+    -  MySQL Database  
+         - Models created for Users, Books and UsersBooks
+         - MySQLWorkbench used to monitor data
+         - UsersBooks joins using userID and BookID
 - [ ] NPM packages
     - [ ] Express & mongoose required - listed in dependencies 
     - [ ] Node command line called on server.js - listed as start file 
