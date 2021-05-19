@@ -93,7 +93,6 @@ function Search() {
       <div className="container">
         <div className="jumbotron">
           <h1>Trending Books</h1>
-          <h3 id="trendingQoute">“Today a reader, tomorrow a leader.”</h3>
           <CarouselBooks />
           <br />
           <div>
