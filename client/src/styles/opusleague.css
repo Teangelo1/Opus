@@ -1,7 +1,12 @@
 .league {
 text-align: center;
-height: 10cm;
-margin-left: 1cm;
-margin-right: 1cm;
+height: 100vh;
+width: 100vw;
+background-color: rgba(196, 208, 197, 0.9);
 
+}
+
+.daclub {
+
+    margin: .75cm;
 }

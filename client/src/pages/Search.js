@@ -28,8 +28,19 @@ function Search() {
     setBookSearch(value);
   };
 
+function hideit() {
+  let hide = document.querySelector(".carousel");
+  hide.setAttribute("id", "hideit")
+}
+
+
   function handleFormSubmit(event) {
     event.preventDefault();
+
+    console.log(event);
+    hideit()
+   
+
     API.searchBooks(bookSearch)
       .then(res => {
         let filtered = res.data.items.filter(book => book.volumeInfo.industryIdentifiers !== undefined) // filtering out books for now that does not have a isbn number
@@ -104,8 +115,9 @@ function Search() {
       <div className="container">
         <div className="jumbotron">
           <h1>Trending Books</h1>
-          <br />
-          <CarouselBooks />
+
+          <CarouselBooks id="" className="carousel" />
+
           <br />
           <div>
 
