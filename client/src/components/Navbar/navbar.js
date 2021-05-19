@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import "./navbar.css"
 import API from "../../utils/API";
+import ReactTooltip from "react-tooltip";
 
 
 function Header() {
@@ -24,6 +25,7 @@ function Header() {
         <header>
             <div className="row headerrow">
                 <div className="col-2"><NavLink
+                    data-tip="👀"
                     className="nav-link search headerselectors"
                     activeClassName="active"
                     isActive={() => window.location.pathname === "/search"}
@@ -35,6 +37,7 @@ function Header() {
 
 
                 <div className="col-2"><NavLink
+                    data-tip= "📚"
                     className="nav-link search headerselectors"
                     activeClassName="active"
                     isActive={() => window.location.pathname === `/bookshelf/${user}`}
@@ -42,6 +45,7 @@ function Header() {
                 >My Bookshelf</NavLink></div>
 
                 <div className="col-2"><NavLink
+                    data-tip = "⭐️"
                     className="nav-link search headerselectors"
                     activeClassName="active"
                     isActive={() => window.location.pathname === "/opusleague"}
@@ -51,6 +55,7 @@ function Header() {
 
 
                 <div className="col-2"><NavLink
+                    data-tip ="📝"
                     className="nav-link search headerselectors"
                     activeClassName="active"
                     isActive={() => window.location.pathname === `/reviews/${user}`}
@@ -67,7 +72,7 @@ function Header() {
 
 
 
-
+            <ReactTooltip place="top" type="light" effect="float" />
         </header>
 
 

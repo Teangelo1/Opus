@@ -6,6 +6,7 @@ import Header from "../components/Navbar/navbar";
 import API from "../utils/API";
 import { useParams } from "react-router-dom";
 import Footer from "../components/Footer";
+import ReactTooltip from "react-tooltip";
 
 function Bookshelf() {
   const [readBooks, setReadBooks] = useState([])
@@ -47,30 +48,30 @@ function Bookshelf() {
           {/* Currently Reading Section */}
           <form className="currentlyReadingForm">
             <Row className="currentlyreadingheader">
-              <div className="col-12 subtitle">Currently Reading</div>
+              <div className="col-12 subtitle" data-tip="📖">Currently Reading</div>
             </Row>
             <Row className="bookreadingrow">
               <div className="col-4"></div>
-              <div className="col-4 favbook">{currentBooks.map((books) => (<BookDetail image={books.Book.img} gID={`/details/${books.Book.isbn}`} />))}</div>
-
+              <div className="col-4 favbook">
+                {currentBooks.map((books) => (<BookDetail image={books.Book.img} gID={`/details/${books.Book.isbn}`} />))}</div>
               <div className="col-4"></div>
             </Row>
           </form>
           {/* Want to Read Section */}
           <form className="currentlyReadingForm">
             <Row>
-              <div className="col-12 subtitle">Want to Read</div>
+              <div className="col-12 subtitle" data-tip="📗">Want to Read</div>
             </Row>
 
             {/* Suggestions for you... Section */}
-            <div className="row books">
+            {/* <div className="row books">
               {wantBooks.map((books) => (<BookDetail image={books.Book.img} gID={`/details/${books.Book.isbn}`} />))}
-            </div>
+            </div> */}
             {/* Read Section */}
           </form>
           <form className="currentlyReadingForm">
             <Row>
-              <div className="col-12 subtitle">Read</div>
+              <div className="col-12 subtitle" data-tip="📚">Read</div>
               <div className="row books">
                 {readBooks.map((books) => (<BookDetail image={books.Book.img} gID={`/details/${books.Book.isbn}`} />))}
               </div>
@@ -82,6 +83,7 @@ function Bookshelf() {
 
 
       </Row>
+      <ReactTooltip place="top" type="dark" effect="float" />
       <Footer />
     </div>
   )

@@ -6,7 +6,9 @@ import SearchInput from "../components/SearchIndex/searchindex";
 import Header from "../components/Navbar/navbar"; import { ListItem } from "../components/List";
 import { Row } from "react-bootstrap";
 import Footer from "../components/Footer";
-import CarouselBooks from '../components/Carousel'
+import CarouselBooks from '../components/Carousel';
+import ReactTooltip from "react-tooltip";
+
 
 function Search() {
   const [books, setBooks] = useState([])
@@ -70,6 +72,7 @@ function Search() {
                     <div className="row searchrow">
 
                       <SearchInput
+                        
                         name="bookSearch"
                         value={bookSearch}
                         onChange={handleInputChange}
@@ -79,6 +82,7 @@ function Search() {
 
                       <div className="col-3 btncol">
                         <button
+                          data-tip="📚🐛 "
                           type="submit"
                           className="btn btn-dark btn-md"
                           id="search-btn"
@@ -124,6 +128,7 @@ function Search() {
           </div>
         </div>
       </div>
+      <ReactTooltip place="top" type="dark" effect="float" />
       <Footer />
     </div>
 
