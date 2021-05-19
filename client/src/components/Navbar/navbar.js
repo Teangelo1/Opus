@@ -72,7 +72,7 @@ function Header() {
 
 
 
-            <ReactTooltip place="top" type="light" effect="float" />
+            <ReactTooltip place="top" type="dark" effect="float" />
         </header>
 
 

@@ -5,6 +5,7 @@ import Header from "../components/Navbar/navbar";
 import BookDetail from "../components/BookDisplay";
 import "../styles/opusleague.css";
 import ClubComments from "../components/ClubComments"; 
+import ReactTooltip from "react-tooltip";
 
 
 function OpusLeague() {
@@ -40,11 +41,11 @@ function OpusLeague() {
                         <Row>
 
                           <div className="col-4">  <BookDetail gID={"/details/9781501160851"} image={"http://books.google.com/books/content?id=AIjCDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_ap"} />
-                            <button className="btn btn-light daclub" value={1} onClick={() => opusBookData(1)}>💰In Da Club🕵️‍♂️</button></div>
+                            <button className="btn btn-light daclub" value={1} onClick={() => opusBookData(1)} data-tip="What's the League saying?">💰In Da Club🕵️‍♂️</button></div>
                             <div className="col-4"> <BookDetail gID={"/details/9781501171345"} image={"http://books.google.com/books/content?id=3s8DEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"} />
-                            <button className="btn btn-light daclub" value={2} onClick={() => opusBookData(2)}>🕵️‍♀️In Da Club📝</button></div>
+                            <button className="btn btn-light daclub" value={2} onClick={() => opusBookData(2)} data-tip="Discover why League members love this one!">🕵️‍♀️In Da Club📝</button></div>
                             <div className="col-4"><BookDetail gID={"/details/9780765387585"} image={"http://books.google.com/books/content?id=vH3LDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"} />
-                            <button className="btn btn-light daclub" value={3} onClick={() => opusBookData(3)}>✨In Da Club🥀</button></div>
+                            <button className="btn btn-light daclub" value={3} onClick={() => opusBookData(3)} data-tip="See what the League is talking about...">✨In Da Club🥀</button></div>
                             
                         </Row>
 
@@ -62,7 +63,7 @@ function OpusLeague() {
                         )}
 
                     </div>
-
+                    <ReactTooltip place="top" type="dark" effect="float" />
                 </Container>
             </div>
         </div>
