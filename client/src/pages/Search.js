@@ -129,11 +129,4 @@ function Search() {
 
 
 export default Search;
-            // <div className="trendingbooks">
-            //   {nyBooks.map((book) => (
-            //     <BookDetail
-            //       title={book.title}
-            //       image={book.book_image}
-            //       key={book.id}
-            //       gID={`/details/${book.isbns[0].isbn13}`}
-            //     />
+           
