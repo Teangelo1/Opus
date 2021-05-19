@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Row } from "react-bootstrap";
 import "../styles/bookshelf.css";
 import BookDetail from '../components/BookDisplay'
-import Header from "../components/Navbar/navbar";
+import Navbar from "../components/Navbar";
 import API from "../utils/API";
 import { useParams } from "react-router-dom";
 import Footer from "../components/Footer";
@@ -39,7 +39,7 @@ function Bookshelf() {
   return (
 
     <div className="bookshelfPage">
-      <Header />
+      <Navbar />
       <Row>
         <div className="col-1 sidebar"></div>
         <div className="col-10 transparent">

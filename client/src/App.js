@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { UserProvider } from "./utils/UserContext";
 import UserLogin from "./pages/UserLogin";
 import Bookshelf from "./pages/Bookshelf";
@@ -8,7 +8,7 @@ import UserSignup from "./pages/UserSignup";
 import BookDetails from "./pages/BookDetails";
 import UserReviews from "./pages/UserReview";
 import OpusLeague from "./pages/OpusLeague";
-
+// import Navbar from "./components/Navbar";
 
 function App() {
 
@@ -17,6 +17,7 @@ function App() {
     <Router>
       <Switch>
         <UserProvider>
+        {/* <Navbar /> */}
           <Route exact path="/" component={UserLogin} />
           <Route exact path="/newuser" component={UserSignup} />
           <Route exact path="/bookshelf/:userId" component={Bookshelf} />

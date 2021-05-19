@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import Input from "../components/Input";
 import API from "../utils/API";
 import { Link } from "react-router-dom"; 
-import { createBrowserHistory } from "history"; 
+import { createBrowserHistory } from "history";
+import "../styles/userlogin.css";
+import { Container, Row, Col } from "react-bootstrap";
+import welcome from "../styles/assets/opuswelcome.png";
 
 function UserSignup() {
     const [user, setUserData] = useState("")
@@ -27,8 +30,10 @@ function UserSignup() {
 
     return (
         <div>
-
-            <form onSubmit={handleFormSubmit}>
+            <form id="newUser" onSubmit={handleFormSubmit}>
+            <Row>
+                <img className="welcome" alt="welcome" src={(welcome)} />
+            </Row>
                 <Input
                     value={user.first_name}
                     onChange={handleInputChange}
@@ -57,13 +62,17 @@ function UserSignup() {
                     name="password"
                     label="Password"
                 />
-                <button
+                <Row><button
                     type="submit"
                     className="btn"
+                    id="submit"
                 >
                     Submit New User
             </button>
-                <Link to="/">Returning User? Login</Link>
+            </Row>
+            <Row>
+                <Link to="/" id="return">Returning User? Login</Link>
+            </Row>
             </form>
 
         </div>

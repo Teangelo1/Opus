@@ -3,7 +3,7 @@ import BookDetail from "../components/BookDisplay";
 import '../styles/search.css';
 import API from '../utils/API';
 import SearchInput from "../components/SearchIndex/searchindex";
-import Header from "../components/Navbar/navbar"; import { ListItem } from "../components/List";
+import Navbar from "../components/Navbar"; import { ListItem } from "../components/List";
 import { Row } from "react-bootstrap";
 import Footer from "../components/Footer";
 import CarouselBooks from '../components/Carousel'
@@ -52,7 +52,7 @@ function Search() {
   return (
     <div className="searchPage">
 
-      <Header />
+      <Navbar />
       <Row className="opusmain">
         <div className="col-2"></div>
         <div className="col-8 opusheader">

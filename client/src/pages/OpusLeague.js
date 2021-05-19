@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import API from "../utils/API";
 import { Container, Row } from "react-bootstrap";
-import Header from "../components/Navbar/navbar";
+import Navbar from "../components/Navbar";
 import BookDetail from "../components/BookDisplay";
 import "../styles/opusleague.css";
 import ClubComments from "../components/ClubComments"; 
@@ -32,7 +32,7 @@ function OpusLeague() {
     return (
         <div className="league">
             <div>
-                <Header />
+                <Navbar />
 
                 <Container>
                     {/* {books.length ? ( */}

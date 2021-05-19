@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
-//import {Col, Row} from "react-bootstrap";
 import { NavLink } from "react-router-dom";
-import "./navbar.css"
+import "./style.css";
 import API from "../../utils/API";
 
-
-function Header() {
+function Navbar() {
     const [user, setUser] = useState([]);
 
     useEffect(() => {
@@ -15,7 +13,6 @@ function Header() {
     function getUser() {
         API.getUser().then(res => {
             setUser(res.data.id)
-            console.log(user)
         })
     }
 
@@ -48,8 +45,6 @@ function Header() {
                     to="/opusleague"
                 >Opus League</NavLink></div>
 
-
-
                 <div className="col-2"><NavLink
                     className="nav-link search headerselectors"
                     activeClassName="active"
@@ -60,21 +55,9 @@ function Header() {
 
             </div>
 
-
-
-
-
-
-
-
-
         </header>
-
-
-
-
 
     )
 }
 
-export default Header;
+export default Navbar;

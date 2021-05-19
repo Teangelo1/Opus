@@ -3,7 +3,7 @@ import BookCard from "../components/Bookcard";
 import API from "../utils/API";
 import { Container } from "react-bootstrap";
 import { useParams } from "react-router-dom";
-import Header from "../components/Navbar/navbar";
+import Navbar from "../components/Navbar";
 import "../styles/bookdetails.css"
 
 function BookDetails() {
@@ -79,7 +79,7 @@ function BookDetails() {
 
     <div  className="row">
 <div className="col-12  backgroundcolor">
-    <Header></Header>
+    <Navbar />
 
 
     <Container>

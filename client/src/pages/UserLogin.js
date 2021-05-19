@@ -35,9 +35,7 @@ function UserLogin() {
             <Container>
                 <form className="mainform" onSubmit={handleLogin}>
                     <Row>
-                        <Col className="col-2"></Col>
-                        <Col className="col-8 imgcenter"><img className="welcome" alt="welcome" src={(welcome)}></img></Col>
-                        <Col className="col-2"></Col>
+                        <img className="welcome" alt="welcome" src={(welcome)}></img>
                     </Row>
                     <Input
                         ref={emailRef}
@@ -51,7 +49,6 @@ function UserLogin() {
                         name="password"
                         label="Password"
                     />
-                    {/* <form> thisform tag cannot exist it breaks the logic of the sign in */}
                     <Row>
                         <div className="col-2"></div>
                         <div className="col-8">
@@ -69,7 +66,6 @@ function UserLogin() {
                         </div>
                         <div className="col-2"></div>
                     </Row>
-                    {/* // </form> */}
                 </form>
             </Container>
         </div>
