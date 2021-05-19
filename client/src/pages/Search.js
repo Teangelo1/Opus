@@ -28,10 +28,10 @@ function Search() {
     setBookSearch(value);
   };
 
-function hideit() {
-  let hide = document.querySelector(".carousel");
-  hide.setAttribute("id", "hideit")
-}
+  function hideit() {
+    let hide = document.querySelector(".carousel");
+    hide.setAttribute("id", "hideit")
+  }
 
 
   function handleFormSubmit(event) {
@@ -39,7 +39,7 @@ function hideit() {
 
     console.log(event);
     hideit()
-   
+
 
     API.searchBooks(bookSearch)
       .then(res => {
@@ -119,29 +119,10 @@ function hideit() {
           <CarouselBooks id="" className="carousel" />
 
           <br />
+          
           <div>
-
           </div>
-
-          {!nyBooks.length ? (
-            <h2>No Trending Books available at this moment </h2>
-          ) :
-            <div className="trendingbooks">
-              {nyBooks.map((book) => (
-                <BookDetail
-                  title={book.title}
-                  image={book.book_image}
-                  key={book.id}
-                  gID={`/details/${book.isbns[0].isbn13}`}
-                />
-              ))}
-            </div>
-          }
-
         </div>
-
-
-
       </div>
       <Footer />
     </div>
