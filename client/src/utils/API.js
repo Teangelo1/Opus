@@ -88,11 +88,10 @@ let API = {
     return axios.post("/api/books/shelf/updatestar", starRating)
   },
 
-  // log in route shows if you are logged in or not -- for testing mainly? may need
+  // log in route shows if you are logged in or not
   getUser: function () {
     return axios.get("/api/user/userdata")
   }
 };
-
 
 export default API;

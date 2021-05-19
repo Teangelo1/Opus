@@ -4,7 +4,6 @@ import { UserProvider } from "./utils/UserContext";
 import UserLogin from "./pages/UserLogin";
 import Bookshelf from "./pages/Bookshelf";
 import Search from "./pages/Search";
-import UserDetails from "./pages/UserDetails";
 import UserSignup from "./pages/UserSignup";
 import BookDetails from "./pages/BookDetails";
 import UserReviews from "./pages/UserReview";
@@ -23,7 +22,6 @@ function App() {
           <Route exact path="/bookshelf/:userId" component={Bookshelf} />
           <Route exact path="/search" component={Search} />
           <Route exact path="/details/:id" component={BookDetails} />
-          <Route exact path="/account" component={UserDetails} />
           <Route exact path="/reviews/:userId" component={UserReviews} />
           <Route exact path="/opusleague" component={OpusLeague} />
         </UserProvider>
