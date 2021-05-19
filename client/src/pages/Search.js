@@ -23,9 +23,16 @@ function Search() {
     setBookSearch(value);
   };
 
+function hideit() {
+  let hide = document.querySelector(".carousel");
+  hide.setAttribute("id", "hideit")
+}
+
+
   function handleFormSubmit(event) {
     event.preventDefault();
     console.log(event);
+    hideit()
    
     API.searchBooks(bookSearch)
       .then(res => {    console.log(res);
@@ -93,7 +100,7 @@ function Search() {
       <div className="container">
         <div className="jumbotron">
           <h1>Trending Books</h1>
-          <CarouselBooks />
+          <CarouselBooks id="" className="carousel" />
           <br />
           <div>
 

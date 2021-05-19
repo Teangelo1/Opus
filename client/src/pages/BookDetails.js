@@ -78,8 +78,8 @@ function BookDetails() {
   }
 
   return (
-    <div  className="mainpage">
-<div>
+    <div  className="row">
+<div className="col-12  backgroundcolor">
     <Header></Header>
 
     <Container>

@@ -47,13 +47,13 @@ function OpusLeague() {
                     <div>
                         <Row>
 
-                            <BookDetail gID={"/details/9781501160851"} image={"http://books.google.com/books/content?id=AIjCDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_ap"} />
-                            <button className="btn btn-light" value={1} onClick={() => opusBookData(1)}>💰In Da Club🕵️‍♂️</button>
-                            <BookDetail gID={"/details/9781501171345"} image={"http://books.google.com/books/content?id=3s8DEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"} />
-                            <button className="btn btn-light" value={2} onClick={() => opusBookData(2)}>🕵️‍♀️In Da Club📝</button>
-                            <BookDetail gID={"/details/9780765387585"} image={"http://books.google.com/books/content?id=vH3LDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"} />
-                            <button className="btn btn-light" value={3} onClick={() => opusBookData(3)}>✨In Da Club🥀</button>
-                              
+                          <div className="col-4">  <BookDetail gID={"/details/9781501160851"} image={"http://books.google.com/books/content?id=AIjCDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_ap"} />
+                            <button className="btn btn-light daclub" value={1} onClick={() => opusBookData(1)}>💰In Da Club🕵️‍♂️</button></div>
+                            <div className="col-4"> <BookDetail gID={"/details/9781501171345"} image={"http://books.google.com/books/content?id=3s8DEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"} />
+                            <button className="btn btn-light daclub" value={2} onClick={() => opusBookData(2)}>🕵️‍♀️In Da Club📝</button></div>
+                            <div className="col-4"><BookDetail gID={"/details/9780765387585"} image={"http://books.google.com/books/content?id=vH3LDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"} />
+                            <button className="btn btn-light daclub" value={3} onClick={() => opusBookData(3)}>✨In Da Club🥀</button></div>
+                            
                         </Row>
 
                     </div>

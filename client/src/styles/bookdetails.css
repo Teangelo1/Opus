@@ -1,9 +1,7 @@
-body {
-    
 
 
-}
+.backgroundcolor {
 
-.bookcard {
-
+    background-color: rgba(159, 167, 160, 0.9);
+    height: 200cm;
 }
