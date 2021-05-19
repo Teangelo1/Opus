@@ -62,11 +62,9 @@ function Bookshelf() {
             <Row>
               <div className="col-12 subtitle" data-tip="📗">Want to Read</div>
             </Row>
-
-            {/* Suggestions for you... Section */}
-            {/* <div className="row books">
+            <div className="row books">
               {wantBooks.map((books) => (<BookDetail image={books.Book.img} gID={`/details/${books.Book.isbn}`} />))}
-            </div> */}
+            </div>
             {/* Read Section */}
           </form>
           <form className="currentlyReadingForm">
