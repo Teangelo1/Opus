@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import "./style.css";
 import API from "../../utils/API";
+import ReactTooltip from "react-tooltip";
 
 function Navbar() {
     const [user, setUser] = useState([]);
@@ -21,6 +22,7 @@ function Navbar() {
         <header>
             <div className="row headerrow">
                 <div className="col-2"><NavLink
+                    data-tip="👀"
                     className="nav-link search headerselectors"
                     activeClassName="active"
                     isActive={() => window.location.pathname === "/search"}
@@ -32,6 +34,7 @@ function Navbar() {
 
 
                 <div className="col-2"><NavLink
+                    data-tip="📚"
                     className="nav-link search headerselectors"
                     activeClassName="active"
                     isActive={() => window.location.pathname === `/bookshelf/${user}`}
@@ -39,6 +42,7 @@ function Navbar() {
                 >My Bookshelf</NavLink></div>
 
                 <div className="col-2"><NavLink
+                    data-tip="⭐️"
                     className="nav-link search headerselectors"
                     activeClassName="active"
                     isActive={() => window.location.pathname === "/opusleague"}
@@ -46,6 +50,7 @@ function Navbar() {
                 >Opus League</NavLink></div>
 
                 <div className="col-2"><NavLink
+                    data-tip="📝"
                     className="nav-link search headerselectors"
                     activeClassName="active"
                     isActive={() => window.location.pathname === `/reviews/${user}`}
@@ -54,7 +59,7 @@ function Navbar() {
 
 
             </div>
-
+            <ReactTooltip place="top" type="dark" effect="float" />
         </header>
 
     )
