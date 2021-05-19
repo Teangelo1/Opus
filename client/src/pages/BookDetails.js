@@ -9,7 +9,7 @@ import "../styles/bookdetails.css"
 function BookDetails() {
  const [books, setBooks] = useState([])
  const [user, setUser] = useState([]); 
- let {id} = useParams(); // useParams will always reference the id in our url
+ let {id} = useParams();
 
  useEffect(() => {
     loadBooks(id)
@@ -25,12 +25,10 @@ function BookDetails() {
   function loadBooks(id) {
     API.testRoute(id)
       .then(res => {
-        console.log(id)
         setBooks(res.data.items)
   }).catch(err => console.log(err));
   };
   
-   
   function addBookRead(index) {
     console.log(user)
     API.saveBooks({
@@ -78,9 +76,11 @@ function BookDetails() {
   }
 
   return (
+
     <div  className="row">
 <div className="col-12  backgroundcolor">
     <Header></Header>
+
 
     <Container>
     {books.length ? (

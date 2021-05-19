@@ -18,9 +18,9 @@ function ClubComments(props) {
                         <Stars
                             stars={props.stars}
                             outOf={5}
-                            full={'#d00'}
-                            empty={'#E1F1FF'}
-                            stroke={'#369'}
+                            full={'#DEAD85'}
+                            empty={'#c4d0c5ff'}
+                            stroke={'#DEAD85'}
                         />
                         <p>{props.review}</p>
                     </Col>
