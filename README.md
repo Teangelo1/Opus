@@ -64,5 +64,5 @@ https://github.com/Teangelo1/Opus
 
 ## Credits
 
-Developers - Robert Sunde, Teangelo Burks & Victoria Shulman 
+Developers - Jacqueline Ross, Victoria Shulman, Robert Sunde & Teangelo Burks
 
