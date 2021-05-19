@@ -21,7 +21,6 @@ h1 {
 
 .search-content {
     margin-top: 4cm;
-
 }
 
 #trendingQoute {
@@ -65,16 +64,12 @@ margin: 0;
     padding-bottom: .62cm;
 }
 
-
-
-
 .searchPage {
     background-image: url("./assets/Books.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }
-
 
 .opusbackground {
     background-color: rgba(222, 173, 133, .8);
@@ -93,9 +88,7 @@ margin: 0;
 .opusTitle {
     font-size: 56pt;
     color: black;
-
 }
-
 
 #hideit {
  display: none;

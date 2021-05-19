@@ -3,11 +3,8 @@ import API from "../utils/API";
 import { Container } from "react-bootstrap";
 import Review from "../components/Review";
 import { useParams } from "react-router-dom";
-
 import "../styles/UserReview.css"
-import Header from "../components/Navbar/navbar";
-
-
+import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { createBrowserHistory } from "history";
 
@@ -113,7 +110,7 @@ function UserReview() {
     return (
 
       <div className="backgroundcolor">
-<Header></Header>
+<Navbar />
 
 
             <Container>

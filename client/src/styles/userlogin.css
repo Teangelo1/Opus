@@ -1,14 +1,14 @@
 .mainform {
-    background-color: rgba(196, 208, 197, 0.9);
-    margin: 2cm;
+  background-color: rgba(196, 208, 197, 0.9);
+  margin: 2cm;
   padding: 2cm;
   border-radius: 10pt;
 
 }
 
 .mainform:hover {
-    background-color: rgba(196, 208, 197, 0.95);
-    margin: 2cm;
+  background-color: rgba(196, 208, 197, 0.95);
+  margin: 2cm;
   padding: 2cm;
   border-radius: 10pt;
 
@@ -16,12 +16,10 @@
 
 .background {
     background-image: url("./assets/LoginPageImage.jpg");
+    /* background-size: cover;  */
     height: 100vh;
     width: 100vw;
-
-    
-
-}
+} 
 
 .textform {
     background-color: transparent;
@@ -29,9 +27,33 @@
 
 .welcome {
     width: 25vw;
-
+    margin-left: auto; 
+    margin-right: auto; 
 }
 
-.imgcenter {
+#submit, #return, #new, #search{
     text-align: center;
+    margin-left: auto; 
+    margin-right: auto;  
+}
+
+#newUser{
+    height: 50%;
+    width: 50%;
+    padding-bottom: 1cm;
+    margin-left: auto; 
+    margin-right: auto;
+    background-color: rgba(196, 208, 197, 0.9);
+    border-radius: 10pt;
+}
+
+#search, #submit {
+    font-size: 20px;
+    color: white;
+    text-shadow: black 2px 2px !important;
+}
+
+#new, #return{
+    font-size: 15px;
+    color: black;
 }
