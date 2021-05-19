@@ -3,3 +3,29 @@
     text-align: center;
 
 }
+
+.headerselectors {
+    color: black;
+    text-decoration: none;
+    font-size: 1.5vw;
+    font-weight: 400;
+    }
+    
+    .headerselectors:hover {
+    color: rgba(238, 195, 103, 0.836);
+    text-decoration: none;
+    font-size: 1.51vw;
+    font-weight: 400;
+    overflow: hidden;
+    border-bottom: black solid 2px;
+    }
+    
+    
+    
+    .headerrow {
+    
+        height: 2cm;
+        background-color: rgb(35, 39, 43);
+        background-color: transparent;
+    }
+    

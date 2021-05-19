@@ -17,11 +17,11 @@ function BookCard(props) {
                 <p>{props.pages} pages</p>
                 <div>
                   <div className="dropdown">
-                    <button className="btn btn-light" type="button" id="leagueAdd" data-bs-toggle="button" aria-expanded="false">
+                    <button className="btn btn-light detailbutton" type="button" id="leagueAdd" data-bs-toggle="button" aria-expanded="false">
                     ☆ League Worthy Add ☆
                   </button>
                   <br></br>
-                    <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button className="btn btn-secondary dropdown-toggle detailbutton" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
                     〖 You can be Shelf-ish here, we don't mind 〗
                   </button>
                     <div className="dropdown-menu" aria-labelledby="dropdownMenu2">

@@ -76,9 +76,11 @@ function BookDetails() {
   }
 
   return (
-    <div  className="mainpage">
-<div>
-    <Header />
+
+    <div  className="row">
+<div className="col-12  backgroundcolor">
+    <Header></Header>
+
 
     <Container>
     {books.length ? (
