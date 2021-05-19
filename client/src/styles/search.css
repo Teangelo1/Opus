@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Playfair Display', serif;
   }
 
 h1 {
@@ -49,9 +50,6 @@ h1 {
 align-items: center;
 padding-bottom: 0%;
 margin: 0;
-
-
-
 }
 
 .btn {
