@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+#  Opus
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description 
 
-## Available Scripts
+Opus was created with readers in mind, rather than dollar signs and ad space like so many other reading applications promote. Opus allows the user to create a unique login, search for books and add them to their shelves. Additionally, Opus League provides readers a book club experience, the League page shows other members reviews and ratings. Future development, would allow members to submit "League Worthy Reads" and create their own club - no spoilers, please! Opus uses MySQL2 & Sequelize to store all books, users and usersbooks - books are pulled from APIs to Google Books and NYT Top Trending and users can safely sign up and login using Passport & Bcrypt.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## User Story
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* **As a** reader, 
+* **I want** a user friendly book app that allows for customization and interaction,
+* **So I** can be presented with new books and interact with like minded readers.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+---
 
-### `npm test`
+## Development 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Opus follows MERN stack development, using MySQL2, Express, React and Node. The foundation of the app was built using create-react-app, client side development continued from this point with most files living in the src folder through components and pages. Server side was created with Express, Sequelize-cli, Sequelize and MySQL2 - data is stored locally in the MySQLWorkbench. Concurrently allows users to run both client and server side from the command line and provides live updates with changes when running properly.
 
-### `npm run build`
+ - Client Development:
+     -  Components
+        - Variety of reusable pieces created 
+        - BookCard, BookDisplay, Carousel, List, Login, NavBav
+     - Pages
+        - Browser pages crafted using various components as well as JavaScript & HTML practices
+        - React imported for all pages, useContext, useEffect or useState applied 
+        - Browser view  
+- [ ] DB  
+    - [ ] Create Workout, workoutSchema using mongoose + connect Mongo  
+    - [ ] Create collection within db allowing for workout and exercises to be stored
+    - [ ] Using MongoDB Atlas with account and process.env used with Heroku 
+- [ ] NPM packages
+    - [ ] Express & mongoose required - listed in dependencies 
+    - [ ] Node command line called on server.js - listed as start file 
+- [ ] Notable files  
+    - [ ] view.js is what the user "views" aka html routes
+    - [ ] routes/api.js contains server routes to get, post, create and delete
+- [ ] Heroku
+    - [ ] App needed to be deployed to Heroku
+    - [ ] Live link included below  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+NPM install for express & mongoose  - other files required throughout the app once they are created. Ensure these are listed on package.json as dependencies.
 
-### `npm run eject`
+--- 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Preview 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![17:LetsMove](./public/images/letsmove.png)
+![17:LetsMove](./public/images/letsmovehome.png)
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Heroku Link 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+https://stark-wildwood-59110.herokuapp.com/
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Github Link
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+https://github.com/vshulman25/burgerama
 
-### Code Splitting
+--
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Credits
 
-### Analyzing the Bundle Size
+Developer - Victoria Shulman 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
