@@ -10,6 +10,7 @@ import Footer from "../components/Footer";
 import CarouselBooks from '../components/Carousel';
 import ReactTooltip from "react-tooltip";
 
+
 function Search() {
   const [books, setBooks] = useState([])
   const [nyBooks, setNyBooks] = useState([])
