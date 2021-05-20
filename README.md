@@ -50,6 +50,9 @@ NPM install for all necessary packages - other files required throughout the app
 ![Opus](./client/images/opussignup.png)
 ![Opus](./client/images/opussignin.png)
 ![Opus](./client/images/opusshelf.png)
+![Opus](./client/images/opusleaguereview.png)
+![Opus](./client/images/opusreview.png)
+
 
 ---
 
