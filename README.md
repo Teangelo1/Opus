@@ -1,4 +1,4 @@
-#  Opus
+#  Opus 
 
 ## Description 
 
@@ -33,7 +33,7 @@ Opus follows MERN stack development, using MySQL2, Express, React and Node. The 
     - Notable NPM packages
         - Client side: react-bootstrap, react-strap, react-tooltip & simple-star-rating
         - Server side: bcrypt, concurrently, mysql2, passport + passport local & sequelize 
-        - See package.json for all packages
+        - Please see package.json for all packages
  
 
 ---
