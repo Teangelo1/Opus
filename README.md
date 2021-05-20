@@ -30,43 +30,42 @@ Opus follows MERN stack development, using MySQL2, Express, React and Node. The 
          - Models created for Users, Books and UsersBooks
          - MySQLWorkbench used to monitor data
          - UsersBooks joins using userID and BookID
-- [ ] NPM packages
-    - [ ] Express & mongoose required - listed in dependencies 
-    - [ ] Node command line called on server.js - listed as start file 
-- [ ] Notable files  
-    - [ ] view.js is what the user "views" aka html routes
-    - [ ] routes/api.js contains server routes to get, post, create and delete
-- [ ] Heroku
-    - [ ] App needed to be deployed to Heroku
-    - [ ] Live link included below  
+    - Notable NPM packages
+        - Client side: react-bootstrap, react-strap, react-tooltip & simple-star-rating
+        - Server side: bcrypt, concurrently, mysql2, passport + passport local & sequelize 
+        - See package.json for all packages
+ 
 
 ---
 
 ## Installation 
 
-NPM install for express & mongoose  - other files required throughout the app once they are created. Ensure these are listed on package.json as dependencies.
+NPM install for all necessary packages - other files required throughout the app once they are created. Ensure these are listed on package.json as dependencies. MySQLWorkbench required for database. Use preferred browser viewer.
 
 --- 
 
 ## Preview 
 
-![17:LetsMove](./public/images/letsmove.png)
-![17:LetsMove](./public/images/letsmovehome.png)
+![Opus](./client/images/opushome.png)
+![Opus](./client/images/opussignup.png)
+![Opus](./client/images/opussignin.png)
+![Opus](./client/images/opusshelf.png)
+
 ---
 
 ## Heroku Link 
 
-https://stark-wildwood-59110.herokuapp.com/
+
 
 ---
 
 ## Github Link
 
-https://github.com/vshulman25/burgerama
+https://github.com/Teangelo1/Opus
 
 --
 
 ## Credits
 
-Developer - Victoria Shulman 
+Developers - Jacqueline Ross, Victoria Shulman, Robert Sunde & Teangelo Burks
 
