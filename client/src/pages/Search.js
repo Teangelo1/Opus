@@ -7,7 +7,7 @@ import Header from "../components/Navbar/navbar"; import { ListItem } from "../c
 import { Row } from "react-bootstrap";
 import Footer from "../components/Footer";
 import CarouselBooks from '../components/Carousel'
-import OpusLogo from '../styles/imageslogo/OpusLogo.png'
+
 
 function Search() {
   const [books, setBooks] = useState([])
