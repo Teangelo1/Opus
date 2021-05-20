@@ -100,3 +100,8 @@ margin: 0;
 #hideit {
  display: none;
 }
+
+.Logo {
+    width: 500px;
+    display: flex;
+}
