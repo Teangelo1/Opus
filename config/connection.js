@@ -1,18 +1,27 @@
-// Dependencies
-const Sequelize = require('sequelize');
+const mysql = require('mysql');
+let connection;
 
-// Creates mySQL connection using Sequelize, the empty string in the third argument spot is our password.
-const sequelize = new Sequelize('opus_db', 'root', process.env.dbPassword, {
-  host: 'localhost',
-  port: 3306,
-  dialect: 'mysql',
-  database: 'opus_db',
-  pool: {
-    max: 5,
-    min: 0,
-    idle: 10000,
-  },
+if (process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+}
+
+else{
+  connection = mysql.createConnection({
+    host: 'localhost',
+    port: 3306,
+    user: 'root',
+    password: process.env.myPassword,
+    database: 'opus_db',
+});
+}
+
+connection.connect((err) => {
+  if (err) {
+    console.error(`error connecting: ${err.stack}`);
+    return;
+  }
+  console.log(`connected as id ${connection.threadId}`);
 });
 
-// Exports the connection for other files to use
-module.exports = sequelize;
+module.exports = connection;
+
