@@ -41,7 +41,9 @@
     "react-tooltip": "^4.2.19",
     "react-use-hoverintent": "^1.2.3",
     "reactstrap": "^8.9.0",
-    "sequelize": "^6.6.2"
+    "sequelize": "^6.6.2",
+    "serve": "^11.3.2",
+    "server": "^1.0.33"
   },
   "devDependencies": {
     "concurrently": "^4.1.0",
