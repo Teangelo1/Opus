@@ -1,21 +1,21 @@
-{
+module.exports = {
   "development": {
     "username": "root",
-    "password": "",
+    "password": process.env.myPassword,
     "database": "opus_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "",
+    "password": process.env.myPassword,
     "database": "opus_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
-    "password": "",
+    "password": process.env.myPassword,
     "database": "opus_db",
     "host": "127.0.0.1",
     "use_env_variable": "JAWSDB_URL",
