@@ -21,19 +21,19 @@ function Bookshelf() {
   }, [userId])
 
   function getReadBooks(userId) {
-    API.getReadBooks(userId).then(data => { console.log(data); return data }).then(res => setReadBooks(
+    API.getReadBooks(userId).then(data => { return data }).then(res => setReadBooks(
       res.data
     )).catch(err => console.log(err))
   }
 
   function wantToReadBooks(userId) {
-    API.wantToReadBooks(userId).then(data => { console.log(data); return data }).then(res => setWantBooks(
+    API.wantToReadBooks(userId).then(data => { return data }).then(res => setWantBooks(
       res.data
     )).catch(err => console.log(err))
   }
 
   function currentlyReading(userId) {
-    API.currentlyReading(userId).then(data => { console.log(data); return data }).then(res => setCurrentBooks(
+    API.currentlyReading(userId).then(data => { return data }).then(res => setCurrentBooks(
       res.data
     )).catch(err => console.log(err))
   }
@@ -52,7 +52,13 @@ function Bookshelf() {
             </Row>
             <Row className="bookreadingrow">
               <div className="col-4"></div>
-              <div className="col-4 favbook">{currentBooks.map((books) => (<BookDetail image={books.Book.img} gID={`/details/${books.Book.isbn}`} />))}</div>
+              <div className="col-4 favbook">
+                {currentBooks.map((books) => (
+                  <BookDetail
+                    key={books.bookId}
+                    image={books.Book.img}
+                    gID={`/details/${books.Book.isbn}`} />
+                ))}</div>
 
               <div className="col-4"></div>
             </Row>
@@ -63,7 +69,11 @@ function Bookshelf() {
               <div className="col-12 subtitle" data-tip="📗">Want to Read</div>
             </Row>
             <div className="row books">
-              {wantBooks.map((books) => (<BookDetail image={books.Book.img} gID={`/details/${books.Book.isbn}`} />))}
+              {wantBooks.map((books) => (
+                <BookDetail
+                  key={books.bookId}
+                  image={books.Book.img}
+                  gID={`/details/${books.Book.isbn}`} />))}
             </div>
             {/* Read Section */}
           </form>
@@ -71,7 +81,11 @@ function Bookshelf() {
             <Row>
               <div className="col-12 subtitle" data-tip="📚">Read</div>
               <div className="row books">
-                {readBooks.map((books) => (<BookDetail image={books.Book.img} gID={`/details/${books.Book.isbn}`} />))}
+                {readBooks.map((books) => (
+                  <BookDetail
+                    key={books.bookId}
+                    image={books.Book.img}
+                    gID={`/details/${books.Book.isbn}`} />))}
               </div>
             </Row>
           </form>

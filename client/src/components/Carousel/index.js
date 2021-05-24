@@ -9,7 +9,7 @@ import {
 import API from '../../utils/API';
 
 function CarouselBooks() {
-    const [books, setBooks] = useState([])
+    const [books] = useState([])
     const [nyBooks, setNyBooks] = useState([]);
     const [activeIndex, setActiveIndex] = useState(0);
     const [animating, setAnimating] = useState(false);
@@ -36,7 +36,7 @@ function CarouselBooks() {
     }, [])
 
     function trendingBooks() {
-        API.trendingBooks().then(data => { console.log(data); return data }).then(res => setNyBooks(
+        API.trendingBooks().then(data => { return data }).then(res => setNyBooks(
             res.data.results.books
         )).catch(err => console.log(err))
     }
@@ -46,12 +46,10 @@ function CarouselBooks() {
             <CarouselItem
                 onExiting={() => setAnimating(true)}
                 onExited={() => setAnimating(false)}
-                key={book.id}
+                key={book.rank}
             >
 
                 <img src={book.book_image} alt={book.altText} />
-
-
 
                 <CarouselCaption captionText={book.caption} captionHeader={book.caption}>
 

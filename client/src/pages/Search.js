@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import BookDetail from "../components/BookDisplay";
 import '../styles/search.css';
 import API from '../utils/API';
@@ -13,18 +13,18 @@ import ReactTooltip from "react-tooltip";
 
 function Search() {
   const [books, setBooks] = useState([])
-  const [nyBooks, setNyBooks] = useState([])
+  // const [nyBooks, setNyBooks] = useState([])
   const [bookSearch, setBookSearch] = useState("")
 
-  useEffect(() => {
-    trendingBooks()
-  }, [])
+  // useEffect(() => {
+  //   trendingBooks()
+  // }, [])
 
-  function trendingBooks() {
-    API.trendingBooks().then(data => { return data }).then(res => setNyBooks(
-      res.data.results.books
-    )).catch(err => console.log(err))
-  }
+  // function trendingBooks() {
+  //   API.trendingBooks().then(data => { return data }).then(res => setNyBooks(
+  //     res.data.results.books
+  //   )).catch(err => console.log(err))
+  // }
 
   function handleInputChange(event) {
     const { value } = event.target;
@@ -35,7 +35,6 @@ function Search() {
     let hide = document.querySelector(".carousel");
     hide.setAttribute("id", "hideit")
   }
-
 
   function handleFormSubmit(event) {
     event.preventDefault();
