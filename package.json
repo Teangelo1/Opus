@@ -40,7 +40,8 @@
     "react-dom": "^17.0.2",
     "react-tooltip": "^4.2.19",
     "react-use-hoverintent": "^1.2.3",
-    "reactstrap": "^8.9.0"
+    "reactstrap": "^8.9.0",
+    "sequelize": "^6.6.2"
   },
   "devDependencies": {
     "concurrently": "^4.1.0",

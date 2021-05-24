@@ -18,13 +18,27 @@ function App() {
       <Switch>
         <UserProvider>
         {/* <Navbar /> */}
-          <Route exact path="/" component={UserLogin} />
-          <Route exact path="/newuser" component={UserSignup} />
-          <Route exact path="/bookshelf/:userId" component={Bookshelf} />
-          <Route exact path="/search" component={Search} />
-          <Route exact path="/details/:id" component={BookDetails} />
-          <Route exact path="/reviews/:userId" component={UserReviews} />
-          <Route exact path="/opusleague" component={OpusLeague} />
+          <Route exact path="/">
+          <UserLogin />
+          </Route>
+          <Route exact path="/newuser">
+          <UserSignup />
+          </Route>
+          <Route exact path="/bookshelf/:userId">
+          <Bookshelf />
+          </Route>
+          <Route exact path="/search">
+          <Search />
+          </Route>
+          <Route exact path="/details/:id">
+          <BookDetails />
+          </Route>
+          <Route exact path="/reviews/:userId">
+          <UserReviews />
+          </Route>
+          <Route exact path="/opusleague">
+          <OpusLeague />
+          </Route>
         </UserProvider>
       </Switch>
 
