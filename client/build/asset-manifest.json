@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.43209823.chunk.css",
+    "main.js": "/static/js/main.1bbc495a.chunk.js",
+    "main.js.map": "/static/js/main.1bbc495a.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.f711b6f5.js",
+    "runtime-main.js.map": "/static/js/runtime-main.f711b6f5.js.map",
+    "static/js/2.8364529b.chunk.js": "/static/js/2.8364529b.chunk.js",
+    "static/js/2.8364529b.chunk.js.map": "/static/js/2.8364529b.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.43209823.chunk.css.map": "/static/css/main.43209823.chunk.css.map",
+    "static/js/2.8364529b.chunk.js.LICENSE.txt": "/static/js/2.8364529b.chunk.js.LICENSE.txt",
+    "static/media/search.css": "/static/media/Books.51a24841.png",
+    "static/media/userlogin.css": "/static/media/LoginPageImage.13960df7.jpg",
+    "static/media/opuswelcome.22370ab6.png": "/static/media/opuswelcome.22370ab6.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f711b6f5.js",
+    "static/js/2.8364529b.chunk.js",
+    "static/css/main.43209823.chunk.css",
+    "static/js/main.1bbc495a.chunk.js"
+  ]
+}
