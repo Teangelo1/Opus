@@ -3,16 +3,17 @@ const express = require("express");
 const session = require("express-session");
 const passport = require("./config/passport");
 const routes = require("./routes");
-
+// Express App
+const app = express();
 const PORT = process.env.PORT || 3001;
 const db = require("./models");
 
-// Express App
-const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-if (process.env.NODE_ENV === "production") { app.use(express.static("client/build")); }
+if (process.env.NODE_ENV === "production") { 
+  app.use(express.static("client/build")); 
+}
 
 // Passport 
 app.use(session({ 
@@ -28,6 +29,6 @@ app.use(routes);
 // Syncing our database
 db.sequelize.sync().then(() => {
     app.listen(PORT, () => {
-      console.log( "Listening on port %s.");
+      console.log( "Listening on port.");
     });
   });
