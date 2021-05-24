@@ -116,6 +116,8 @@ function UserReview() {
             <Container>
                 {books.map((book) =>
                     <Review
+                        id={book.bookId}
+                        key={book.Book.isbn}
                         title={book.Book.title}
                         authors={book.Book.author}
                         image={book.Book.img}

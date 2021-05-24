@@ -30,7 +30,7 @@ function Review(props) {
                             stars={props.stars}
                             outOf={5}
                             full={'#DEAD85'}
-                            empty={'#c4d0c5ff'}
+                            empty={'#E1F1FF'}
                             stroke={'#DEAD85'}
                         />
                     </Col>
@@ -59,7 +59,7 @@ function Review(props) {
                 <Row>
                     <Col size="8">
                         <div className="form-group">
-                            <label for="exampleFormControlTextarea1" className="whatdidyouthink">What did you think of the book?</label>
+                            <label htmlFor="exampleFormControlTextarea1" className="whatdidyouthink">What did you think of the book?</label>
                             <textarea className="form-control" id="exampleFormControlTextarea1" onChange={props.onChange} rows="3" placeholder={props.placeholder}></textarea>
                         </div>
                         <div className="save">

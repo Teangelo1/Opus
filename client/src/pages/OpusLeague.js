@@ -61,6 +61,7 @@ function OpusLeague() {
                                 lastName={book.User.last_name}
                                 review={book.review}
                                 stars={book.rating}
+                                id={book.bookId}
                             />
                         )}
 

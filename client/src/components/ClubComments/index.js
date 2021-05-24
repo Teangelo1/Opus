@@ -4,7 +4,7 @@ import Stars from 'simple-rating-stars';
 
 function ClubComments(props) {
     return (
-        <div className="card" id={props.id}>
+        <div className="card">
             <div className="card-body">
                 <Row>
                     <Col size="4">
@@ -13,13 +13,12 @@ function ClubComments(props) {
                         <p>League Expansion  ...coming soon</p>
                     </Col>
 
-
                     <Col size="8">
                         <Stars
                             stars={props.stars}
                             outOf={5}
                             full={'#DEAD85'}
-                            empty={'#c4d0c5ff'}
+                            empty={'#E1F1FF'}
                             stroke={'#DEAD85'}
                         />
                         <p>{props.review}</p>

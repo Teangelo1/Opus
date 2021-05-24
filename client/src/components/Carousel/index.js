@@ -39,6 +39,7 @@ function CarouselBooks() {
         API.trendingBooks().then(data => { return data }).then(res => setNyBooks(
             res.data.results.books
         )).catch(err => console.log(err))
+        console.log(nyBooks)
     }
 
     const slides = nyBooks.map((book) => {
@@ -51,7 +52,7 @@ function CarouselBooks() {
 
                 <img src={book.book_image} alt={book.altText} />
 
-                <CarouselCaption captionText={book.caption} captionHeader={book.caption}>
+                <CarouselCaption captionText="" captionHeader="">
 
                 </CarouselCaption>
 
